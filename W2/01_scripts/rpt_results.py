@@ -78,7 +78,8 @@ def dropped(sid):
     dec = dikes_decision(); return (sid in ("S3N", "S2N") and dec is not None and not dec.get("keep_no_dikes", True)) or sid in DROPPED
 def not_run(sid):
     """the table cell of a scenario without products"""
-    return DROPPED.get(sid, "not run, see chapter 3" if dropped(sid) else "pending")
+    if sid in DROPPED: return DROPPED[sid].split(":")[0] + ", see chapter 3"      # short form for the results tables; the register carries the reason
+    return "not run, see chapter 3" if dropped(sid) else "pending"
 
 def key_rows(sids):
     """one row per scenario for the results tables"""
@@ -469,8 +470,15 @@ def content(d):
         d.FIG(chart("results_dam_hydrographs_time_flood.png"), "Flow past the dam for the flood-day failure during the PMF and during the 10,000-year flood.", "hyd_f", width_cm=15)
     if os.path.exists(chart("results_peaks_and_areas.png")):
         d.FIG(chart("results_peaks_and_areas.png"), "Peak flow and flooded area of all runs.", "peaks", width_cm=15)
-    d.P("The reading of these runs is in chapter 10. In short, the breach width sets the peak flow almost in proportion, the formation time matters little "
-        "for a concrete dam, and the flooded area is far less sensitive than the peak because the plain is wide and flat.")
+    w51, w153, t3, t18, c144, s1 = load("S1D-W51"), load("S1D-W153"), load("S1D-T3m"), load("S1D-T18m"), load("S1D-C1.44"), load("S1D")
+    q = lambda x: n0((x or {}).get("peak_total_flow_m3s"))
+    r15 = lambda sid: n0((load_w(sid) or {}).get("people_cum", [None])[0])
+    d.P(f"The reading of these runs is in chapter 10. In short: the breach width sets the peak almost in proportion ({q(w51)}, {q(s1)} and {q(w153)} m³/s "
+        f"for 51, 85 and 153 m) while the flooded area hardly moves ({n1((w51 or {}).get('inundated_area_km2_gt0.3m'))} to "
+        f"{n1((w153 or {}).get('inundated_area_km2_gt0.3m'))} km²), because the plain is wide and flat. The formation time changes the peak by about a "
+        f"tenth either way ({q(t3)} m³/s in 3 minutes, {q(t18)} in 18) and neither the extent nor the people in it, but it does change the first quarter "
+        f"hour: {r15('S1D-T3m')} people are reached within 15 minutes of a 3-minute breach, {r15('S1D')} with 6 minutes and {r15('S1D-T18m')} with 18. "
+        f"The lower weir coefficient trims the peak by {n0(100 * (1 - (c144 or {}).get('peak_total_flow_m3s', 0) / max((s1 or {}).get('peak_total_flow_m3s', 1), 1)))} %.")
 
     # ============================================================ 8 consequences
     d.H1("Consequences")
@@ -587,7 +595,8 @@ def content(d):
                                            "the dam's own monitoring, and the plan should use the arrival bands of chapter 9 as its warning zones.")
     items += ["The emergency action plan should use the hazard maps for evacuation routes and shelters.",
               "The training dikes should not be relied on in the plan: they are overtopped by every failure scenario.",
-              "The breach width is the parameter that matters; the sensitivity runs bound the results and should be quoted with them."]
+              "The breach width is the parameter that matters for the peak; the formation time matters for the first quarter hour of warning; "
+              "the sensitivity runs bound the results and should be quoted with them."]
     d.BULS(items)
 
     # ============================================================ references

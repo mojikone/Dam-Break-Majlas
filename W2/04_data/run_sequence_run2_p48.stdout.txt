@@ -1,3 +1,50 @@
 2026-09-22 19:19  fill finished; restart file present
 2026-09-22 19:19  START p48 S3D-F10000 10000-yr flood no failure, dikes
 Plan_SetCurrent -> (True, 'S3D-F10000 10000-yr flood no failure, dikes') | current plan file: Majlas.p48 | geom: Majlas.g02 | unsteady: Majlas.u29
+2026-09-23 10:16  END   p48 ok=True 898 min | Unsteady Finished Successfully | volume error 0.002378056524321437
+{
+ "plan": "p48",
+ "plan_title": "S3D-F10000 10000-yr flood no failure, dikes",
+ "solution": "Unsteady Finished Successfully",
+ "computation_time": "**:**:**",
+ "unstable_at": null,
+ "volume_error_pct": 0.002378056524321437,
+ "volume_in_1000m3": 400153.625,
+ "volume_out_1000m3": 389785.28125,
+ "volume_end_1000m3": 112081.921875,
+ "volume_start_1000m3": 101701.6328125,
+ "max_courant": 0.8858933448791504,
+ "max_volume_error_step": 0.0,
+ "peak_total_flow_m3s": 12386.0166015625,
+ "peak_time_h": 15.50000000003283,
+ "peak_stage_hw": 93.74884796142578,
+ "peak_stage_tw": 39.0692024230957,
+ "breach_started": false,
+ "breach_final_width": 0.0,
+ "breach_peak_flow_m3s": 0.0,
+ "max_stage_hw": 93.74884796142578,
+ "breach_start_h": null,
+ "stage_hw_at_breach": null,
+ "volume_through_dam_Mm3": 280.21722412109375,
+ "reference_time_h_for_arrival": 0.0,
+ "inundated_area_km2_gt0.3m": 26.10414,
+ "inundated_area_km2_gt0.3m_incl_reservoir": 30.251736,
+ "max_depth_m": 45.59896743401913,
+ "max_depth_incl_reservoir_m": 74.41924144573113,
+ "max_velocity_ms": 11.06513500213623,
+ "max_dv_m2s": 132.64100646972656,
+ "arrival_h_median": 7.333333492279053,
+ "arrival_h_max": 15.666666984558105,
+ "reservoir_area_km2": 4.155476,
+ "pixels": 42381370,
+ "hazard_area_km2": {
+  "H1": 0.953548,
+  "H2": 1.13058,
+  "H3": 0.969424,
+  "H4": 2.780048,
+  "H5": 12.383212,
+  "H6": 9.669388
+ }
+}
+2026-09-23 10:17  PRODUCTS p48: peak 12386.0166015625 m3/s at 15.50000000003283 h; area 26.10414 km2
+2026-09-23 10:17  sequence complete

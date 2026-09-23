@@ -225,3 +225,15 @@ pywintypes.com_error: (-2147023170, 'The remote procedure call failed.', None, N
 2026-09-23 08:40  START p45 S1D-T18m sunny day, breach time 18 min
 2026-09-23 08:41  fill finished; restart file present
 2026-09-23 08:41  START p44 S1D-T3m sunny day, breach time 3 min
+2026-09-23 10:16  END   p48 ok=True 898 min | Unsteady Finished Successfully | volume error 0.002378056524321437
+2026-09-23 10:17  PRODUCTS p48: peak 12386.0166015625 m3/s at 15.50000000003283 h; area 26.10414 km2
+2026-09-23 10:17  sequence complete
+2026-09-23 10:17  fill finished; restart file present
+2026-09-23 10:17  START p42 S2D-F10000 flood day, 10000-yr flood
+2026-09-23 10:17  p42 breach trigger set from p48: 01JAN2000 1530 (pool 93.75 m at 15.50 h)
+2026-09-23 10:45  END   p45 ok=True 124 min | Unsteady Finished Successfully | volume error 0.007396077737212181
+2026-09-23 10:46  PRODUCTS p45: peak 42856.42578125 m3/s at 2.3333333333333623 h; area 17.017636 km2
+2026-09-23 10:46  sequence complete
+2026-09-23 10:49  END   p44 ok=True 127 min | Unsteady Finished Successfully | volume error 0.00696336617693305
+2026-09-23 10:49  PRODUCTS p44: peak 49525.26953125 m3/s at 2.083333333333419 h; area 17.027752 km2
+2026-09-23 10:49  sequence complete

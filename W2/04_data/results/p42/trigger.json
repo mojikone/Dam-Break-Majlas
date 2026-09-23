@@ -1,0 +1,10 @@
+{
+  "plan": "p42",
+  "scenario": "S2D-F10000",
+  "from_run": "p48",
+  "trigger_date": "01JAN2000",
+  "trigger_time": "1530",
+  "time_h": 15.5,
+  "max_stage_hw": 93.749,
+  "s3_date_column": "01JAN2000 15:30:00"
+}

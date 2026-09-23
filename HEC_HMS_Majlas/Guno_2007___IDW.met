@@ -1,0 +1,210 @@
+Meteorology: Guno 2007 - IDW
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 11:50:01
+     Version: 4.12
+     Unit System: Metric
+     Set Missing Data to Default: No
+     Precipitation Method: Inverse Distance Squared
+     Air Temperature Method: None
+     Atmospheric Pressure Method: None
+     Dew Point Method: None
+     Wind Speed Method: None
+     Shortwave Radiation Method: None
+     Longwave Radiation Method: None
+     Snowmelt Method: None
+     Evapotranspiration Method: No Evapotranspiration
+     Use Basin Model: Basin 1
+     Use Basin Model: Majlas Catchment
+End:
+
+Gage: FL655789AF
+     Type: Recording
+End:
+
+Gage: FL672275AF
+     Type: Recording
+End:
+
+Gage: FL771702AF
+     Type: Recording
+End:
+
+Gage: FL788017AF
+     Type: Recording
+End:
+
+Gage: FL974085AF
+     Type: Recording
+End:
+
+Precip Method Parameters: Inverse Distance
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Use Indexing: No
+     Search Distance: 100
+End:
+
+Subbasin: S3
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S3
+     Node Latitude Degrees: 23.21308239
+     Node Longitude Degrees: 58.63510274
+     Node Weight: 1
+End:
+
+Subbasin: S4
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S4
+     Node Latitude Degrees: 23.21436289
+     Node Longitude Degrees: 58.67457382
+     Node Weight: 1
+End:
+
+Subbasin: S5
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S5
+     Node Latitude Degrees: 23.18421057
+     Node Longitude Degrees: 58.72139234
+     Node Weight: 1
+End:
+
+Subbasin: S6
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S6
+     Node Latitude Degrees: 23.28563922
+     Node Longitude Degrees: 58.67812457
+     Node Weight: 1
+End:
+
+Subbasin: S7
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S7
+     Node Latitude Degrees: 23.22861643
+     Node Longitude Degrees: 58.72905003
+     Node Weight: 1
+End:
+
+Subbasin: Majlas
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:08:28
+     Node: Majlas
+     Node Latitude Degrees: 23.258846
+     Node Longitude Degrees: 58.683471
+     Node Weight: 1
+End:
+
+Subbasin: Subbasin-1
+     Last Modified Date: 31 March 2026
+     Last Modified Time: 08:57:34
+End:
+
+Subbasin: S9
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S9
+     Node Latitude Degrees: 23.35258095
+     Node Longitude Degrees: 58.68310039
+     Node Weight: 1
+End:
+
+Subbasin: Subbasin-2
+     Last Modified Date: 31 March 2026
+     Last Modified Time: 08:57:35
+End:
+
+Subbasin: Sdn4
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: Sdn3
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: Sdn2
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: S11
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S11
+     Node Latitude Degrees: 23.25931844
+     Node Longitude Degrees: 58.73963774
+     Node Weight: 1
+End:
+
+Subbasin: Sdn1
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: S10
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S10
+     Node Latitude Degrees: 23.28968417
+     Node Longitude Degrees: 58.72746392
+     Node Weight: 1
+End:
+
+Subbasin: S13
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S13
+     Node Latitude Degrees: 23.24077349
+     Node Longitude Degrees: 58.76399271
+     Node Weight: 1
+End:
+
+Subbasin: S12
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S12
+     Node Latitude Degrees: 23.21455116
+     Node Longitude Degrees: 58.78403425
+     Node Weight: 1
+End:
+
+Subbasin: S15
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S15
+     Node Latitude Degrees: 23.26288905
+     Node Longitude Degrees: 58.8454016
+     Node Weight: 1
+End:
+
+Subbasin: S14
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S14
+     Node Latitude Degrees: 23.28295329
+     Node Longitude Degrees: 58.79959816
+     Node Weight: 1
+End:
+
+Subbasin: S1
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S1
+     Node Latitude Degrees: 23.24305411
+     Node Longitude Degrees: 58.52035583
+     Node Weight: 1
+End:
+
+Subbasin: S2
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:01:22
+     Node: S2
+     Node Latitude Degrees: 23.18151006
+     Node Longitude Degrees: 58.61620645
+     Node Weight: 1
+End:

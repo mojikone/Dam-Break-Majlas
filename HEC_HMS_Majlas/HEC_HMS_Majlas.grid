@@ -1,0 +1,74 @@
+Grid Manager: HEC HMS Majlas
+     Version: 4.12
+     Filepath Separator: \
+End:
+
+Grid: Guno June 2007
+     Grid Type: Precipitation
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 12:49:45
+     Reference Height Units: Meters
+     Reference Height: 10.0
+     Data Source Type: External DSS
+     Variant: Variant-1
+       Last Variant Modified Date: 1 March 2026
+       Last Variant Modified Time: 12:49:45
+       Default Variant: Yes
+       DSS File Name: \\fileserver\works\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\DSS\Gonu_2007.dss
+       DSS Pathname: /MAJLAS/PRECIP-INC/GONU-GRID/05jun2007:0000/05jun2007:0010/GONU_2007/
+     End Variant: Variant-1
+     Use Lookup Table: No
+End:
+
+Grid: Guno June 2007 - Reduced
+     Grid Type: Precipitation
+     Last Modified Date: 2 March 2026
+     Last Modified Time: 07:38:10
+     Reference Height Units: Meters
+     Reference Height: 10.0
+     Data Source Type: External DSS
+     Variant: Variant-1
+       Last Variant Modified Date: 2 March 2026
+       Last Variant Modified Time: 07:38:10
+       Default Variant: Yes
+       DSS File Name: \\fileserver\works\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\DSS\Gonu_2007_Reduced.dss
+       DSS Pathname: /MAJLAS/PRECIP-INC/GONU-GRID/05jun2007:0000/05jun2007:0010/GONU_2007/
+     End Variant: Variant-1
+     Use Lookup Table: No
+End:
+
+Grid: Phet June 2007
+     Grid Type: Precipitation
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 12:49:55
+     Reference Height Units: Meters
+     Reference Height: 10.0
+     Data Source Type: External DSS
+     Variant: Variant-1
+       Last Variant Modified Date: 1 March 2026
+       Last Variant Modified Time: 12:49:55
+       Default Variant: Yes
+       DSS File Name: \\fileserver\works\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\DSS\Phet_2010.dss
+       DSS Pathname: /MAJLAS/PRECIP-INC/PHET-GRID/03jun2010:0000/03jun2010:0010/PHET_2010/
+     End Variant: Variant-1
+     Use Lookup Table: No
+End:
+
+Grid: PMP
+     Grid Type: Precipitation-Frequency
+     Units: mm
+     Last Modified Date: 19 July 2026
+     Last Modified Time: 14:31:47
+     Data Source Type: GeoTIFF
+     Filename: Hydrology Data\Rainfall Grids\tiff\PMP_823mm_21c.tif
+End:
+
+Grid: SCS Grid
+     Grid Type: Curve Number
+     Units: one
+     Last Modified Date: 1 June 2026
+     Last Modified Time: 13:24:59
+     Data Source Type: GeoTIFF
+     Filename: Hydrology Data\CN Majlas.tif
+End:
+

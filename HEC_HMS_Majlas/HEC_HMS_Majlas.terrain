@@ -1,0 +1,22 @@
+Terrain Data Manager: HEC HMS Majlas
+     Version: 4.12
+     Filepath Separator: \
+End:
+
+Terrain Data: Terrain Majlas NSA 5m
+     Description: 
+     Terrain Directory: terrain\Terrain_Majlas_NSA_5m
+     Vertical Units: Meters
+     Stream Threshold: 1 km²
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:52:30
+End:
+
+Terrain Data: Terrain Majlas NSA 5m Breach
+     Description: 
+     Terrain Directory: terrain\Terrain_Majlas_NSA_5m_Breach
+     Vertical Units: Meters
+     Stream Threshold: 10 mi²
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 06:47:39
+End:

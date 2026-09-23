@@ -1,0 +1,454 @@
+Run: FM PMP
+     Default Description: Yes
+     Log File: FM_PMP.log
+     DSS File: FM_PMP.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 4 June 2026
+     Last Execution Time: 09:05:19
+     Basin: Basin 1
+     Precip: FM PMP
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM PMP fix
+     Default Description: Yes
+     Log File: FM_PMP_fix.log
+     DSS File: FM_PMP_fix.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 22 February 2026
+     Last Modified Time: 11:09:03
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:42:17
+     Basin: Basin 1
+     Precip: FM PMP fix
+     Control: Control 1
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM PMP - single
+     Default Description: Yes
+     Log File: FM_PMP___single.log
+     DSS File: FM_PMP___single.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 22 February 2026
+     Last Modified Time: 07:03:57
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:42:52
+     Basin: Majlas Catchment
+     Precip: FM PMP - single
+     Control: Control 1
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 10yr
+     Default Description: Yes
+     Log File: FM_10yr.log
+     DSS File: FM_10yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:42:55
+     Basin: Basin 1
+     Precip: FM 10yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 100yr
+     Default Description: Yes
+     Log File: FM_100yr.log
+     DSS File: FM_100yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:43:32
+     Basin: Basin 1
+     Precip: FM 100yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 1000yr
+     Default Description: Yes
+     Log File: FM_1000yr.log
+     DSS File: FM_1000yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:44:10
+     Basin: Basin 1
+     Precip: FM 1000yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 10000yr
+     Default Description: Yes
+     Log File: FM_10000yr.log
+     DSS File: FM_10000yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:44:46
+     Basin: Basin 1
+     Precip: FM 10000yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 2yr
+     Default Description: Yes
+     Log File: FM_2yr.log
+     DSS File: FM_2yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:45:21
+     Basin: Basin 1
+     Precip: FM 2yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 200yr
+     Default Description: Yes
+     Log File: FM_200yr.log
+     DSS File: FM_200yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:46:01
+     Basin: Basin 1
+     Precip: FM 200yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 2000yr
+     Default Description: Yes
+     Log File: FM_2000yr.log
+     DSS File: FM_2000yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:46:34
+     Basin: Basin 1
+     Precip: FM 2000yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 25yr
+     Default Description: Yes
+     Log File: FM_25yr.log
+     DSS File: FM_25yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:46:40
+     Basin: Basin 1
+     Precip: FM 25yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 5yr
+     Default Description: Yes
+     Log File: FM_5yr.log
+     DSS File: FM_5yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:46:46
+     Basin: Basin 1
+     Precip: FM 5yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 50yr
+     Default Description: Yes
+     Log File: FM_50yr.log
+     DSS File: FM_50yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:46:52
+     Basin: Basin 1
+     Precip: FM 50yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 500yr
+     Default Description: Yes
+     Log File: FM_500yr.log
+     DSS File: FM_500yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:46:59
+     Basin: Basin 1
+     Precip: FM 500yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: FM 5000yr
+     Default Description: Yes
+     Log File: FM_5000yr.log
+     DSS File: FM_5000yr.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 07:08:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:05
+     Basin: Basin 1
+     Precip: FM 5000yr
+     Control: Control 1
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: Gonu
+     Default Description: Yes
+     Log File: Gonu.log
+     DSS File: Gonu.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 14:54:41
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:11
+     Basin: Basin 1
+     Precip: Guno 2007 Thiessen Weights
+     Control: Control 2 Guno
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: Gonu - IDW
+     Default Description: Yes
+     Log File: Gonu___IDW.log
+     DSS File: Gonu___IDW.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 06:27:03
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:18
+     Basin: Basin 1
+     Precip: Guno 2007 - IDW
+     Control: Control 2 Guno
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: Gonu - IDW - Majlas
+     Default Description: Yes
+     Log File: Gonu___IDW___Majlas.log
+     DSS File: Gonu___IDW___Majlas.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:09:14
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:25
+     Basin: Majlas Catchment
+     Precip: Guno 2007 - IDW
+     Control: Control 2 Guno
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: Guno June 2007
+     Default Description: Yes
+     Log File: Guno_June_2007.log
+     DSS File: Guno_June_2007.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 12:55:52
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:27
+     Basin: Basin 1 - discretized
+     Precip: Guno June 2007
+     Control: Guno June 2007
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: Guno June 2007 - Reduced
+     Default Description: Yes
+     Log File: Guno_June_2007___Reduced.log
+     DSS File: Guno_June_2007___Reduced.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 2 March 2026
+     Last Modified Time: 07:41:18
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:36
+     Basin: Basin 1 - discretized
+     Precip: Guno June 2007 - Reduced
+     Control: Guno June 2007
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: Guno June 2007 - Reduced - S
+     Default Description: Yes
+     Log File: Guno_June_2007___Reduced___S.log
+     DSS File: Guno_June_2007___Reduced___S.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 2 March 2026
+     Last Modified Time: 08:36:14
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:45
+     Basin: Majlas Catchment - discretiz
+     Precip: Guno June 2007 - Reduced
+     Control: Guno June 2007
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: Guno June 2007 - single
+     Default Description: Yes
+     Log File: Guno_June_2007___single.log
+     DSS File: Guno_June_2007___single.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 16:20:36
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:46
+     Basin: Majlas Catchment - discretiz
+     Precip: Guno June 2007
+     Control: Guno June 2007
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: Phet June 2010
+     Default Description: Yes
+     Log File: Phet_June_2010.log
+     DSS File: Phet_June_2010.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 12:56:31
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:47
+     Basin: Basin 1 - discretized
+     Precip: Phet June 2010
+     Control: Phet June 2010
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: Phet June 2010 - single
+     Default Description: Yes
+     Log File: Phet_June_2010___single.log
+     DSS File: Phet_June_2010___single.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 16:20:44
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:56
+     Basin: Majlas Catchment - discretiz
+     Precip: Phet June 2010
+     Control: Phet June 2010
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: test
+     Default Description: Yes
+     Log File: test.log
+     DSS File: test.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:50:51
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:47:57
+     Basin: Basin 1
+     Precip: test
+     Control: Control test
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+
+Run: test - Majlas single
+     Default Description: Yes
+     Log File: test___Majlas_single.log
+     DSS File: test___Majlas_single.dss
+     Is Save Spatial Results: No
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 11:12:55
+     Last Execution Date: 3 March 2026
+     Last Execution Time: 08:48:04
+     Basin: Majlas Catchment
+     Precip: test
+     Control: Control test
+     Save State Type: None
+     Time-Series Output: Save All
+     Time Series Results Manager Start:
+     Time Series Results Manager End:
+End:
+

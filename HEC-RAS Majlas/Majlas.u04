@@ -1,0 +1,305 @@
+Flow Title=25yr
+Program Version=7.00
+Use Restart= 0 
+Boundary Location=                ,                ,        ,        ,                ,Perimeter 1     ,                ,BC Line 1                       ,                                ,                                
+Friction Slope=0.006
+Boundary Location=                ,                ,        ,        ,                ,Perimeter 1     ,                ,                                ,                                ,                                
+Interval=10MIN
+Precipitation Hydrograph= 145 
+       0      .2      .2      .2      .2      .2      .2      .2      .2      .2
+      .2      .2      .2      .2      .2      .2      .2      .2      .2      .2
+      .2      .2      .2      .2      .2      .2      .2      .2      .3      .3
+      .3      .3      .3      .3      .3      .3      .3      .3      .3      .3
+      .3      .3      .3      .4      .4      .4      .4      .4      .4      .4
+      .5      .5      .5      .5      .5      .6      .6      .6      .7      .7
+      .8      .9      .9     1.1     1.2     1.4     1.6       2     2.5     3.6
+     6.2    17.8     9.4     4.6       3     2.2     1.8     1.5     1.3     1.1
+       1      .9      .8      .8      .7      .7      .6      .6      .6      .5
+      .5      .5      .5      .4      .4      .4      .4      .4      .4      .4
+      .4      .3      .3      .3      .3      .3      .3      .3      .3      .3
+      .3      .3      .3      .3      .3      .3      .2      .2      .2      .2
+      .2      .2      .2      .2      .2      .2      .2      .2      .2      .2
+      .2      .2      .2      .2      .2      .2      .2      .2      .2      .2
+      .2      .2      .2      .2      .2
+DSS Path=
+Use DSS=False
+Use Fixed Start Time=False
+Fixed Start Date/Time=,
+Is Critical Boundary=False
+Critical Boundary Flow=
+Boundary Location=                ,                ,        ,        ,                ,Quriyat         ,                ,BC Line 1                       ,                                ,                                
+Friction Slope=0.006
+Boundary Location=                ,                ,        ,        ,                ,Quriyat         ,                ,                                ,                                ,                                
+Interval=10MIN
+Precipitation Hydrograph= 145 
+       0       4       4       4       4       4       4       4       4       4
+       4       4       4       4       4       4       4       4       4       4
+       4       4       4       4       4       4       4       4       4       4
+       4       4       5       5       5       5       5       5       5       5
+       5       5       5       5       5       5       5       5       6       6
+       6       6       6       6       6       6       7       7       7       7
+       8       8       9       9      10      10      11      13      15      18
+      23      34      75      46      27      20      16      14      12      11
+      10       9       9       8       8       8       7       7       7       7
+       6       6       6       6       6       6       6       5       5       5
+       5       5       5       5       5       5       5       5       5       5
+       5       5       5       5       4       4       4       4       4       4
+       4       4       4       4       4       4       4       4       4       4
+       4       4       4       4       4       4       4       4       4       4
+       4       4       4       4       5
+DSS Path=
+Use DSS=False
+Use Fixed Start Time=True
+Fixed Start Date/Time=01jan2000,0000
+Is Critical Boundary=False
+Critical Boundary Flow=
+Boundary Location=                ,                ,        ,        ,                ,DS Protection   ,                ,outflow                         ,                                ,                                
+Friction Slope=0.003
+Boundary Location=                ,                ,        ,        ,                ,DS Protection   ,                ,inflow                          ,                                ,                                
+Interval=5MIN
+Flow Hydrograph= 577 
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       01.08E-04
+8.65E-043.31E-039.01E-031.98E-02.03729026.18E-029.34E-02.1316552.1756018.2245679
+.2779202 .335064.3954334.4588365.5252018.5941344.6652238.7378888.8113448.8858668
+.96225251.0413661.1232621.2082571.2978461.3924321.4910991.5941321.7032751.820504
+1.9470882.0839542.2333282.3954512.5689722.7539272.9514163.1623053.3869463.624856
+3.8766844.1429134.4235534.7184865.0281115.3511075.6862236.0333826.3932696.768356
+7.1624487.5758028.0088078.4606468.930921 9.421479.93486210.4737611.0428711.64416
+12.2812912.9583713.6796314.4532115.2908716.2011617.1927718.2749419.4603420.75989
+22.1836323.7492625.4794327.4107529.5876432.07368  34.93838.3181342.3727447.49905
+54.1419164.2745280.18256102.0963130.0865159.5316183.8546199.9971206.2764203.9398
+194.9773180.9426 165.993152.3115140.4518130.9782123.4051118.0417114.8248113.8892
+115.4282119.6454126.7702137.6093154.9613185.2981223.2029257.9992284.4319302.2438
+313.0957318.8076320.8625320.5684319.7088 322.121337.0344380.9526463.7239565.6135
+654.0065715.7126756.1047786.2955818.6609868.3887953.56321086.2391256.1071428.915
+1570.388 1667.221725.5411759.058 1780.451798.0911815.7131833.2791848.3951857.939
+1859.4611851.9431835.8481812.6821784.4011752.9181719.8141686.2441652.9581620.383
+1588.7081557.9761528.1381499.1021470.7611443.0071415.7371388.8731362.3551336.139
+1310.1911284.498 1259.061233.8871208.9921184.3891160.0941136.1311112.5221089.291
+1066.4571044.0321022.0241000.444979.2947 958.587  938.33918.5323899.2028 880.348
+861.9739844.0831826.6716809.7399793.2902777.3181761.8121746.7595732.1484717.9658
+704.1926690.8131677.8141665.1805652.8955640.9423 629.304617.9687606.9257596.1616
+585.6618575.4184565.4268555.6856546.1933536.9427527.9262519.1385510.5758502.2319
+494.0968486.1642478.4317470.8965463.5541456.3962449.4139442.6008435.9525429.4664
+423.1373416.9628410.9452405.0797399.3581393.7749388.3279383.0154377.8313372.7406
+367.7089362.7002357.6695 352.643 347.673342.8027338.0695333.4848329.0657324.8185
+320.7095316.7224312.8408 309.054305.3517301.7212298.1526294.6366291.1639287.7267
+284.3191280.9374277.5806274.2493270.9455267.6725264.4337261.2325258.0724 254.956
+251.8856248.8626245.8874242.9603240.0812237.2489234.4609231.7136229.0023226.3213
+223.6663221.0323218.4153215.8127213.2233210.6473208.0861205.5416203.0166200.5138
+198.0362195.5864193.1673190.7815188.4314186.1194183.8476181.6178179.4309177.2876
+175.1876173.1298171.1124169.1332167.1892165.2775163.3949161.5378 159.703157.8869
+156.0861154.2972 152.517150.7421148.9698147.1971145.4209143.6364141.8347140.0005
+138.1085136.1544134.1511132.1074130.0289127.9194 125.782123.6196121.4354119.2331
+117.0167114.7903112.5564110.3145108.0601105.7853103.4822101.147198.7823196.39677
+ 94.004191.6200589.2601986.9381184.6646282.4475680.2921178.2013976.1769674.21944
+72.3288170.5047868.7467567.0539265.4251363.8586762.35211 60.902259.5047458.15462
+56.8459455.5722454.3268253.1030851.8949150.6969949.5050548.3160547.1281845.94085
+44.7545143.5704842.3907141.2175440.0534738.90099 37.762436.6397735.5348234.44894
+33.3831632.3382331.3146130.3125729.3322228.3735427.4364626.5208425.6265424.75342
+23.9013523.0702222.2599121.4703620.7014719.95318 19.225418.5180617.8310617.16428
+16.5176115.8908815.2839114.6965214.12847 13.579513.0493412.5376612.0441511.56843
+11.1101310.6688310.244139.8355659.4426949.0650488.7021558.3535348.0187027.697177
+7.3884797.0921316.8076636.5346176.2725416.0209965.7795555.5478085.3253545.111809
+4.9068054.7099874.5210154.3395644.1653223.997992 3.837293.682942 3.534693.392286
+3.2554913.1240792.9978322.8765442.7600142.6480532.5404782.4371152.3377952.242359
+2.1506522.062527 1.977841.8964561.8182421.7430711.6708211.6013741.5346151.470437
+1.4087331.3494041.2923551.2374971.184745 1.134021.0852481.038362.9932948.9499876
+.9083832 .868427 .830067.7932525 .757934.7240627  .69159.6604677.6306479.6020825
+ .574724.5485252.5234393.4994207.4764245.4544069.4333255.4131394.3938089.3752961
+.3575647.3405796.3243074.3087158.2937739.2794503.2657165.2525446.2399076.2277789
+.2161326.2049431.1941847.1838323.1738604.1642434.1549557.1459711 .137263.1288045
+.1205675.1125232.10464159.68E-028.92E-028.16E-027.40E-026.64E-025.87E-02.0510104
+4.31E-023.48E-02.02581991.64E-027.08E-033.06E-031.33E-03
+Stage Hydrograph TW Check=0
+Flow Hydrograph Slope= 0.006 
+DSS Path=
+Use DSS=False
+Use Fixed Start Time=False
+Fixed Start Date/Time=,
+Is Critical Boundary=False
+Critical Boundary Flow=
+Boundary Location=                ,                ,        ,        ,                ,DS Protection   ,                ,                                ,                                ,                                
+Interval=10MIN
+Precipitation Hydrograph= 145 
+       0      .2      .2      .2      .2      .2      .2      .2      .2      .2
+      .2      .2      .3      .3      .3      .3      .3      .3      .3      .3
+      .3      .3      .3      .3      .3      .3      .3      .3      .3      .3
+      .3      .3      .4      .4      .4      .4      .4      .4      .4      .4
+      .4      .4      .4      .5      .5      .5      .5      .5      .5      .6
+      .6      .6      .6      .7      .7      .7      .8      .8      .9      .9
+       1     1.1     1.2     1.4     1.5     1.7     2.1     2.5     3.3     4.6
+     7.9    22.9      12     5.9     3.8     2.8     2.3     1.9     1.6     1.4
+     1.3     1.2     1.1       1      .9      .9      .8      .8      .7      .7
+      .7      .6      .6      .6      .6      .5      .5      .5      .5      .5
+      .5      .4      .4      .4      .4      .4      .4      .4      .4      .4
+      .4      .3      .3      .3      .3      .3      .3      .3      .3      .3
+      .3      .3      .3      .3      .3      .3      .3      .3      .3      .3
+      .3      .2      .2      .2      .2      .2      .2      .2      .2      .2
+      .2      .2      .2      .2      .2
+DSS Path=
+Use DSS=False
+Use Fixed Start Time=False
+Fixed Start Date/Time=,
+Is Critical Boundary=False
+Critical Boundary Flow=
+Boundary Location=                ,                ,        ,        ,                ,DS Protection   ,                ,Inflow_Branch                   ,                                ,                                
+Interval=1HOUR
+Flow Hydrograph= 577 
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0 .000377  .00275   .0101   .0269   .0564   .0998.1564037.2243983
+.3017685.3870197  .47914.5771083.6798683.7857994.89334921.0014511.1105141.222347
+ 1.338211.4577691.5803811.7067271.8378451.9730792.1108482.2476192.3835312.522183
+2.6653752.811376 2.961883.120442 3.286013.4521013.6181083.7865733.9585354.133853
+4.3169814.5118664.7175244.9264075.1364575.3495525.5687275.7940166.0287096.273472
+6.5280926.7922227.0690887.3595547.6652887.9807438.3038638.6338348.9770189.342354
+9.73901910.1637710.6135711.0813611.56776 12.074712.6126613.1855513.8013914.45889
+15.1589415.8990416.6921317.5569518.5128219.5650220.7261922.0120923.4430225.02948
+26.7930528.7693831.0126733.6182336.6685840.3054344.6683250.1243756.97251 66.2459
+78.88721100.3568135.8109186.2125246.4393298.2075330.3533338.2303325.1076295.7874
+259.4054224.8814193.4478166.9816144.2393  125.59109.8036 96.832585.9870277.03676
+69.5000463.1942557.8281853.3274549.4573446.1219143.14736 40.498238.1437236.14243
+34.4017432.88954 31.532830.3331129.2407728.2353127.2859126.4159725.6050924.85405
+24.1473723.5036422.9076722.3601521.8399521.3349220.8261720.3312119.8521619.40475
+ 18.991318.62429 18.283417.9545517.6260717.31141  17.00916.7202816.4434716.18625
+15.9357515.68284 15.423315.1745614.9400414.7219414.5136214.3133814.1115213.90903
+13.7034713.50009 13.302813.1260612.9662712.8177512.6759212.5506712.43774  12.322
+12.1931712.0542811.9071611.7615411.6218511.4839111.33882 11.197111.0644710.95185
+10.8617110.7846410.7025610.6073210.4987310.3861410.2761710.1733310.078749.998268
+9.9232169.8406059.7488989.6640899.5893269.5173319.4449859.3748469.3001289.215295
+9.1224569.0326498.9504348.8789498.8143058.7533078.6937248.6432528.6022568.556461
+8.4948528.4204018.3397438.2671528.208841  8.15718.1029198.0525848.0058737.955505
+7.9002227.8468497.7977947.7584187.7278987.6950017.6527597.603343 7.544297.473621
+ 7.401137.3453247.3049777.2651997.2191187.1748957.1326967.0905657.053468 6.94772
+6.682053 6.138665.3135734.3622323.4135212.5747931.8822781.3904551.031911 .766932
+.5656395 .418047.3082823.2264237.1663105.1216267   .0881   .0633   .0449   .0313
+    .021   .0132  .00734  .00315 .000702       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0       0       0       0
+       0       0       0       0       0       0       0
+Stage Hydrograph TW Check=0
+Flow Hydrograph Slope= 0.008 
+DSS Path=
+Use DSS=False
+Use Fixed Start Time=False
+Fixed Start Date/Time=,
+Is Critical Boundary=False
+Critical Boundary Flow=
+Met Point Raster Parameters=,,,,
+Precipitation Mode=Disable
+Wind Mode=No Wind Forces
+Air Density Mode=
+Wave Mode=No Wave Forcing
+Met BC=Precipitation|Expanded View=0
+Met BC=Precipitation|Point Interpolation=Nearest
+Met BC=Precipitation|Gridded Source=DSS
+Met BC=Precipitation|Gridded Interpolation=
+Met BC=Evapotranspiration|Expanded View=0
+Met BC=Evapotranspiration|Point Interpolation=Nearest
+Met BC=Evapotranspiration|Gridded Source=DSS
+Met BC=Evapotranspiration|Gridded Interpolation=
+Met BC=Wind Speed|Expanded View=0
+Met BC=Wind Speed|Point Interpolation=Nearest
+Met BC=Wind Speed|Gridded Source=DSS
+Met BC=Wind Speed|Gridded Interpolation=
+Met BC=Wind Direction|Expanded View=0
+Met BC=Wind Direction|Point Interpolation=Nearest
+Met BC=Wind Direction|Gridded Source=DSS
+Met BC=Wind Direction|Gridded Interpolation=
+Met BC=Wind Velocity X|Expanded View=0
+Met BC=Wind Velocity X|Point Interpolation=Nearest
+Met BC=Wind Velocity X|Gridded Source=DSS
+Met BC=Wind Velocity X|Gridded Interpolation=
+Met BC=Wind Velocity Y|Expanded View=0
+Met BC=Wind Velocity Y|Point Interpolation=Nearest
+Met BC=Wind Velocity Y|Gridded Source=DSS
+Met BC=Wind Velocity Y|Gridded Interpolation=
+Met BC=Wave Forcing X|Expanded View=0
+Met BC=Wave Forcing X|Point Interpolation=Nearest
+Met BC=Wave Forcing X|Gridded Source=DSS
+Met BC=Wave Forcing X|Gridded Interpolation=
+Met BC=Wave Forcing Y|Expanded View=0
+Met BC=Wave Forcing Y|Point Interpolation=Nearest
+Met BC=Wave Forcing Y|Gridded Source=DSS
+Met BC=Wave Forcing Y|Gridded Interpolation=
+Met BC=Air Density|Mode=Constant
+Met BC=Air Density|Expanded View=0
+Met BC=Air Density|Constant Value=1.225
+Met BC=Air Density|Constant Units=kg/m3
+Met BC=Air Density|Point Interpolation=Nearest
+Met BC=Air Density|Gridded Source=DSS
+Met BC=Air Density|Gridded Interpolation=
+Met BC=Air Temperature|Expanded View=0
+Met BC=Air Temperature|Point Interpolation=Nearest
+Met BC=Air Temperature|Gridded Source=DSS
+Met BC=Air Temperature|Gridded Interpolation=
+Met BC=Humidity|Expanded View=0
+Met BC=Humidity|Point Interpolation=Nearest
+Met BC=Humidity|Gridded Source=DSS
+Met BC=Humidity|Gridded Interpolation=
+Met BC=Air Pressure|Mode=Constant
+Met BC=Air Pressure|Expanded View=0
+Met BC=Air Pressure|Constant Value=1013.2
+Met BC=Air Pressure|Constant Units=mb
+Met BC=Air Pressure|Point Interpolation=Inv Distance
+Met BC=Air Pressure|Gridded Source=DSS
+Met BC=Air Pressure|Gridded Interpolation=
+Non-Newtonian Method= 0 ,          
+Non-Newtonian Constant Vol Conc=0
+Non-Newtonian Yield Method= 0 ,          
+Non-Newtonian Yield Coef=0, 0
+User Yeild=   0
+Non-Newtonian Sed Visc= 0 ,          
+Non-Newtonian Obrian B=0
+User Viscosity=0
+User Viscosity Ratio=0
+Herschel-Bulkley Coef=0, 0
+Clastic Method= 0 ,          
+Coulomb Phi=0
+Voellmy X=0
+Non-Newtonian Hindered FV= 0 
+Non-Newtonian FV K=0
+Non-Newtonian ds=0
+Non-Newtonian Max Cv=0
+Non-Newtonian Bulking Method= 0 , 
+Non-Newtonian High C Transport= 0 , 
+Lava Activation= 0 
+Temperature=1300,15,,15,14,980
+Heat Ballance=1,1200,0.5,1,70,0.95
+Viscosity=1000,,,
+Yield Strength=,,,
+Consistency Factor=,,,
+Profile Coefficient=4,1.3,
+Lava Param=,2500,

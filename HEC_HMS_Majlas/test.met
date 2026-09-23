@@ -1,0 +1,144 @@
+Meteorology: test
+     Last Modified Date: 2 March 2026
+     Last Modified Time: 07:42:15
+     Version: 4.12
+     Unit System: Metric
+     Set Missing Data to Default: No
+     Precipitation Method: Specified Average
+     Air Temperature Method: None
+     Atmospheric Pressure Method: None
+     Dew Point Method: None
+     Wind Speed Method: None
+     Shortwave Radiation Method: None
+     Longwave Radiation Method: None
+     Snowmelt Method: None
+     Evapotranspiration Method: No Evapotranspiration
+     Use Basin Model: Basin 1
+     Use Basin Model: Majlas Catchment
+End:
+
+Precip Method Parameters: Specified Average
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:38:03
+     Allow Depth Override: No
+End:
+
+Subbasin: S3
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: S4
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: S5
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: S6
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: S7
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: Majlas
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: Subbasin-1
+     Last Modified Date: 31 March 2026
+     Last Modified Time: 08:57:34
+End:
+
+Subbasin: S9
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: Subbasin-2
+     Last Modified Date: 31 March 2026
+     Last Modified Time: 08:57:35
+End:
+
+Subbasin: Sdn4
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: Sdn3
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: Sdn2
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: S11
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: Sdn1
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: S10
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: S13
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: S12
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: S15
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: S14
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: S1
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:
+
+Subbasin: S2
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:58:07
+     Gage: Gage test
+End:

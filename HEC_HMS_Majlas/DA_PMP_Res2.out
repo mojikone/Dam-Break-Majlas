@@ -1,0 +1,12 @@
+03:21:16.099      -----DSS---zopen   Existing file opened,  File: \\fileserver\works\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\DSS\Gonu_2007.dss
+03:21:16.102                         Handle 5;  Process: 374900;  DSS Versions - Software: 7-IS, File:  7-IQ
+03:21:16.102                         Single-user advisory access mode
+03:21:16.357      -----DSS---zclose  Handle 5;  Process: 374900;  File: \\fileserver\works\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\DSS\Gonu_2007.dss
+03:21:16.372      -----DSS---zopen   Existing file opened,  File: \\fileserver\works\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\DSS\Gonu_2007_Reduced.dss
+03:21:16.372                         Handle 5;  Process: 374900;  DSS Versions - Software: 7-IS, File:  7-IQ
+03:21:16.372                         Single-user advisory access mode
+03:21:16.592      -----DSS---zclose  Handle 5;  Process: 374900;  File: \\fileserver\works\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\DSS\Gonu_2007_Reduced.dss
+03:21:16.611      -----DSS---zopen   Existing file opened,  File: \\fileserver\works\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\DSS\Phet_2010.dss
+03:21:16.611                         Handle 5;  Process: 374900;  DSS Versions - Software: 7-IS, File:  7-IQ
+03:21:16.611                         Single-user advisory access mode
+03:21:16.880      -----DSS---zclose  Handle 5;  Process: 374900;  File: \\fileserver\works\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\DSS\Phet_2010.dss

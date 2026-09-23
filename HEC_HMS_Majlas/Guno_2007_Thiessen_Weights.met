@@ -1,0 +1,310 @@
+Meteorology: Guno 2007 Thiessen Weights
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 14:54:41
+     Version: 4.12
+     Unit System: Metric
+     Set Missing Data to Default: No
+     Precipitation Method: Weighted Gages
+     Air Temperature Method: None
+     Atmospheric Pressure Method: None
+     Dew Point Method: None
+     Wind Speed Method: None
+     Shortwave Radiation Method: None
+     Longwave Radiation Method: None
+     Snowmelt Method: None
+     Evapotranspiration Method: No Evapotranspiration
+     Use Basin Model: Basin 1
+     Use Basin Model: Majlas Catchment
+End:
+
+Gage: FL655789AF
+     Type: Recording
+End:
+
+Gage: FL672275AF
+     Type: Recording
+End:
+
+Gage: FL771702AF
+     Type: Recording
+End:
+
+Gage: FL788017AF
+     Type: Recording
+End:
+
+Gage: FL974085AF
+     Type: Recording
+End:
+
+Precip Method Parameters: Weighted Gages
+     Last Modified Date: 24 February 2026
+     Last Modified Time: 09:50:40
+     Use HEC1 Weighting Scheme: Yes
+     Use Indexing: No
+     Allow Depth Override: No
+End:
+
+Subbasin: S3
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0.0714640
+     Gage: FL672275AF
+     Volume Weight: 0.91776
+     Temporal Distribution Weight: 1
+     Gage: FL771702AF
+     Volume Weight: 0.0107780
+     Gage: FL788017AF
+     Volume Weight: 0
+     Gage: FL974085AF
+     Volume Weight: 0
+End:
+
+Subbasin: S4
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0.32708
+     Gage: FL672275AF
+     Volume Weight: 0.13514
+     Gage: FL771702AF
+     Volume Weight: 0.53777
+     Temporal Distribution Weight: 1
+     Gage: FL788017AF
+     Volume Weight: 0
+     Gage: FL974085AF
+     Volume Weight: 0
+End:
+
+Subbasin: S5
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0.60518
+     Temporal Distribution Weight: 1
+     Gage: FL672275AF
+     Volume Weight: 0
+     Gage: FL771702AF
+     Volume Weight: 0.39482
+     Gage: FL788017AF
+     Volume Weight: 0
+     Gage: FL974085AF
+     Volume Weight: 0
+End:
+
+Subbasin: S6
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0
+     Gage: FL672275AF
+     Volume Weight: 0
+     Gage: FL771702AF
+     Volume Weight: 1
+     Temporal Distribution Weight: 1
+     Gage: FL788017AF
+     Volume Weight: 0
+     Gage: FL974085AF
+     Volume Weight: 0
+End:
+
+Subbasin: S7
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0
+     Gage: FL672275AF
+     Volume Weight: 0
+     Gage: FL771702AF
+     Volume Weight: 1
+     Temporal Distribution Weight: 1
+     Gage: FL788017AF
+     Volume Weight: 0
+     Gage: FL974085AF
+     Volume Weight: 0
+End:
+
+Subbasin: Majlas
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Gage: FL672275AF
+     Gage: FL771702AF
+     Gage: FL788017AF
+     Gage: FL974085AF
+End:
+
+Subbasin: Subbasin-1
+     Last Modified Date: 31 March 2026
+     Last Modified Time: 08:57:34
+End:
+
+Subbasin: S9
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0
+     Gage: FL672275AF
+     Volume Weight: 0
+     Gage: FL771702AF
+     Volume Weight: 0.51623
+     Temporal Distribution Weight: 1
+     Gage: FL788017AF
+     Volume Weight: 0.48377
+     Gage: FL974085AF
+     Volume Weight: 0
+End:
+
+Subbasin: Subbasin-2
+     Last Modified Date: 31 March 2026
+     Last Modified Time: 08:57:35
+End:
+
+Subbasin: Sdn4
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: Sdn3
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: Sdn2
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: S11
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0
+     Gage: FL672275AF
+     Volume Weight: 0
+     Gage: FL771702AF
+     Volume Weight: 0.32935
+     Gage: FL788017AF
+     Volume Weight: 0.67065
+     Temporal Distribution Weight: 1
+     Gage: FL974085AF
+     Volume Weight: 0
+End:
+
+Subbasin: Sdn1
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:26:59
+End:
+
+Subbasin: S10
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0
+     Gage: FL672275AF
+     Volume Weight: 0
+     Gage: FL771702AF
+     Volume Weight: 0.46987
+     Gage: FL788017AF
+     Volume Weight: 0.53013
+     Temporal Distribution Weight: 1
+     Gage: FL974085AF
+     Volume Weight: 0
+End:
+
+Subbasin: S13
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0
+     Gage: FL672275AF
+     Volume Weight: 0
+     Gage: FL771702AF
+     Volume Weight: 0.19163
+     Gage: FL788017AF
+     Volume Weight: 0.80837
+     Temporal Distribution Weight: 1
+     Gage: FL974085AF
+     Volume Weight: 0
+End:
+
+Subbasin: S12
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0.0172411
+     Gage: FL672275AF
+     Volume Weight: 0
+     Gage: FL771702AF
+     Volume Weight: 0.18887
+     Gage: FL788017AF
+     Volume Weight: 0.24254
+     Gage: FL974085AF
+     Volume Weight: 0.55135
+     Temporal Distribution Weight: 1
+End:
+
+Subbasin: S15
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0
+     Gage: FL672275AF
+     Volume Weight: 0
+     Gage: FL771702AF
+     Volume Weight: 0
+     Gage: FL788017AF
+     Volume Weight: 0.0817354
+     Gage: FL974085AF
+     Volume Weight: 0.91826
+     Temporal Distribution Weight: 1
+End:
+
+Subbasin: S14
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0
+     Gage: FL672275AF
+     Volume Weight: 0
+     Gage: FL771702AF
+     Volume Weight: 0
+     Gage: FL788017AF
+     Volume Weight: 0.83346
+     Temporal Distribution Weight: 1
+     Gage: FL974085AF
+     Volume Weight: 0.16654
+End:
+
+Subbasin: S1
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0
+     Gage: FL672275AF
+     Volume Weight: 1
+     Temporal Distribution Weight: 1
+     Gage: FL771702AF
+     Volume Weight: 0
+     Gage: FL788017AF
+     Volume Weight: 0
+     Gage: FL974085AF
+     Volume Weight: 0
+End:
+
+Subbasin: S2
+     Last Modified Date: 25 February 2026
+     Last Modified Time: 08:19:09
+     Gage: FL655789AF
+     Volume Weight: 0.64188
+     Temporal Distribution Weight: 1
+     Gage: FL672275AF
+     Volume Weight: 0.35812
+     Gage: FL771702AF
+     Volume Weight: 0
+     Gage: FL788017AF
+     Volume Weight: 0
+     Gage: FL974085AF
+     Volume Weight: 0
+End:

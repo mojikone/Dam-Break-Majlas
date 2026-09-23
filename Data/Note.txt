@@ -1,0 +1,16 @@
+HEC Dam breach
+https://www.hec.usace.army.mil/confluence/rasdocs/ras1dtechref/6.2/performing-a-dam-break-study-with-hec-ras/estimating-dam-breach-parameters/estimating-breach-parameters
+
+Project main directory - read only
+W:\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat
+
+Project local directory
+D:\Mojtaba\Renardet\2224 WS11\Majlas
+
+Data folder include input data i directly give to you - read only unless i ask
+below folder contains a sample dam breack analysis using HEC-RAS for two scenarios including rainy and sunny day
+D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\Data\09-Dam Break Analysis Report
+
+OLD Dam axis
+"D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\Data\SHP\Dam Axis.shp"
+The dam axis which used to be gravity arch dam, now is shifted few meters fruther downstream and the axis is a straight line. i don't have it. but i think this is enough information.

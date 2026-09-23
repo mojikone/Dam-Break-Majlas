@@ -1,0 +1,159 @@
+Meteorology: FM 2000yr
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:19:54
+     Version: 4.12
+     Unit System: Metric
+     Set Missing Data to Default: No
+     Precipitation Method: Hypothetical Storm
+     Air Temperature Method: None
+     Atmospheric Pressure Method: None
+     Dew Point Method: None
+     Wind Speed Method: None
+     Shortwave Radiation Method: None
+     Longwave Radiation Method: None
+     Snowmelt Method: None
+     Evapotranspiration Method: No Evapotranspiration
+     Use Basin Model: Basin 1
+     Use Basin Model: Basin 1 Res
+     Use Basin Model: Basin 1 Res2
+End:
+
+Precip Method Parameters: Hypothetical Storm
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Precipitation Method: Point Depth
+     Storm Depth: 488.7
+     Storm Type: Specified Pattern
+     Storm Duration: 24
+     Pattern Name: FM 2000-10000
+     Storm Area: 570
+     Depth-Area Reduction Method: User-Specified
+     Reduction Table Name: ARF FM
+     Uniform Depth: Yes
+End:
+
+Subbasin: S3
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S4
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S5
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S6
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S7
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: Subbasin-1
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S9
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: Subbasin-2
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: South
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: Sdn4
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: Sdn3
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S11
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: Sdn2
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S10
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: Sdn1
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S13
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S12
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S15
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S14
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S1
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:
+
+Subbasin: S2
+     Last Modified Date: 31 December 2025
+     Last Modified Time: 14:27:13
+     Depth: 
+End:

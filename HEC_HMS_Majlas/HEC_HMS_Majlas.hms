@@ -1,0 +1,243 @@
+Project: HEC HMS Majlas
+     Description: 
+     Version: 4.12
+     Filepath Separator: \
+     DSS File Name: HEC_HMS_Majlas.dss
+     Time Zone ID: America/Los_Angeles
+End:
+
+Precipitation: FM 2yr
+     Filename: FM_2yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:19:42
+End:
+
+Precipitation: FM 5yr
+     Filename: FM_5yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:20:06
+End:
+
+Precipitation: FM 10yr
+     Filename: FM_10yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:19:21
+End:
+
+Precipitation: FM 25yr
+     Filename: FM_25yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:20:01
+End:
+
+Precipitation: FM 50yr
+     Filename: FM_50yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:20:13
+End:
+
+Precipitation: FM 100yr
+     Filename: FM_100yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:19:26
+End:
+
+Precipitation: FM 200yr
+     Filename: FM_200yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:19:48
+End:
+
+Precipitation: FM 500yr
+     Filename: FM_500yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:20:18
+End:
+
+Precipitation: FM 1000yr
+     Filename: FM_1000yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:19:31
+End:
+
+Precipitation: FM 2000yr
+     Filename: FM_2000yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:19:54
+End:
+
+Precipitation: FM 5000yr
+     Filename: FM_5000yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:20:24
+End:
+
+Precipitation: FM 10000yr
+     Filename: FM_10000yr.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:19:36
+End:
+
+Precipitation: FM PMP
+     Filename: FM_PMP.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:18:59
+End:
+
+Precipitation: FM PMP - single
+     Filename: FM_PMP___single.met
+     Description: 
+     Last Modified Date: 22 February 2026
+     Last Modified Time: 07:02
+End:
+
+Precipitation: FM PMP fix
+     Filename: FM_PMP_fix.met
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:19:06
+End:
+
+Precipitation: Guno 2007 Thiessen Weights
+     Filename: Guno_2007_Thiessen_Weights.met
+     Description: 
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:27
+End:
+
+Precipitation: Guno 2007 - IDW
+     Filename: Guno_2007___IDW.met
+     Description: 
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:27
+End:
+
+Precipitation: test
+     Filename: test.met
+     Description: 
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:27
+End:
+
+Precipitation: Guno June 2007
+     Filename: Guno_June_2007.met
+     Description: 
+     Last Modified Date: 2 March 2026
+     Last Modified Time: 08:00
+End:
+
+Precipitation: Phet June 2010
+     Filename: Phet_June_2010.met
+     Description: 
+     Last Modified Date: 2 March 2026
+     Last Modified Time: 07:42
+End:
+
+Precipitation: Guno June 2007 - Reduced
+     Filename: Guno_June_2007___Reduced.met
+     Description: 
+     Last Modified Date: 2 March 2026
+     Last Modified Time: 08:36
+End:
+
+Basin: Basin 1
+     Filename: Basin_1.basin
+     Description: 
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 07:47
+End:
+
+Basin: Majlas Catchment
+     Filename: Majlas_Catchment.basin
+     Description: 
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 11:14
+End:
+
+Basin: Basin 1 - discretized
+     Filename: Basin_1___discretized.basin
+     Description: 
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 15:20
+End:
+
+Basin: Majlas Catchment - discretiz
+     Filename: Majlas_Catchment___discretiz.basin
+     Description: 
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 16:21
+End:
+
+Basin: Basin 2
+     Filename: Basin_2.basin
+     Description: 
+     Last Modified Date: 31 March 2026
+     Last Modified Time: 08:32
+End:
+
+Basin: Basin 3
+     Filename: Basin_3.basin
+     Description: 
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 06:36
+End:
+
+Basin: Basin 1 Res
+     Filename: Basin_1_Res.basin
+     Description: 
+     Last Modified Date: 16 June 2026
+     Last Modified Time: 11:01
+End:
+
+Basin: Basin 1 Res2
+     Filename: Basin_1_Res2.basin
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:35:22
+End:
+
+Basin: Basin south
+     Filename: Basin_south.basin
+     Description: 
+     Last Modified Date: 22 September 2026
+     Last Modified Time: 10:35:40
+End:
+
+Control: Control test
+     FileName: Control_test.control
+     Description: 
+End:
+
+Control: Control 1
+     FileName: Control_1.control
+     Description: 
+End:
+
+Control: Control 2 Guno
+     FileName: Control_2_Guno.control
+     Description: 
+End:
+
+Control: Guno June 2007
+     FileName: Guno_June_2007.control
+     Description: 
+End:
+
+Control: Phet June 2010
+     FileName: Phet_June_2010.control
+     Description: 
+End:
+

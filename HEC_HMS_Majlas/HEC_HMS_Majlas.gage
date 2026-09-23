@@ -1,0 +1,187 @@
+Gage Manager: HEC HMS Majlas
+     Version: 4.12
+     Filepath Separator: \
+End:
+
+Gage: FL655789AF
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 10:36:02
+     Latitude Degrees:  23.12159
+     Longitude Degrees: 58.619156
+     Reference Height Units: Meters
+     Reference Height: 9.9999
+     Gage Type: Precipitation
+     Precipitation Type: Incremental
+     Units: MM
+     Data Type: PER-CUM
+     Data Source Type: External DSS
+     Variant: Variant-1
+       Last Variant Modified Date: 25 February 2026
+       Last Variant Modified Time: 08:00:31
+       Default Variant: Yes
+       DSS File Name: W:\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\XLS\rainfall gage\MAJLAS_Rainfall_Guno_basinARF.dss
+       DSS Pathname: /MAJLAS/FL655789AF/PRECIP-INC/05Jun2007 - 07Jun2007/10Minute/Guno rainfall basinARF/
+       Start Time: 5 June 2007, 11:10
+       End Time: 8 June 2007, 00:00
+     End Variant: Variant-1
+End:
+
+Gage: FL672275AF
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:08:28
+     Latitude Degrees:  23.253732
+     Longitude Degrees: 58.59045
+     Reference Height Units: Meters
+     Reference Height: 9.9999
+     Gage Type: Precipitation
+     Precipitation Type: Incremental
+     Units: MM
+     Data Type: PER-CUM
+     Data Source Type: External DSS
+     Variant: Variant-1
+       Last Variant Modified Date: 25 February 2026
+       Last Variant Modified Time: 08:00:42
+       Default Variant: Yes
+       DSS File Name: W:\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\XLS\rainfall gage\MAJLAS_Rainfall_Guno_basinARF.dss
+       DSS Pathname: /MAJLAS/FL672275AF/PRECIP-INC/05Jun2007 - 07Jun2007/10Minute/Guno rainfall basinARF/
+       Start Time: 5 June 2007, 11:10
+       End Time: 8 June 2007, 00:00
+     End Variant: Variant-1
+End:
+
+Gage: FL771702AF
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:08:28
+     Latitude Degrees:  23.295327
+     Longitude Degrees: 58.672089
+     Reference Height Units: Meters
+     Reference Height: 9.9999
+     Gage Type: Precipitation
+     Precipitation Type: Incremental
+     Units: MM
+     Data Type: PER-CUM
+     Data Source Type: External DSS
+     Variant: Variant-1
+       Last Variant Modified Date: 25 February 2026
+       Last Variant Modified Time: 08:00:53
+       Default Variant: Yes
+       DSS File Name: W:\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\XLS\rainfall gage\MAJLAS_Rainfall_Guno_basinARF.dss
+       DSS Pathname: /MAJLAS/FL771702AF/PRECIP-INC/05Jun2007 - 07Jun2007/10Minute/Guno rainfall basinARF/
+       Start Time: 5 June 2007, 11:10
+       End Time: 8 June 2007, 00:00
+     End Variant: Variant-1
+End:
+
+Gage: FL788017AF
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:08:28
+     Latitude Degrees:  23.326173
+     Longitude Degrees: 58.741903
+     Reference Height Units: Meters
+     Reference Height: 9.9999
+     Gage Type: Precipitation
+     Precipitation Type: Incremental
+     Units: MM
+     Data Type: PER-CUM
+     Data Source Type: External DSS
+     Variant: Variant-1
+       Last Variant Modified Date: 25 February 2026
+       Last Variant Modified Time: 08:01:03
+       Default Variant: Yes
+       DSS File Name: W:\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\XLS\rainfall gage\MAJLAS_Rainfall_Guno_basinARF.dss
+       DSS Pathname: /MAJLAS/FL788017AF/PRECIP-INC/05Jun2007 - 07Jun2007/10Minute/Guno rainfall basinARF/
+       Start Time: 5 June 2007, 11:10
+       End Time: 8 June 2007, 00:00
+     End Variant: Variant-1
+End:
+
+Gage: FL974085AF
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 08:08:28
+     Latitude Degrees:  23.232186
+     Longitude Degrees: 58.90386
+     Reference Height Units: Meters
+     Reference Height: 9.9999
+     Gage Type: Precipitation
+     Precipitation Type: Incremental
+     Units: MM
+     Data Type: PER-CUM
+     Data Source Type: External DSS
+     Variant: Variant-1
+       Last Variant Modified Date: 25 February 2026
+       Last Variant Modified Time: 08:01:15
+       Default Variant: Yes
+       DSS File Name: W:\2525 Design and Supervision of Wadi Majlas Dam in Qurayyat\06-WORKING\03-Hydrology\XLS\rainfall gage\MAJLAS_Rainfall_Guno_basinARF.dss
+       DSS Pathname: /MAJLAS/FL974085AF/PRECIP-INC/05Jun2007 - 07Jun2007/10Minute/Guno rainfall basinARF/
+       Start Time: 5 June 2007, 11:10
+       End Time: 8 June 2007, 00:00
+     End Variant: Variant-1
+End:
+
+Gage: Gage test
+     Last Modified Date: 26 February 2026
+     Last Modified Time: 11:06:24
+     Reference Height Units: Meters
+     Reference Height: 9.9999
+     Gage Type: Precipitation
+     Precipitation Type: Incremental
+     Units: MM
+     Data Type: PER-CUM
+     Data Source Type: Manual Entry
+     Variant: Variant-1
+       Last Variant Modified Date: 26 February 2026
+       Last Variant Modified Time: 10:55:41
+       Default Variant: Yes
+       DSS File Name: HEC_HMS_Majlas.dss
+       DSS Pathname: //Gage test/PRECIP-INC//10MIN/GAGE/
+       Start Time: 5 June 2007, 12:00
+       End Time: 7 June 2007, 12:00
+     End Variant: Variant-1
+End:
+
+Gage: FA777631AD Haifadh Gonu
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 15:08:21
+     Latitude Degrees:  23.28696
+     Longitude Degrees: 58.73647
+     Reference Height Units: Meters
+     Reference Height: 9.9999
+     Station Id: FA777631AD
+     Gage Type: Flow
+     Units: M3/S
+     Data Type: INST-VAL
+     Data Source Type: Manual Entry
+     Variant: Variant-1
+       Last Variant Modified Date: 1 March 2026
+       Last Variant Modified Time: 14:59:27
+       Default Variant: Yes
+       DSS File Name: HEC_HMS_Majlas.dss
+       DSS Pathname: //FA777631AD Haifadh Gonu/FLOW//10MIN/GAGE/
+       Start Time: 5 June 2007, 00:00
+       End Time: 8 June 2007, 02:00
+     End Variant: Variant-1
+End:
+
+Gage: FA877343AD Phet
+     Last Modified Date: 1 March 2026
+     Last Modified Time: 15:20:30
+     Latitude Degrees:  23.25487
+     Longitude Degrees: 58.8358
+     Reference Height Units: Meters
+     Reference Height: 9.9999
+     Station Id: FA877343AD
+     Gage Type: Flow
+     Units: M3/S
+     Data Type: INST-VAL
+     Data Source Type: Manual Entry
+     Variant: Variant-1
+       Last Variant Modified Date: 1 March 2026
+       Last Variant Modified Time: 15:19:48
+       Default Variant: Yes
+       DSS File Name: HEC_HMS_Majlas.dss
+       DSS Pathname: //FA877343AD Phet/FLOW//10MIN/GAGE/
+       Start Time: 3 June 2010, 00:00
+       End Time: 6 June 2010, 04:00
+     End Variant: Variant-1
+End:
+

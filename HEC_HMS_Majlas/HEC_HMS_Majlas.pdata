@@ -1,0 +1,112 @@
+Paired Data Manager: HEC HMS Majlas
+     Version: 4.12
+     Filepath Separator: \
+End:
+
+Table: ARF FM
+     Table Type: Area-Reduction Factor
+     Last Modified Date: 12 October 2025
+     Last Modified Time: 12:53:02
+     X-Units: KM2
+     Use External DSS File: NO
+     DSS File: HEC_HMS_Majlas.dss
+     Pathname: //ARF FM/AREA-REDUCTION FACTOR///TABLE/
+     Interpolation: Linear Interpolation
+End:
+
+Table: Elev-Dis
+     Table Type: Stage-Flow
+     Last Modified Date: 13 October 2025
+     Last Modified Time: 08:11:18
+     X-Units: M
+     Y-Units: M3/S
+     Use External DSS File: NO
+     DSS File: HEC_HMS_Majlas.dss
+     Pathname: //Elev-Dis/STAGE-FLOW///TABLE/
+     Interpolation: Linear Interpolation
+End:
+
+Table: FM PMP
+     Table Type: Percent Graph
+     Last Modified Date: 23 February 2026
+     Last Modified Time: 08:10:08
+     X-Units: %
+     Y-Units: %
+     Use External DSS File: NO
+     DSS File: HEC_HMS_Majlas.dss
+     Pathname: //FM PMP/PERCENT GRAPH///TABLE/
+     Interpolation: Linear Interpolation
+End:
+
+Table: FM 10-1000yr
+     Table Type: Percent Graph
+     Last Modified Date: 12 October 2025
+     Last Modified Time: 12:39:15
+     X-Units: %
+     Y-Units: %
+     Use External DSS File: NO
+     DSS File: HEC_HMS_Majlas.dss
+     Pathname: //FM 10-1000yr/PERCENT GRAPH///TABLE/
+     Interpolation: Linear Interpolation
+End:
+
+Table: FM 2yr
+     Table Type: Percent Graph
+     Last Modified Date: 12 October 2025
+     Last Modified Time: 12:33:39
+     X-Units: %
+     Y-Units: %
+     Use External DSS File: NO
+     DSS File: HEC_HMS_Majlas.dss
+     Pathname: //FM 2yr/PERCENT GRAPH///TABLE/
+     Interpolation: Linear Interpolation
+End:
+
+Table: FM 2000-10000
+     Table Type: Percent Graph
+     Last Modified Date: 12 October 2025
+     Last Modified Time: 12:40:15
+     X-Units: %
+     Y-Units: %
+     Use External DSS File: NO
+     DSS File: HEC_HMS_Majlas.dss
+     Pathname: //FM 2000-10000/PERCENT GRAPH///TABLE/
+     Interpolation: Linear Interpolation
+End:
+
+Table: FM 5yr
+     Table Type: Percent Graph
+     Last Modified Date: 12 October 2025
+     Last Modified Time: 12:34:19
+     X-Units: %
+     Y-Units: %
+     Use External DSS File: NO
+     DSS File: HEC_HMS_Majlas.dss
+     Pathname: //FM 5yr/PERCENT GRAPH///TABLE/
+     Interpolation: Linear Interpolation
+End:
+
+Table: W&B
+     Table Type: Percent Graph
+     Last Modified Date: 23 February 2026
+     Last Modified Time: 10:18:26
+     X-Units: %
+     Y-Units: %
+     Use External DSS File: NO
+     DSS File: HEC_HMS_Majlas.dss
+     Pathname: //W&B/PERCENT GRAPH///TABLE/
+     Interpolation: Linear Interpolation
+End:
+
+Table: Elev-Area
+     Table Type: Elevation-Area
+     Last Modified Date: 15 June 2026
+     Last Modified Time: 08:53:13
+     X-Units: M
+     Y-Units: M2
+     Use External DSS File: NO
+     DSS File: HEC_HMS_Majlas.dss
+     Pathname: //Elev-Area/ELEVATION-AREA///TABLE/
+     Interpolation: Linear Interpolation
+End:
+

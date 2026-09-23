@@ -1,0 +1,48 @@
+2026-09-22 11:38  fill finished; restart file present
+2026-09-22 11:38  START p43 FillN fill reservoir to 84.5 m, no dikes (restart)
+Plan_SetCurrent -> (True, 'FillN fill reservoir to 84.5 m, no dikes (restart)') | current plan file: Majlas.p43 | geom: Majlas.g03 | unsteady: Majlas.u26
+2026-09-22 12:39  END   p43 ok=True 61 min | Unsteady Finished Successfully | volume error 0.00038699666038155556
+2026-09-22 12:39  p43 is a fill run: restart file written, no products
+2026-09-22 12:39  START p29 S1N sunny day failure, no dikes
+Plan_SetCurrent -> (True, 'S1N sunny day failure, no dikes') | current plan file: Majlas.p29 | geom: Majlas.g03 | unsteady: Majlas.u30
+2026-09-22 14:26  END   p29 ok=True 107 min | Unsteady Finished Successfully | volume error 0.006699476856738329
+{
+ "plan": "p29",
+ "plan_title": "S1N sunny day failure, no dikes",
+ "solution": "Unsteady Finished Successfully",
+ "computation_time": "01:46:55",
+ "unstable_at": null,
+ "volume_error_pct": 0.006699476856738329,
+ "volume_in_1000m3": 0.0,
+ "volume_out_1000m3": 96447.7578125,
+ "volume_end_1000m3": 5247.10693359375,
+ "volume_start_1000m3": 101701.6796875,
+ "max_courant": 0.7967333197593689,
+ "max_volume_error_step": 0.0,
+ "peak_total_flow_m3s": 45346.06640625,
+ "peak_time_h": 2.1666666666667336,
+ "peak_stage_hw": 70.89778900146484,
+ "peak_stage_tw": 64.97785186767578,
+ "breach_started": true,
+ "breach_final_width": 84.99988555908203,
+ "breach_peak_flow_m3s": 45346.06640625,
+ "max_stage_hw": 84.5068130493164,
+ "breach_start_h": 2.083333333333419,
+ "stage_hw_at_breach": 75.7168197631836,
+ "volume_through_dam_Mm3": 102.55159759521484,
+ "reference_time_h_for_arrival": 2.083333333333419,
+ "inundated_area_km2_gt0.3m": 20.84198,
+ "max_depth_m": 65.25345230102539,
+ "pixels": 42373605,
+ "hazard_area_km2": {
+  "H1": 0.221196,
+  "H2": 0.20738,
+  "H3": 0.618164,
+  "H4": 0.920988,
+  "H5": 6.857052,
+  "H6": 12.33208
+ }
+}
+2026-09-22 14:27  PRODUCTS p29: peak 45346.06640625 m3/s at 2.1666666666667336 h; area 20.84198 km2
+2026-09-22 14:27  START p31 S2N flood day PMF failure, no dikes
+Plan_SetCurrent -> (True, 'S2N flood day PMF failure, no dikes') | current plan file: Majlas.p31 | geom: Majlas.g03 | unsteady: Majlas.u31

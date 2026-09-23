@@ -1,0 +1,3 @@
+﻿killed python.exe 203364
+killed RasUnsteady.exe 233752
+trigger: 2026-09-22 12:19  PRODUCTS p28: peak 45311.73046875 m3/s at 2.1666666666667336 h; area 20.769136 km2 | 2026-09-22 12:19  START p30 S2D flood day PMF failure, dikes

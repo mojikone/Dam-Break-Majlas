@@ -1,0 +1,10 @@
+{
+  "plan": "p35",
+  "scenario": "S2D-W119",
+  "from_run": "p32",
+  "trigger_date": "01JAN2000",
+  "trigger_time": "1515",
+  "time_h": 15.25,
+  "max_stage_hw": 96.063,
+  "s3_date_column": "01JAN2000 15:15:00"
+}

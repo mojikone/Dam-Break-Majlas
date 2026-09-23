@@ -1,0 +1,222 @@
+2026-09-22 10:27  fill finished; restart file present
+2026-09-22 10:27  START p32 S3D PMF no failure, dikes
+2026-09-22 10:41  ERROR p32: 'Unable to synchronously open object (component not found)'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 45, in main
+    with h5py.File(os.path.join(RAS, f"Majlas.{code}.hdf"), "r") as f: sol = f["Results/Unsteady/Summary"].attrs["Solution"].decode()
+                                                                             ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mojtaba\AppData\Local\Programs\Python\Python312\Lib\site-packages\h5py\_hl\group.py", line 407, in __getitem__
+    return self._get(name)
+           ^^^^^^^^^^^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "C:\Users\mojtaba\AppData\Local\Programs\Python\Python312\Lib\site-packages\h5py\_hl\group.py", line 421, in _get
+    oid = h5o.open(self.id, self._e(name), lapl=lapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5o.pyx", line 255, in h5py.h5o.open
+KeyError: 'Unable to synchronously open object (component not found)'
+
+2026-09-22 11:03  fill finished; restart file present
+2026-09-22 11:08  fill finished; restart file present
+2026-09-22 11:08  START p32 S3D PMF no failure, dikes
+2026-09-22 11:12  fill finished; restart file present
+2026-09-22 11:12  START p28 S1D sunny day failure, dikes
+2026-09-22 11:13  fill finished; restart file present
+2026-09-22 11:13  START p29 S1N sunny day failure, no dikes
+2026-09-22 11:13  END   p29 ok=True 0 min | Unsteady failed to run | volume error ?
+2026-09-22 11:13  run did not finish successfully; sequence stopped
+2026-09-22 11:17  fill finished; restart file present
+2026-09-22 11:20  fill finished; restart file present
+2026-09-22 11:20  START p43 FillN fill reservoir to 84.5 m, no dikes (restart)
+2026-09-22 11:37  fill finished; restart file present
+2026-09-22 11:37  START p27 Fill reservoir to 84.5 m (restart)
+2026-09-22 11:38  fill finished; restart file present
+2026-09-22 11:38  START p43 FillN fill reservoir to 84.5 m, no dikes (restart)
+2026-09-22 12:18  END   p28 ok=True 67 min | Unsteady Finished Successfully | volume error 0.007389064412564039
+2026-09-22 12:19  PRODUCTS p28: peak 45311.73046875 m3/s at 2.1666666666667336 h; area 20.769136 km2
+2026-09-22 12:19  START p30 S2D flood day PMF failure, dikes
+2026-09-22 12:20  fill finished; restart file present
+2026-09-22 12:20  START p37 S1D-W51 sunny day, breach width 51 m
+2026-09-22 12:20  fill finished; restart file present
+2026-09-22 12:20  START p30 S2D flood day PMF failure, dikes
+2026-09-22 12:20  ERROR p30: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 47, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 12:20  START p34 S2D-W51 flood day, breach width 51 m
+2026-09-22 12:20  ERROR p34: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 47, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 12:20  START p36 S2D-W153 flood day, breach width 153 m
+2026-09-22 12:20  ERROR p36: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 47, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 12:20  sequence complete
+2026-09-22 12:21  first plan is a fill: not waiting for an earlier fill
+2026-09-22 12:21  START p27 Fill reservoir to 84.5 m (restart)
+2026-09-22 12:39  END   p43 ok=True 61 min | Unsteady Finished Successfully | volume error 0.00038699666038155556
+2026-09-22 12:39  p43 is a fill run: restart file written, no products
+2026-09-22 12:39  START p29 S1N sunny day failure, no dikes
+2026-09-22 13:26  END   p27 ok=True 65 min | Unsteady Finished Successfully | volume error 0.0003215690376237035
+2026-09-22 13:26  p27 is a fill run: restart file written, no products
+2026-09-22 13:26  START p32 S3D PMF no failure, dikes
+2026-09-22 14:02  orch: dispatcher started: base first, then sensitivity; S1N comparison decides S3N/S2N
+2026-09-22 14:17  END   p37 ok=True 117 min | Unsteady Finished Successfully | volume error 0.001450920244678855
+2026-09-22 14:18  PRODUCTS p37: peak 31663.171875 m3/s at 2.1666666666667336 h; area 20.187168 km2
+2026-09-22 14:18  START p38 S1D-W153 sunny day, breach width 153 m
+2026-09-22 14:19  orch: reprocessed p37 with current ras_results
+2026-09-22 14:19  orch: consequences p37
+2026-09-22 14:26  END   p29 ok=True 107 min | Unsteady Finished Successfully | volume error 0.006699476856738329
+2026-09-22 14:27  PRODUCTS p29: peak 45346.06640625 m3/s at 2.1666666666667336 h; area 20.84198 km2
+2026-09-22 14:27  START p31 S2N flood day PMF failure, no dikes
+2026-09-22 14:28  orch: reprocessed p29 with current ras_results
+2026-09-22 14:29  orch: consequences p29
+2026-09-22 14:29  orch: dikes decision: SKIP S3N and S2N | inundated_area_km2_gt0.3m 0.4%, par_total 0.4%, arrival_h_median 0.0%, peak_total_flow_m3s 0.1%
+2026-09-22 15:27  END   p38 ok=True 69 min | Unsteady Finished Successfully | volume error 0.012165164574980736
+2026-09-22 15:27  PRODUCTS p38: peak 66954.953125 m3/s at 2.083333333333419 h; area 21.179508 km2
+2026-09-22 15:27  START p41 S1D-C1.44 sunny day, breach coefficient 1.44
+2026-09-22 15:29  orch: reprocessed p38 with current ras_results
+2026-09-22 15:29  orch: consequences p38
+2026-09-22 16:17  END   p41 ok=True 50 min | Unsteady Finished Successfully | volume error 0.006482261698693037
+2026-09-22 16:18  PRODUCTS p41: peak 42384.37109375 m3/s at 2.1666666666667336 h; area 20.674712 km2
+2026-09-22 16:18  sequence complete
+2026-09-22 16:19  orch: reprocessed p41 with current ras_results
+2026-09-22 16:19  orch: consequences p41
+2026-09-22 18:50  END   p32 ok=True 324 min | Unsteady Finished Successfully | volume error 0.0017616342520341277
+2026-09-22 18:50  ERROR p32: "Unable to synchronously open object (object 'Breaching Variables' doesn't exist)"
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 58, in main
+    s = ras_results.process(code); log(f"PRODUCTS {code}: peak {s.get('peak_total_flow_m3s')} m3/s at {s.get('peak_time_h')} h; area {s.get('inundated_area_km2_gt0.3m')} km2")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_results.py", line 188, in process
+    try:
+         
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_results.py", line 61, in summary
+    sv = f[CONN + "/Structure Variables"][:]; bv = f[CONN + "/Breaching Variables"][:]
+                                                   ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mojtaba\AppData\Local\Programs\Python\Python312\Lib\site-packages\h5py\_hl\group.py", line 407, in __getitem__
+    return self._get(name)
+           ^^^^^^^^^^^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "C:\Users\mojtaba\AppData\Local\Programs\Python\Python312\Lib\site-packages\h5py\_hl\group.py", line 421, in _get
+    oid = h5o.open(self.id, self._e(name), lapl=lapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5o.pyx", line 255, in h5py.h5o.open
+KeyError: "Unable to synchronously open object (object 'Breaching Variables' doesn't exist)"
+
+2026-09-22 18:50  START p30 S2D flood day PMF failure, dikes
+2026-09-22 18:50  ERROR p30: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 48, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 18:50  START p34 S2D-W51 flood day, breach width 51 m
+2026-09-22 18:50  ERROR p34: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 48, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 18:50  START p36 S2D-W153 flood day, breach width 153 m
+2026-09-22 18:50  ERROR p36: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 48, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 18:50  sequence complete
+2026-09-22 18:51  orch: dispatcher started: base first, then sensitivity; S1N comparison decides S3N/S2N
+2026-09-22 18:51  orch: dispatcher started: base first, then sensitivity; S1N comparison decides S3N/S2N
+2026-09-22 18:51  orch: launched p30 S2D in main (pid 52164)
+2026-09-22 18:51  fill finished; restart file present
+2026-09-22 18:51  START p30 S2D flood day PMF failure, dikes
+2026-09-22 18:51  p30 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+2026-09-22 18:51  orch: launched p30 S2D in run2 (pid 194256)
+2026-09-22 18:51  fill finished; restart file present
+2026-09-22 18:51  START p30 S2D flood day PMF failure, dikes
+2026-09-22 18:51  p30 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+2026-09-22 18:51  orch: launched p30 S2D in run3 (pid 227372)
+2026-09-22 18:51  fill finished; restart file present
+2026-09-22 18:51  START p30 S2D flood day PMF failure, dikes
+2026-09-22 18:51  p30 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+2026-09-22 18:52  ERROR p30: (-2147023170, 'The remote procedure call failed.', None, None)
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 51, in main
+    ok, elapsed, msgs = ras_run.run_plan(code, title)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_run.py", line 54, in run_plan
+    res = rc.Compute_CurrentPlan(0, None, True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<COMObject RAS66.HECRASController>", line 2, in Compute_CurrentPlan
+  File "C:\Users\mojtaba\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32com\client\dynamic.py", line 356, in _ApplyTypes_
+    result = self._oleobj_.InvokeTypes(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+pywintypes.com_error: (-2147023170, 'The remote procedure call failed.', None, None)
+
+2026-09-22 18:52  sequence complete
+2026-09-22 18:53  orch: dispatcher started: base first, then sensitivity; S1N comparison decides S3N/S2N
+2026-09-22 18:53  orch: launched p30 S2D in main (pid 158028)
+2026-09-22 18:53  fill finished; restart file present
+2026-09-22 18:53  START p30 S2D flood day PMF failure, dikes
+2026-09-22 18:53  p30 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+2026-09-22 19:19  orch: dispatcher started: base first, then sensitivity; S1N comparison decides S3N/S2N
+2026-09-22 19:19  orch: launched p48 S3D-F10000 in run2 (pid 344952)
+2026-09-22 19:19  fill finished; restart file present
+2026-09-22 19:19  START p48 S3D-F10000 10000-yr flood no failure, dikes
+2026-09-22 19:19  orch: launched p35 S2D-W119 in run3 (pid 212552)
+2026-09-22 19:19  fill finished; restart file present
+2026-09-22 19:19  START p35 S2D-W119 flood day, breach width 119 m
+2026-09-22 19:19  p35 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+2026-09-23 02:04  END   p35 ok=True 405 min | Unsteady Finished Successfully | volume error 0.00048773843445815146
+2026-09-23 02:05  PRODUCTS p35: peak 79029.75 m3/s at 15.33333333336886 h; area 27.545992 km2
+2026-09-23 02:05  sequence complete
+2026-09-23 02:06  orch: consequences p35
+2026-09-23 02:06  orch: launched p39 S2D-T18m in run3 (pid 353000)
+2026-09-23 02:06  fill finished; restart file present
+2026-09-23 02:06  START p39 S2D-T18m flood day, breach time 18 min
+2026-09-23 02:06  p39 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+2026-09-23 04:17  END   p30 ok=True 564 min | Unsteady Finished Successfully | volume error 5.964974479866214e-05
+2026-09-23 04:18  PRODUCTS p30: peak 63857.95703125 m3/s at 15.33333333336886 h; area 27.362284 km2
+2026-09-23 04:18  sequence complete
+2026-09-23 04:19  orch: launched p40 S2D-T3m in main (pid 31476)
+2026-09-23 04:19  fill finished; restart file present
+2026-09-23 04:19  START p40 S2D-T3m flood day, breach time 3 min
+2026-09-23 04:19  p40 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)

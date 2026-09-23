@@ -1,0 +1,51 @@
+2026-09-22 18:53  fill finished; restart file present
+2026-09-22 18:53  START p30 S2D flood day PMF failure, dikes
+2026-09-22 18:53  p30 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+Plan_SetCurrent -> (True, 'S2D flood day PMF failure, dikes') | current plan file: Majlas.p30 | geom: Majlas.g02 | unsteady: Majlas.u28
+2026-09-23 04:17  END   p30 ok=True 564 min | Unsteady Finished Successfully | volume error 5.964974479866214e-05
+{
+ "plan": "p30",
+ "plan_title": "S2D flood day PMF failure, dikes",
+ "solution": "Unsteady Finished Successfully",
+ "computation_time": "**:**:**",
+ "unstable_at": null,
+ "volume_error_pct": 5.964974479866214e-05,
+ "volume_in_1000m3": 791485.5625,
+ "volume_out_1000m3": 888348.0625,
+ "volume_end_1000m3": 4839.71142578125,
+ "volume_start_1000m3": 101701.6328125,
+ "max_courant": 0.875417172908783,
+ "max_volume_error_step": 0.0,
+ "peak_total_flow_m3s": 63857.95703125,
+ "peak_time_h": 15.33333333336886,
+ "peak_stage_hw": 86.74385070800781,
+ "peak_stage_tw": 77.46027374267578,
+ "breach_started": true,
+ "breach_final_width": 84.99988555908203,
+ "breach_peak_flow_m3s": 62381.04296875,
+ "max_stage_hw": 96.05970764160156,
+ "breach_start_h": 15.33333333336886,
+ "stage_hw_at_breach": 86.74385070800781,
+ "volume_through_dam_Mm3": 662.91064453125,
+ "reference_time_h_for_arrival": 15.33333333336886,
+ "inundated_area_km2_gt0.3m": 27.362284,
+ "inundated_area_km2_gt0.3m_incl_reservoir": 32.611444,
+ "max_depth_m": 64.587331974482,
+ "max_depth_incl_reservoir_m": 76.73483050103025,
+ "max_velocity_ms": 13.727339744567871,
+ "max_dv_m2s": 655.5582275390625,
+ "arrival_h_median": 0.0,
+ "arrival_h_max": 3.0833332538604736,
+ "reservoir_area_km2": 5.285456,
+ "pixels": 42381370,
+ "hazard_area_km2": {
+  "H1": 0.611288,
+  "H2": 0.792816,
+  "H3": 0.559792,
+  "H4": 1.41418,
+  "H5": 6.756636,
+  "H6": 18.482104
+ }
+}
+2026-09-23 04:18  PRODUCTS p30: peak 63857.95703125 m3/s at 15.33333333336886 h; area 27.362284 km2
+2026-09-23 04:18  sequence complete

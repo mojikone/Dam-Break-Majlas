@@ -1,0 +1,35 @@
+2026-09-22 12:20  fill finished; restart file present
+2026-09-22 12:20  START p30 S2D flood day PMF failure, dikes
+2026-09-22 12:20  ERROR p30: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 47, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 12:20  START p34 S2D-W51 flood day, breach width 51 m
+2026-09-22 12:20  ERROR p34: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 47, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 12:20  START p36 S2D-W153 flood day, breach width 153 m
+2026-09-22 12:20  ERROR p36: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 47, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 12:20  sequence complete

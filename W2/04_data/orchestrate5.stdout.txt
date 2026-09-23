@@ -1,0 +1,6 @@
+2026-09-22 19:19  orch: dispatcher started: base first, then sensitivity; S1N comparison decides S3N/S2N
+2026-09-22 19:19  orch: launched p48 S3D-F10000 in run2 (pid 344952)
+2026-09-22 19:19  orch: launched p35 S2D-W119 in run3 (pid 212552)
+2026-09-23 02:06  orch: consequences p35
+2026-09-23 02:06  orch: launched p39 S2D-T18m in run3 (pid 353000)
+2026-09-23 04:19  orch: launched p40 S2D-T3m in main (pid 31476)

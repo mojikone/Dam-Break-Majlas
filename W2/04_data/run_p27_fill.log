@@ -1,0 +1,8 @@
+=== p27 Fill reservoir to 84.5 m (restart) ===
+Plan_SetCurrent -> (True, 'Fill reservoir to 84.5 m (restart)') | current plan file: Majlas.p27 | geom: Majlas.g02 | unsteady: Majlas.u26
+ok: True elapsed min: 16.3
+summary: {'hdf': 'Majlas.p27.hdf', 'size_MB': 142.1, 'VA Error': 0.32717365026474, 'VA Error Percent': 0.000321700528729707, 'VA Total Boundary Flux of Water In': 101701.3046875, 'VA Total Boundary Flux of Water Out': 0.0, 'VA': "n/a (could not convert string to float: np.bytes_(b'1000 m^3'))", 'max WSE (m)': 438.8760986328125, 'computation time': '00:16:14'}
+   Starting Unsteady Computations
+   Computing
+   Computations Completed
+exit 0

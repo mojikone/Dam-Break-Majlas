@@ -1,0 +1,4 @@
+2026-09-22 18:51  fill finished; restart file present
+2026-09-22 18:51  START p30 S2D flood day PMF failure, dikes
+2026-09-22 18:51  p30 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+Plan_SetCurrent -> (True, 'S2D flood day PMF failure, dikes') | current plan file: Majlas.p30 | geom: Majlas.g02 | unsteady: Majlas.u28

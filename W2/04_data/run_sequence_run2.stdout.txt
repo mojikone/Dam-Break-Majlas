@@ -1,0 +1,44 @@
+2026-09-22 11:12  fill finished; restart file present
+2026-09-22 11:12  START p28 S1D sunny day failure, dikes
+Plan_SetCurrent -> (True, 'S1D sunny day failure, dikes') | current plan file: Majlas.p28 | geom: Majlas.g02 | unsteady: Majlas.u27
+2026-09-22 12:18  END   p28 ok=True 67 min | Unsteady Finished Successfully | volume error 0.007389064412564039
+{
+ "plan": "p28",
+ "plan_title": "S1D sunny day failure, dikes",
+ "solution": "Unsteady Finished Successfully",
+ "computation_time": "01:06:11",
+ "unstable_at": null,
+ "volume_error_pct": 0.007389064412564039,
+ "volume_in_1000m3": 0.0,
+ "volume_out_1000m3": 96405.109375,
+ "volume_end_1000m3": 5289.0087890625,
+ "volume_start_1000m3": 101701.6328125,
+ "max_courant": 0.8313663005828857,
+ "max_volume_error_step": 0.0,
+ "peak_total_flow_m3s": 45311.73046875,
+ "peak_time_h": 2.1666666666667336,
+ "peak_stage_hw": 71.0292739868164,
+ "peak_stage_tw": 65.26808166503906,
+ "breach_started": true,
+ "breach_final_width": 84.99988555908203,
+ "breach_peak_flow_m3s": 45311.734375,
+ "max_stage_hw": 84.50679779052734,
+ "breach_start_h": 2.083333333333419,
+ "stage_hw_at_breach": 75.75541687011719,
+ "volume_through_dam_Mm3": 102.51258087158203,
+ "reference_time_h_for_arrival": 2.083333333333419,
+ "inundated_area_km2_gt0.3m": 20.769136,
+ "max_depth_m": 65.25342178344727,
+ "pixels": 42373605,
+ "hazard_area_km2": {
+  "H1": 0.225312,
+  "H2": 0.202224,
+  "H3": 0.617224,
+  "H4": 0.950908,
+  "H5": 6.89942,
+  "H6": 12.194164
+ }
+}
+2026-09-22 12:19  PRODUCTS p28: peak 45311.73046875 m3/s at 2.1666666666667336 h; area 20.769136 km2
+2026-09-22 12:19  START p30 S2D flood day PMF failure, dikes
+Plan_SetCurrent -> (True, 'S2D flood day PMF failure, dikes') | current plan file: Majlas.p30 | geom: Majlas.g02 | unsteady: Majlas.u28

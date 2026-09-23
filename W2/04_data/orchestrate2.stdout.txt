@@ -1,0 +1,1 @@
+2026-09-22 18:51  orch: dispatcher started: base first, then sensitivity; S1N comparison decides S3N/S2N

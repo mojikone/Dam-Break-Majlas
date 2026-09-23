@@ -1,0 +1,3 @@
+2026-09-22 11:37  fill finished; restart file present
+2026-09-22 11:37  START p27 Fill reservoir to 84.5 m (restart)
+Plan_SetCurrent -> (True, 'Fill reservoir to 84.5 m (restart)') | current plan file: Majlas.p27 | geom: Majlas.g02 | unsteady: Majlas.u26

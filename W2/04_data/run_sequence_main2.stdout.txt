@@ -1,0 +1,66 @@
+2026-09-22 12:21  first plan is a fill: not waiting for an earlier fill
+2026-09-22 12:21  START p27 Fill reservoir to 84.5 m (restart)
+Plan_SetCurrent -> (True, 'Fill reservoir to 84.5 m (restart)') | current plan file: Majlas.p27 | geom: Majlas.g02 | unsteady: Majlas.u26
+2026-09-22 13:26  END   p27 ok=True 65 min | Unsteady Finished Successfully | volume error 0.0003215690376237035
+2026-09-22 13:26  p27 is a fill run: restart file written, no products
+2026-09-22 13:26  START p32 S3D PMF no failure, dikes
+Plan_SetCurrent -> (True, 'S3D PMF no failure, dikes') | current plan file: Majlas.p32 | geom: Majlas.g02 | unsteady: Majlas.u28
+2026-09-22 18:50  END   p32 ok=True 324 min | Unsteady Finished Successfully | volume error 0.0017616342520341277
+2026-09-22 18:50  ERROR p32: "Unable to synchronously open object (object 'Breaching Variables' doesn't exist)"
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 58, in main
+    s = ras_results.process(code); log(f"PRODUCTS {code}: peak {s.get('peak_total_flow_m3s')} m3/s at {s.get('peak_time_h')} h; area {s.get('inundated_area_km2_gt0.3m')} km2")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_results.py", line 188, in process
+    try:
+         
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_results.py", line 61, in summary
+    sv = f[CONN + "/Structure Variables"][:]; bv = f[CONN + "/Breaching Variables"][:]
+                                                   ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mojtaba\AppData\Local\Programs\Python\Python312\Lib\site-packages\h5py\_hl\group.py", line 407, in __getitem__
+    return self._get(name)
+           ^^^^^^^^^^^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "C:\Users\mojtaba\AppData\Local\Programs\Python\Python312\Lib\site-packages\h5py\_hl\group.py", line 421, in _get
+    oid = h5o.open(self.id, self._e(name), lapl=lapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5o.pyx", line 255, in h5py.h5o.open
+KeyError: "Unable to synchronously open object (object 'Breaching Variables' doesn't exist)"
+
+2026-09-22 18:50  START p30 S2D flood day PMF failure, dikes
+2026-09-22 18:50  ERROR p30: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 48, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 18:50  START p34 S2D-W51 flood day, breach width 51 m
+2026-09-22 18:50  ERROR p34: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 48, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 18:50  START p36 S2D-W153 flood day, breach width 153 m
+2026-09-22 18:50  ERROR p36: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_sequence.py", line 48, in main
+    info = ras_setup.set_trigger_from_s3(pid, RAS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\ras_setup.py", line 223, in set_trigger_from_s3
+    rows = list(csv.DictReader(open(os.path.join(rdir, "connection.csv"))))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Mojtaba\\Renardet\\2224 WS11\\Majlas\\Hydraulic\\Dam Breack\\W2\\04_data\\results\\p32\\connection.csv'
+
+2026-09-22 18:50  sequence complete

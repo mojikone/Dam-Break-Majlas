@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "Dam connection (SA/2D)"}, "geometry": {"type": "LineString", "coordinates": [[691579.591530691, 2573157.46008592], [691647.668009248, 2572843.81455793]]}}], "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::32640"}}}

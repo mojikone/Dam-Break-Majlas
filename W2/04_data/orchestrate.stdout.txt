@@ -1,0 +1,10 @@
+2026-09-22 14:02  orch: dispatcher started: base first, then sensitivity; S1N comparison decides S3N/S2N
+2026-09-22 14:19  orch: reprocessed p37 with current ras_results
+2026-09-22 14:19  orch: consequences p37
+2026-09-22 14:28  orch: reprocessed p29 with current ras_results
+2026-09-22 14:29  orch: consequences p29
+2026-09-22 14:29  orch: dikes decision: SKIP S3N and S2N | inundated_area_km2_gt0.3m 0.4%, par_total 0.4%, arrival_h_median 0.0%, peak_total_flow_m3s 0.1%
+2026-09-22 15:29  orch: reprocessed p38 with current ras_results
+2026-09-22 15:29  orch: consequences p38
+2026-09-22 16:19  orch: reprocessed p41 with current ras_results
+2026-09-22 16:19  orch: consequences p41

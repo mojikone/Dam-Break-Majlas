@@ -1,0 +1,17 @@
+{
+  "plan": "p38",
+  "par_total": 24147.86029816419,
+  "par_depth_gt1m": 22583.889834441245,
+  "par_H1": 0.0,
+  "par_H2": 40.708343256264925,
+  "par_H3": 287.7542657516897,
+  "par_H4": 625.1744209863245,
+  "par_H5": 4399.220554814674,
+  "par_H6": 18795.002713355236,
+  "par_H4plus": 23819.397689156234,
+  "plots_total": 3036,
+  "plots_Residential": 1756,
+  "plots_Agriculture": 1018,
+  "plots_Commercial": 254,
+  "plots_Industry": 5
+}

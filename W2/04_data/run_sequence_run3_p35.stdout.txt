@@ -1,0 +1,51 @@
+2026-09-22 19:19  fill finished; restart file present
+2026-09-22 19:19  START p35 S2D-W119 flood day, breach width 119 m
+2026-09-22 19:19  p35 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+Plan_SetCurrent -> (True, 'S2D-W119 flood day, breach width 119 m') | current plan file: Majlas.p35 | geom: Majlas.g02 | unsteady: Majlas.u28
+2026-09-23 02:04  END   p35 ok=True 405 min | Unsteady Finished Successfully | volume error 0.00048773843445815146
+{
+ "plan": "p35",
+ "plan_title": "S2D-W119 flood day, breach width 119 m",
+ "solution": "Unsteady Finished Successfully",
+ "computation_time": "**:**:**",
+ "unstable_at": null,
+ "volume_error_pct": 0.00048773843445815146,
+ "volume_in_1000m3": 790001.1875,
+ "volume_out_1000m3": 880519.25,
+ "volume_end_1000m3": 11179.19921875,
+ "volume_start_1000m3": 101701.6328125,
+ "max_courant": 0.8754198551177979,
+ "max_volume_error_step": 0.0,
+ "peak_total_flow_m3s": 79029.75,
+ "peak_time_h": 15.33333333336886,
+ "peak_stage_hw": 85.28348541259766,
+ "peak_stage_tw": 78.42479705810547,
+ "breach_started": true,
+ "breach_final_width": 119.00001525878906,
+ "breach_peak_flow_m3s": 76672.203125,
+ "max_stage_hw": 96.0597915649414,
+ "breach_start_h": 15.33333333336886,
+ "stage_hw_at_breach": 85.28348541259766,
+ "volume_through_dam_Mm3": 658.3270263671875,
+ "reference_time_h_for_arrival": 15.33333333336886,
+ "inundated_area_km2_gt0.3m": 27.545992,
+ "inundated_area_km2_gt0.3m_incl_reservoir": 32.795152,
+ "max_depth_m": 65.56224725441578,
+ "max_depth_incl_reservoir_m": 76.73478447136931,
+ "max_velocity_ms": 14.449403762817383,
+ "max_dv_m2s": 640.2612915039062,
+ "arrival_h_median": 0.0,
+ "arrival_h_max": 1.6666666269302368,
+ "reservoir_area_km2": 5.285456,
+ "pixels": 42381370,
+ "hazard_area_km2": {
+  "H1": 0.599652,
+  "H2": 0.773924,
+  "H3": 0.525552,
+  "H4": 1.331992,
+  "H5": 6.554816,
+  "H6": 18.995408
+ }
+}
+2026-09-23 02:05  PRODUCTS p35: peak 79029.75 m3/s at 15.33333333336886 h; area 27.545992 km2
+2026-09-23 02:05  sequence complete

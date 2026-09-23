@@ -1,0 +1,4 @@
+2026-09-23 04:19  fill finished; restart file present
+2026-09-23 04:19  START p40 S2D-T3m flood day, breach time 3 min
+2026-09-23 04:19  p40 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+Plan_SetCurrent -> (True, 'S2D-T3m flood day, breach time 3 min') | current plan file: Majlas.p40 | geom: Majlas.g02 | unsteady: Majlas.u28

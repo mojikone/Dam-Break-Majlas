@@ -1,0 +1,4 @@
+2026-09-22 18:51  orch: dispatcher started: base first, then sensitivity; S1N comparison decides S3N/S2N
+2026-09-22 18:51  orch: launched p30 S2D in main (pid 52164)
+2026-09-22 18:51  orch: launched p30 S2D in run2 (pid 194256)
+2026-09-22 18:51  orch: launched p30 S2D in run3 (pid 227372)

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\orchestrate.py", line 151, in <module>
+    main()
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\orchestrate.py", line 139, in main
+    if folder_busy(name, procs) or sequence_alive(name, procs): continue
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mojtaba\Renardet\2224 WS11\Majlas\Hydraulic\Dam Breack\W2\01_scripts\orchestrate.py", line 53, in folder_busy
+    pid, exe, cmd = p.split("|", 2)
+    ^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 1)

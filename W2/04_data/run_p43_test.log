@@ -1,0 +1,8 @@
+=== p43 TEST copy of PMPDam ===
+Plan_SetCurrent -> (True, 'TEST copy of PMPDam') | current plan file: Majlas.p43 | geom: Majlas.g02 | unsteady: Majlas.u24
+ok: True elapsed min: 0.5
+summary: {'hdf': 'Majlas.p43.hdf', 'size_MB': 33.4, 'VA Error': 0.33690229058265686, 'VA Error Percent': 0.06760279089212418, 'VA Precipitation Excess (m^3)': 379.2000732421875, 'VA Precipitation Excess (mm)': 636736128.0, 'VA Total Boundary Flux of Water In': 498.3555908203125, 'VA Total Boundary Flux of Water Out': 0.8677970767021179, 'VA': "n/a (could not convert string to float: np.bytes_(b'1000 m^3'))", 'max WSE (m)': 439.3077392578125, 'computation time': '00:00:25'}
+   Starting Unsteady Computations
+   Computing
+   Computations Completed
+exit 0

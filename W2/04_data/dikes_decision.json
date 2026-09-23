@@ -1,0 +1,23 @@
+{
+  "keep_no_dikes": false,
+  "threshold": 0.05,
+  "S1D": {
+    "inundated_area_km2_gt0.3m": 17.041628,
+    "par_total": 23211.608801834285,
+    "arrival_h_median": 0.25,
+    "peak_total_flow_m3s": 45311.73046875
+  },
+  "S1N": {
+    "inundated_area_km2_gt0.3m": 17.11394,
+    "par_total": 23298.94482355565,
+    "arrival_h_median": 0.25,
+    "peak_total_flow_m3s": 45346.06640625
+  },
+  "relative_differences": {
+    "inundated_area_km2_gt0.3m": 0.004243256571496582,
+    "par_total": 0.0037626009669119265,
+    "arrival_h_median": 0.0,
+    "peak_total_flow_m3s": 0.000757771489739955
+  },
+  "decided": "2026-09-22T14:29"
+}

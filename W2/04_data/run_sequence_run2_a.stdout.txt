@@ -1,0 +1,125 @@
+2026-09-22 12:20  fill finished; restart file present
+2026-09-22 12:20  START p37 S1D-W51 sunny day, breach width 51 m
+Plan_SetCurrent -> (True, 'S1D-W51 sunny day, breach width 51 m') | current plan file: Majlas.p37 | geom: Majlas.g02 | unsteady: Majlas.u27
+2026-09-22 14:17  END   p37 ok=True 117 min | Unsteady Finished Successfully | volume error 0.001450920244678855
+{
+ "plan": "p37",
+ "plan_title": "S1D-W51 sunny day, breach width 51 m",
+ "solution": "Unsteady Finished Successfully",
+ "computation_time": "01:56:42",
+ "unstable_at": null,
+ "volume_error_pct": 0.001450920244678855,
+ "volume_in_1000m3": 0.0,
+ "volume_out_1000m3": 96367.15625,
+ "volume_end_1000m3": 5335.953125,
+ "volume_start_1000m3": 101701.6328125,
+ "max_courant": 0.7996326088905334,
+ "max_volume_error_step": 0.0,
+ "peak_total_flow_m3s": 31663.171875,
+ "peak_time_h": 2.1666666666667336,
+ "peak_stage_hw": 74.65879821777344,
+ "peak_stage_tw": 63.54299545288086,
+ "breach_started": true,
+ "breach_final_width": 51.00004959106445,
+ "breach_peak_flow_m3s": 31663.169921875,
+ "max_stage_hw": 84.50679779052734,
+ "breach_start_h": 2.083333333333419,
+ "stage_hw_at_breach": 79.30944061279297,
+ "volume_through_dam_Mm3": 102.20703887939453,
+ "reference_time_h_for_arrival": 2.083333333333419,
+ "inundated_area_km2_gt0.3m": 20.187168,
+ "max_depth_m": 65.25342178344727,
+ "pixels": 42373605,
+ "hazard_area_km2": {
+  "H1": 0.244576,
+  "H2": 0.250376,
+  "H3": 0.69364,
+  "H4": 1.226816,
+  "H5": 7.257176,
+  "H6": 10.8807
+ }
+}
+2026-09-22 14:18  PRODUCTS p37: peak 31663.171875 m3/s at 2.1666666666667336 h; area 20.187168 km2
+2026-09-22 14:18  START p38 S1D-W153 sunny day, breach width 153 m
+Plan_SetCurrent -> (True, 'S1D-W153 sunny day, breach width 153 m') | current plan file: Majlas.p38 | geom: Majlas.g02 | unsteady: Majlas.u27
+2026-09-22 15:27  END   p38 ok=True 69 min | Unsteady Finished Successfully | volume error 0.012165164574980736
+{
+ "plan": "p38",
+ "plan_title": "S1D-W153 sunny day, breach width 153 m",
+ "solution": "Unsteady Finished Successfully",
+ "computation_time": "01:08:22",
+ "unstable_at": null,
+ "volume_error_pct": 0.012165164574980736,
+ "volume_in_1000m3": 0.0,
+ "volume_out_1000m3": 96428.703125,
+ "volume_end_1000m3": 5260.5595703125,
+ "volume_start_1000m3": 101701.6328125,
+ "max_courant": 0.8908417224884033,
+ "max_volume_error_step": 0.0,
+ "peak_total_flow_m3s": 66954.953125,
+ "peak_time_h": 2.083333333333419,
+ "peak_stage_hw": 72.96238708496094,
+ "peak_stage_tw": 68.67637634277344,
+ "breach_started": true,
+ "breach_final_width": 153.00015258789062,
+ "breach_peak_flow_m3s": 66954.953125,
+ "max_stage_hw": 84.50679779052734,
+ "breach_start_h": 2.083333333333419,
+ "stage_hw_at_breach": 72.96238708496094,
+ "volume_through_dam_Mm3": 100.45116424560547,
+ "reference_time_h_for_arrival": 2.083333333333419,
+ "inundated_area_km2_gt0.3m": 21.179508,
+ "max_depth_m": 65.25342178344727,
+ "pixels": 42373605,
+ "hazard_area_km2": {
+  "H1": 0.213384,
+  "H2": 0.202092,
+  "H3": 0.577428,
+  "H4": 0.81636,
+  "H5": 5.776312,
+  "H6": 13.891152
+ }
+}
+2026-09-22 15:27  PRODUCTS p38: peak 66954.953125 m3/s at 2.083333333333419 h; area 21.179508 km2
+2026-09-22 15:27  START p41 S1D-C1.44 sunny day, breach coefficient 1.44
+Plan_SetCurrent -> (True, 'S1D-C1.44 sunny day, breach coefficient 1.44') | current plan file: Majlas.p41 | geom: Majlas.g02 | unsteady: Majlas.u27
+2026-09-22 16:17  END   p41 ok=True 50 min | Unsteady Finished Successfully | volume error 0.006482261698693037
+{
+ "plan": "p41",
+ "plan_title": "S1D-C1.44 sunny day, breach coefficient 1.44",
+ "solution": "Unsteady Finished Successfully",
+ "computation_time": "00:49:40",
+ "unstable_at": null,
+ "volume_error_pct": 0.006482261698693037,
+ "volume_in_1000m3": 0.0,
+ "volume_out_1000m3": 96397.875,
+ "volume_end_1000m3": 5297.166015625,
+ "volume_start_1000m3": 101701.6328125,
+ "max_courant": 0.8048390746116638,
+ "max_volume_error_step": 0.0,
+ "peak_total_flow_m3s": 42384.37109375,
+ "peak_time_h": 2.1666666666667336,
+ "peak_stage_hw": 72.5683364868164,
+ "peak_stage_tw": 63.26264572143555,
+ "breach_started": true,
+ "breach_final_width": 84.99988555908203,
+ "breach_peak_flow_m3s": 42384.375,
+ "max_stage_hw": 84.50679779052734,
+ "breach_start_h": 2.083333333333419,
+ "stage_hw_at_breach": 77.05669403076172,
+ "volume_through_dam_Mm3": 102.43461608886719,
+ "reference_time_h_for_arrival": 2.083333333333419,
+ "inundated_area_km2_gt0.3m": 20.674712,
+ "max_depth_m": 65.25342178344727,
+ "pixels": 42373605,
+ "hazard_area_km2": {
+  "H1": 0.223908,
+  "H2": 0.213156,
+  "H3": 0.642172,
+  "H4": 0.96026,
+  "H5": 7.034544,
+  "H6": 11.92404
+ }
+}
+2026-09-22 16:18  PRODUCTS p41: peak 42384.37109375 m3/s at 2.1666666666667336 h; area 20.674712 km2
+2026-09-22 16:18  sequence complete

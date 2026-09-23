@@ -23,13 +23,19 @@ FS = 16   # table font (8 pt)
 CODE = S.FIXED_P                                    # scenario id -> plan code
 SID = {v: k for k, v in CODE.items()}               # plan code -> scenario id
 BASE = ["S3D", "S3N", "S1D", "S1N", "S2D", "S2N"]
-SENS = ["S2D-W51", "S2D-W119", "S2D-W153", "S1D-W51", "S1D-W153", "S2D-T18m", "S2D-T3m", "S1D-C1.44", "S3D-F10000", "S2D-F10000"]
+SENS = ["S1D-W51", "S1D-W153", "S1D-C1.44", "S1D-T3m", "S1D-T18m", "S2D-W119", "S3D-F10000", "S2D-F10000", "S2D-W51", "S2D-W153", "S2D-T18m", "S2D-T3m"]
+# runs given up on 2026-09-23 08:50 (user decision): the breach mechanics are tested on the sunny day, where a run takes an hour, not fifteen
+DROPPED = {"S2D-W51": "not run: width tested on the sunny day and once on the flood day (S2D-W119)",
+           "S2D-W153": "not run: width tested on the sunny day and once on the flood day (S2D-W119)",
+           "S2D-T18m": "stopped at 36 %: formation time tested on the sunny day (S1D-T18m)",
+           "S2D-T3m": "stopped at 24 %: formation time tested on the sunny day (S1D-T3m)"}
 DESC = {"S1D": "sunny-day failure, dikes in place", "S1N": "sunny-day failure, no dikes", "S2D": "flood-day (PMF) failure, dikes in place",
         "S2N": "flood-day (PMF) failure, no dikes", "S3D": "PMF without failure, dikes in place", "S3N": "PMF without failure, no dikes",
         "S2D-W51": "flood-day failure, breach 51 m wide (3 monoliths)", "S2D-W119": "flood-day failure, breach 119 m wide (7 monoliths)",
         "S2D-W153": "flood-day failure, breach 153 m wide (9 monoliths)", "S1D-W51": "sunny-day failure, breach 51 m wide",
         "S1D-W153": "sunny-day failure, breach 153 m wide", "S2D-T18m": "flood-day failure, breach formed in 18 minutes",
         "S2D-T3m": "flood-day failure, breach formed in 3 minutes", "S1D-C1.44": "sunny-day failure, breach weir coefficient 1.44",
+        "S1D-T3m": "sunny-day failure, breach formed in 3 minutes", "S1D-T18m": "sunny-day failure, breach formed in 18 minutes",
         "S3D-F10000": "10,000-year flood without failure, dikes in place", "S2D-F10000": "flood-day failure during the 10,000-year flood"}
 
 # ------------------------------------------------------------------ data access
@@ -69,14 +75,17 @@ def dikes_decision():
     return json.load(open(DECISION)) if os.path.exists(DECISION) else None
 def dropped(sid):
     """S3N and S2N are not run when the S1N/S1D comparison found the dikes immaterial (dispatcher decision, 2026-09-22)"""
-    dec = dikes_decision(); return sid in ("S3N", "S2N") and dec is not None and not dec.get("keep_no_dikes", True)
+    dec = dikes_decision(); return (sid in ("S3N", "S2N") and dec is not None and not dec.get("keep_no_dikes", True)) or sid in DROPPED
+def not_run(sid):
+    """the table cell of a scenario without products"""
+    return DROPPED.get(sid, "not run, see chapter 3" if dropped(sid) else "pending")
 
 def key_rows(sids):
     """one row per scenario for the results tables"""
     rows = []
     for sid in sids:
         s = load(sid)
-        if s is None: rows.append([sid, DESC[sid], "not run, see chapter 3" if dropped(sid) else "pending", "-", "-", "-", "-", "-"]); continue
+        if s is None: rows.append([sid, DESC[sid], not_run(sid), "-", "-", "-", "-", "-"]); continue
         rows.append([sid, DESC[sid], n0(s.get("peak_total_flow_m3s")), hm(s.get("peak_time_h")), n2(peak_pool(s)),
                      n1(s.get("inundated_area_km2_gt0.3m")), f"{n0(s.get('max_depth_m'))} / {n1(s.get('max_depth_plain_m'))}", n0(s.get("consequences_par_total"))])
     return rows
@@ -109,7 +118,7 @@ def content(d):
     d.P(f"This report presents the dam break analysis of the Wadi Majlas Flood Protection Dam, a {F.HEIGHT_THALWEG:.0f} m high roller-compacted "
         f"concrete gravity dam about {F.DAM_TO_QURAYAT_KM} km upstream of Qurayat. It applies the methodology of the Dam Break Analysis Methodology "
         "Report Rev 00 (September 2026) with the HEC-RAS 6.6 two-dimensional model built for this study. Three scenarios were run with the downstream "
-        "training dikes in place, the no-dikes condition was checked on the sunny-day scenario, and ten sensitivity runs bound the breach parameters.")
+        "training dikes in place, the no-dikes condition was checked on the sunny-day scenario, and eight sensitivity runs bound the breach parameters and the flood.")
     if s1d:
         d.P(f"**Sunny-day failure (S1D).** With the reservoir at the full supply level and no flood, the sudden failure of five monoliths "
             f"(85 m of the dam) releases {n0(s1d.get('volume_through_dam_Mm3'))} Mm³ in about two hours. The peak outflow is "
@@ -271,12 +280,15 @@ def content(d):
     d.P("The sensitivity runs change one breach parameter at a time from the base case: the breach width (three, five, seven and nine monoliths), "
         "the formation time (3, 6 and 18 minutes), the weir coefficient of the breach opening, and the flood (the 10,000-year flood instead of the PMF).")
     d.TBL(["Name", "What is changed from the base case", "Purpose"], [
-        ["S2D-W51, S2D-W119, S2D-W153", "Breach width 51, 119, 153 m instead of 85 m", "How much the peak and the flooded area depend on how many monoliths go"],
-        ["S1D-W51, S1D-W153", "Breach width 51 and 153 m, sunny day", "Same question for the sunny-day case"],
-        ["S2D-T18m, S2D-T3m", "Formation time 18 min and 3 min instead of 6 min", "Whether the speed of the failure matters"],
-        ["S1D-C1.44", "Breach weir coefficient 1.44 instead of 1.66", "Lower bound of the flow through the opening"],
+        ["S1D-W51, S1D-W153", "Breach width 51 and 153 m (three and nine monoliths) instead of 85 m, sunny day", "How much the peak and the flooded area depend on how many monoliths go"],
+        ["S2D-W119", "Breach width 119 m (seven monoliths), flood day", "The same question on the flood day, one check"],
+        ["S1D-T3m, S1D-T18m", "Formation time 3 min and 18 min instead of 6 min, sunny day", "Whether the speed of the failure matters"],
+        ["S1D-C1.44", "Breach weir coefficient 1.44 instead of 1.66, sunny day", "Lower bound of the flow through the opening"],
         ["S3D-F10000, S2D-F10000", "10,000-year flood instead of the PMF, without and with failure", "How the flood-day results change with a smaller flood"],
     ], "The sensitivity runs.", "sens", col_w=[1.8, 2.6, 2.6], font_sz=FS)
+    d.P("The breach mechanics are tested on the sunny day, where the dam's contribution stands alone and a run takes an hour. The flood-day runs first "
+        "planned for width (51 and 153 m) and formation time were stopped on 23 September once the sunny-day family had answered the question, S2D-W119 "
+        "giving the one flood-day check on width, and the machine time went to the 10,000-year pair.")
 
     # ============================================================ 3 the model as built
     d.H1("The Model as Built")
@@ -380,7 +392,7 @@ def content(d):
         f"Non-overflow crest: the parapet ({F.PARAPET} m) is credited as the overtopping level, as on the design drawings.",
         "Flood-day trigger: set at the time of maximum pool of the no-failure twin rather than at a fixed level, so that a PMF peaking below the parapet still triggers the failure.",
         "Initial state: fill run and restart file instead of an initial-condition point; the result is the same start.",
-        "Sensitivity runs use a 36-hour window (the breach falls between hour 15 and 20) instead of 60 hours; the base runs keep 60 hours.",
+        "Flood-day sensitivity runs use a 36-hour window (the breach falls between hour 15 and 20) instead of 60 hours, the sunny-day runs 14 hours (breach at hour 2); the base flood-day runs keep 60 hours.",
     ])
 
     # ============================================================ 4 results: no failure
@@ -449,8 +461,12 @@ def content(d):
         d.FIG(chart("results_dam_hydrographs_sunny_width.png"), "Flow past the dam for the sunny-day breach-width runs (51, 85 and 153 m).", "hyd_sw", width_cm=15)
     if os.path.exists(chart("results_dam_hydrographs_sunny_coef.png")):
         d.FIG(chart("results_dam_hydrographs_sunny_coef.png"), "Flow past the dam for the two breach weir coefficients, sunny day.", "hyd_sc", width_cm=15)
+    if os.path.exists(chart("results_dam_hydrographs_sunny_time.png")):
+        d.FIG(chart("results_dam_hydrographs_sunny_time.png"), "Flow past the dam for the three formation times, sunny day (3, 6 and 18 min).", "hyd_st", width_cm=15)
     if os.path.exists(chart("results_dam_hydrographs_width.png")):
-        d.FIG(chart("results_dam_hydrographs_width.png"), "Flow past the dam for the flood-day breach-width runs.", "hyd_w", width_cm=15)
+        d.FIG(chart("results_dam_hydrographs_width.png"), "Flow past the dam for the flood-day breach-width check (85 and 119 m).", "hyd_w", width_cm=15)
+    if os.path.exists(chart("results_dam_hydrographs_time_flood.png")):
+        d.FIG(chart("results_dam_hydrographs_time_flood.png"), "Flow past the dam for the flood-day failure during the PMF and during the 10,000-year flood.", "hyd_f", width_cm=15)
     if os.path.exists(chart("results_peaks_and_areas.png")):
         d.FIG(chart("results_peaks_and_areas.png"), "Peak flow and flooded area of all runs.", "peaks", width_cm=15)
     d.P("The reading of these runs is in chapter 10. In short, the breach width sets the peak flow almost in proportion, the formation time matters little "
@@ -488,7 +504,7 @@ def content(d):
         "by the time it takes to detect the failure and to spread the alarm, which depend on the dam's instrumentation and the authorities' "
         "procedures and are not set by this study.")
     W = {sid: load_w(sid) for sid in BASE + SENS}; W = {k: v for k, v in W.items() if v}
-    fails = [sid for sid in ("S1D", "S1N", "S1D-W51", "S1D-W153", "S1D-C1.44", "S2D", "S2D-W51", "S2D-W119", "S2D-W153", "S2D-T18m", "S2D-T3m", "S2D-F10000") if sid in W]
+    fails = [sid for sid in ("S1D", "S1N", "S1D-W51", "S1D-W153", "S1D-C1.44", "S1D-T3m", "S1D-T18m", "S2D", "S2D-W119", "S2D-F10000") if sid in W]
     pmfs = [sid for sid in ("S3D", "S3D-F10000") if sid in W]
     PLACES = ["Gorge exit, start of the fan", "Head of the training dikes", "Qurayat, residential centre", "Shoreline, 'Outflow Sea' line", "Southern outlet, 'Outflow 2' line"]
     if W:
@@ -603,7 +619,7 @@ def content(d):
         s = load(sid) if sid not in ("Fill", "FillN") else None
         code = CODE[sid]
         if sid in ("Fill", "FillN"): rows.append([sid, code, "restart file written", "-", "-"]); continue
-        if s is None: rows.append([sid, code, "not run: dikes immaterial (chapter 3)" if dropped(sid) else "pending", "-", "-"]); continue
+        if s is None: rows.append([sid, code, DROPPED.get(sid, "not run: dikes immaterial (chapter 3)" if dropped(sid) else "pending"), "-", "-"]); continue
         rows.append([sid, code, s.get("solution", "-"), run_time(code, s), n2(s.get("max_courant"))])
     d.TBL(["Scenario", "HEC-RAS plan", "Solver status", "Run time", "Max Courant"], rows, "Run register.", "reg", col_w=[1.2, 1.0, 2.2, 1.0, 1.0], font_sz=FS)
     d.H1("Appendix B: Model Files", numbered=False)

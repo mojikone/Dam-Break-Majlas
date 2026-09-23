@@ -206,6 +206,7 @@ FIXED_P = {"Fill": "p27", "FillN": "p43", "S1D": "p28", "S1N": "p29", "S2D": "p3
 # suffix = the one thing changed from the base run: W<width m>, T<formation time>, C<weir coefficient>, F<flood return period>.
 
 RESTART_N = "Majlas.p43.31DEC1999 2400.rst"
+FIXED_P["S1D-T3m"] = "p44"; FIXED_P["S1D-T18m"] = "p45"    # formation-time sensitivity moved to the sunny day (user, 2026-09-23 08:50): 1 h runs instead of 15 h
 FIXED_P["S3D-F10000"] = "p48"          # 10,000-yr flood, no failure, dikes: gives the routed level and the trigger time for S2D-F10000
 WINDOW["flood_sens"] = ("01jan2000,0000", "02jan2000,1200")   # 36 h for the sensitivity runs: breach near the PMF peak (hour 15-20), 16 h after
 # Flood-day failure = failure at the maximum pool (FERC/USACE convention for a concrete gravity dam: the critical load is the peak
@@ -277,6 +278,8 @@ def build_all(restart_name="Majlas.p27.31DEC1999 2400.rst", rebuild=False, only=
         ("S2D-T18m", "S2D-T18m flood day, breach time 18 min", "D", u_pmp, WINDOW["flood_sens"], True, dict(trigger_ws=F.PMF_LEVEL, tform=0.3)),
         ("S2D-T3m", "S2D-T3m flood day, breach time 3 min", "D", u_pmp, WINDOW["flood_sens"], True, dict(trigger_ws=F.PMF_LEVEL, tform=0.05)),
         ("S1D-C1.44", "S1D-C1.44 sunny day, breach coefficient 1.44", "D", u_sun, WINDOW["sunny"], True, dict(trigger_time=BREACH_AT, coef=1.44)),
+        ("S1D-T3m", "S1D-T3m sunny day, breach time 3 min", "D", u_sun, WINDOW["sunny"], True, dict(trigger_time=BREACH_AT, tform=0.05)),
+        ("S1D-T18m", "S1D-T18m sunny day, breach time 18 min", "D", u_sun, WINDOW["sunny"], True, dict(trigger_time=BREACH_AT, tform=0.3)),
         ("S2D-F10000", "S2D-F10000 flood day, 10000-yr flood", "D", u_10k, WINDOW["flood_sens"], True, dict(trigger_ws=F.PMF_LEVEL)),
         ("S3D-F10000", "S3D-F10000 10000-yr flood no failure, dikes", "D", u_10k, WINDOW["flood_sens"], False, {}),
     ]

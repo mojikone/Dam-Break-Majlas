@@ -220,3 +220,8 @@ pywintypes.com_error: (-2147023170, 'The remote procedure call failed.', None, N
 2026-09-23 04:19  fill finished; restart file present
 2026-09-23 04:19  START p40 S2D-T3m flood day, breach time 3 min
 2026-09-23 04:19  p40 breach trigger set from p32: 01JAN2000 1515 (pool 96.06 m at 15.25 h)
+2026-09-23 08:39  STOPPED p39 S2D-T18m at 36 % and p40 S2D-T3m at 24 %, dispatcher stopped: user decision 08:50, formation-time sensitivity moves to the sunny day (p44 S1D-T3m, p45 S1D-T18m); S2D-W51 and S2D-W153 dropped
+2026-09-23 08:40  fill finished; restart file present
+2026-09-23 08:40  START p45 S1D-T18m sunny day, breach time 18 min
+2026-09-23 08:41  fill finished; restart file present
+2026-09-23 08:41  START p44 S1D-T3m sunny day, breach time 3 min

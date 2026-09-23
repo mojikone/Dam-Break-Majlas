@@ -4,7 +4,7 @@ Dam break analysis of the Wadi Majlas Flood Protection Dam (Wilayat Qurayat, Mus
 
 This file is the entry point to the repository and is kept up to date whenever something meaningful changes (a result, a decision, a deliverable). Two more live documents carry the detail: [`W2/README.md`](W2/README.md) (what the working folder holds and how to run it) and [`W2/PROJECT_STATE.md`](W2/PROJECT_STATE.md) (every decision, number and open item, dated).
 
-*Last updated: 2026-09-23 07:30. Campaign status: base scenarios complete, six sensitivity runs still computing, interim report 62 pages.*
+*Last updated: 2026-09-23 08:50. Campaign status: base scenarios complete; sensitivity set re-pointed (breach mechanics on the sunny day, see below); S3D-F10000, S1D-T3m and S1D-T18m computing, S2D-F10000 to follow; interim report 62 pages.*
 
 ## The dam in brief
 
@@ -24,7 +24,7 @@ Roller-compacted concrete gravity dam on a straight axis, 2 km upstream of Quray
    Each was planned with the training dikes in place (D) and without them (N).
 3. **Incremental reading.** A flood-day failure is read against its no-failure twin: only what the failure adds to the flood counts against the dam. The sunny-day failure stands alone.
 4. **Dikes decision gate.** S1N and S1D were run first; they differ by 0.4 % in flooded area and people at risk, so the flood-day pair without dikes (S3N, S2N) was not run and the with-dikes runs stand for both conditions (`W2/04_data/dikes_decision.json`).
-5. **Sensitivity, one parameter at a time.** Breach width 51, 119 and 153 m (three, seven and nine monoliths), formation time 3 and 18 min, weir coefficient 1.44, and the 10,000-year flood instead of the PMF.
+5. **Sensitivity, one parameter at a time.** Breach width 51 and 153 m (three and nine monoliths), formation time 3 and 18 min and weir coefficient 1.44 on the sunny day, where the dam's contribution stands alone and a run takes an hour; one width check on the flood day (119 m, seven monoliths); and the 10,000-year flood instead of the PMF, without and with failure. The flood-day width and formation-time runs first planned were stopped on 23 September once the sunny-day family had answered the question (a flood-day run costs about 15 h of computing against 1 h).
 6. **Consequences.** Depth, velocity and their product on a 2 m grid, AIDR hazard classes H1–H6, people (GHS-POP 2025) and plots (flood-risk land-use layer) in the flooded area, and, because the hazard maps alone make the PMF look as bad as a failure, **warning time**: who is reached, and when, timed from each scenario's own trigger.
 
 ## Models and tools
@@ -64,7 +64,7 @@ Peak flow at the dam, flooded area (depth over 0.3 m, reservoir excluded), peopl
 | S1D-W153, breach 153 m | 66,955 | 17.4 | 24,148 | 10.5 | 21,900 |
 | S1D-C1.44, weir coefficient 1.44 | 42,384 | 16.9 | 22,876 | 8.5 | 13,900 |
 
-What they mean: the breach width sets the peak almost in proportion, the flooded plain barely moves; the failure at the PMF peak adds depth and force rather than extent; and time, not extent, separates the scenarios: the sunny-day wave reaches the residential centre of Qurayat in 15 minutes and the shoreline in 22, the PMF without failure takes about an hour to reach the town and twelve to reach everyone it will reach. Still computing: S3D-F10000, S2D-F10000, S2D-W51, S2D-W153, S2D-T18m, S2D-T3m.
+What they mean: the breach width sets the peak almost in proportion, the flooded plain barely moves; the failure at the PMF peak adds depth and force rather than extent; and time, not extent, separates the scenarios: the sunny-day wave reaches the residential centre of Qurayat in 15 minutes and the shoreline in 22, the PMF without failure takes about an hour to reach the town and twelve to reach everyone it will reach. Still computing: S3D-F10000, S1D-T3m, S1D-T18m; S2D-F10000 follows S3D-F10000. Dropped: S2D-W51, S2D-W153, S2D-T18m, S2D-T3m.
 
 Deliverables: `W2/05_report/R0/Wadi Majlas Dam Break Analysis Report Rev00.pdf` (interim build, rebuilt from the results at the end of the campaign), maps in `W2/02_figures/maps/results/`, charts in `W2/02_figures/charts/`, per-plan results in `W2/04_data/results/<plan>/` (`summary.json`, `consequences.json`, `warning.json`, `connection.csv`, boundary series, flood outline). The methodology report Rev 00 and the HEC-RAS run sheet are in `W1/05_report/R0/`.
 

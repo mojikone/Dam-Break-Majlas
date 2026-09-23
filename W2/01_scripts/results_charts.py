@@ -12,7 +12,7 @@ C = dict(blue="#2a78d6", orange="#eb6834", aqua="#1baf7a", yellow="#eda100", mag
 plt.rcParams.update({"font.family": "Arial", "font.size": 9, "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True, "grid.color": C["grid"],
                      "grid.linewidth": 0.6, "legend.frameon": False, "savefig.dpi": 300, "savefig.bbox": "tight", "savefig.facecolor": "white"})
 thousands = FuncFormatter(lambda x, p: f"{x:,.0f}")
-ORDER = ["p32", "p33", "p30", "p31", "p28", "p29", "p34", "p35", "p36", "p37", "p38", "p39", "p40", "p41", "p48", "p42"]
+ORDER = ["p32", "p33", "p30", "p31", "p28", "p29", "p34", "p35", "p36", "p37", "p38", "p39", "p40", "p41", "p44", "p45", "p48", "p42"]
 COLORS = [C["blue"], C["orange"], C["aqua"], C["yellow"], C["magenta"], C["green"] if "green" in C else "#008300", C["violet"], C["red"]]
 
 LEGEND = {"p28": "S1D: sunny day, base breach 85 m in 6 min, C = 1.66", "p29": "S1N: sunny day, base breach, no dikes",
@@ -20,11 +20,13 @@ LEGEND = {"p28": "S1D: sunny day, base breach 85 m in 6 min, C = 1.66", "p29": "
           "p32": "S3D: PMF, no failure", "p33": "S3N: PMF, no failure, no dikes",
           "p34": "S2D-W51: breach 51 m", "p35": "S2D-W119: breach 119 m", "p36": "S2D-W153: breach 153 m",
           "p37": "S1D-W51: breach 51 m", "p38": "S1D-W153: breach 153 m", "p39": "S2D-T18m: breach in 18 min", "p40": "S2D-T3m: breach in 3 min",
-          "p41": "S1D-C1.44: C = 1.44", "p42": "S2D-F10000: 10,000-yr flood, base breach", "p48": "S3D-F10000: 10,000-yr flood, no failure"}
+          "p41": "S1D-C1.44: C = 1.44", "p42": "S2D-F10000: 10,000-yr flood, base breach", "p48": "S3D-F10000: 10,000-yr flood, no failure",
+          "p44": "S1D-T3m: sunny day, breach in 3 min", "p45": "S1D-T18m: sunny day, breach in 18 min"}
 
 SHORT = {"p28": "S1D: sunny day, base breach", "p29": "S1N: sunny day, no dikes", "p30": "S2D: PMF failure, base breach",
          "p35": "S2D-W119: breach 119 m", "p34": "S2D-W51: breach 51 m", "p36": "S2D-W153: breach 153 m", "p37": "S1D-W51: breach 51 m",
          "p38": "S1D-W153: breach 153 m", "p39": "S2D-T18m: breach in 18 min", "p40": "S2D-T3m: breach in 3 min", "p41": "S1D-C1.44: C = 1.44",
+         "p44": "S1D-T3m: breach in 3 min", "p45": "S1D-T18m: breach in 18 min",
          "p32": "S3D: PMF, no failure", "p48": "S3D-F10000: 10,000-yr, no failure", "p42": "S2D-F10000: 10,000-yr failure"}   # axis labels of the bar chart
 
 def name(code):
@@ -162,7 +164,7 @@ def chart_warning(fname="results_people_vs_time.png"):
         p = os.path.join(RES, code, "warning.json"); return json.load(open(p)) if os.path.exists(p) else None
     left = [("p28", C["blue"], "-", 2.0), ("p29", C["blue"], "--", 1.2), ("p37", C["aqua"], "-", 1.2), ("p38", C["yellow"], "-", 1.2),
             ("p30", C["orange"], "-", 2.0), ("p35", C["orange"], "--", 1.2), ("p34", C["red"], "--", 1.0), ("p36", C["magenta"], "--", 1.0),
-            ("p40", C["violet"], ":", 1.0), ("p39", C["violet"], "--", 1.0), ("p42", C["ink2"], "--", 1.0)]
+            ("p44", C["violet"], ":", 1.0), ("p45", C["violet"], "--", 1.0), ("p42", C["ink2"], "--", 1.0)]
     right = [("p32", C["blue"], "-", 2.0), ("p48", C["blue"], "--", 1.2)]
     fig, axes = plt.subplots(1, 2, figsize=(6.3, 3.0), gridspec_kw={"width_ratios": [1.3, 1]})
     for ax, rows, scale, xl, xlab in ((axes[0], left, 60.0, (0, 120), "Minutes after the breach"), (axes[1], right, 1.0, (0, 18), "Hours after the start of the storm")):
@@ -186,8 +188,9 @@ if __name__ == "__main__":
     chart_dam_hydrographs([c for c in have if c in ("p28", "p29")], "results_dam_hydrographs_sunny_dikes.png", xlim=(1.5, 6))     # S1D vs S1N
     chart_dam_hydrographs([c for c in have if c in ("p28", "p37", "p38")], "results_dam_hydrographs_sunny_width.png", xlim=(1.5, 6))
     chart_dam_hydrographs([c for c in have if c in ("p28", "p41")], "results_dam_hydrographs_sunny_coef.png", xlim=(1.5, 6))
-    chart_dam_hydrographs([c for c in have if c in ("p30", "p34", "p35", "p36")], "results_dam_hydrographs_width.png")
-    chart_dam_hydrographs([c for c in have if c in ("p30", "p39", "p40", "p42")], "results_dam_hydrographs_time_flood.png")
+    chart_dam_hydrographs([c for c in have if c in ("p28", "p44", "p45")], "results_dam_hydrographs_sunny_time.png", xlim=(1.5, 6))   # formation time, sunny day (2026-09-23)
+    chart_dam_hydrographs([c for c in have if c in ("p30", "p35")], "results_dam_hydrographs_width.png")                              # the one flood-day width check
+    chart_dam_hydrographs([c for c in have if c in ("p30", "p42")], "results_dam_hydrographs_time_flood.png")                         # PMF against the 10,000-yr flood
     chart_dam_hydrographs([c for c in have if c in ("p32", "p48")], "results_dam_hydrographs_nofail_floods.png")
     chart_pool([c for c in have if c in ("p32", "p30", "p28")], "results_pool_levels.png")
     chart_peaks(have, "results_peaks_and_areas.png")

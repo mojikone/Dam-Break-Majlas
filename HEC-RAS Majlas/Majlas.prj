@@ -1,5 +1,5 @@
 Proj Title=Majlas
-Current Plan=p40
+Current Plan=p44
 Default Exp/Contr=0.3,0.1
 SI Units
 Geom File=g04
@@ -83,6 +83,8 @@ Plan File=p41
 Plan File=p42
 Plan File=p43
 Plan File=p48
+Plan File=p44
+Plan File=p45
 Y Axis Title=Elevation
 X Axis Title(PF)=Main Channel Distance
 X Axis Title(XS)=Station

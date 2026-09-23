@@ -1,0 +1,57 @@
+# Wadi Majlas dam break analysis: what stays out of the public repository
+# (large binaries above GitHub's limits, model results that are rebuilt from the model, third-party documents)
+
+# HEC-RAS: results, restart files, terrain, logs and the parallel run copies (the text model files are versioned)
+*.hdf
+*.rst
+*.dss
+*.bco*
+*.computeMsgs.txt
+*.tmp.hdf
+HEC-RAS Majlas/Terrain/
+HEC-RAS Majlas/Land Classification/
+HEC-RAS Majlas_run*/
+HEC-RAS Majlas_test*/
+
+# HEC-HMS: terrain grids, results and caches (basin, met, control and run files are versioned)
+HEC_HMS_Majlas/terrain/
+HEC_HMS_Majlas/**/output/
+HEC_HMS_Majlas/**/*.pkl
+HEC_HMS_Majlas/**/*.log
+HEC_HMS_Majlas/**/*.tif
+
+# Data: terrain rasters, archives, backups and third-party documents
+Data/Terrain/
+Data/Backup/
+Data/New folder/
+*.rar
+*.zip
+Data/09-Dam Break Analysis Report/
+Data/*.pptx
+Data/*.pdf
+~$*
+
+# Products rebuilt by the scripts: 2 m rasters (170 MB each) and page renders; the JSON/CSV summaries are versioned
+W2/04_data/results/**/*.tif
+W2/04_data/results/**/quicklook_*.png
+W2/05_report/_review*/
+W1/05_report/_review*/
+W2/02_figures/maps/**/*.tmp
+
+# The W2 report docx (100 MB of embedded maps) is above the size limit and not versioned; its PDF and the W1 documents are
+W2/05_report/**/*.docx
+
+# HEC-HMS gridded data and database (large); the model text files are enough to re-run with the shared data
+HEC_HMS_Majlas/Hydrology Data/
+HEC_HMS_Majlas/results/
+*.access
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# HEC-RAS stored map folders (RAS Mapper layers of the flood-protection study and of the dam-break plans, rebuilt on demand)
+HEC-RAS Majlas/*/
+# report build directory (unpacked template) and page renders
+W2/05_report/_build/

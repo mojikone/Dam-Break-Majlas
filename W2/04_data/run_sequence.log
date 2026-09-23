@@ -237,3 +237,6 @@ pywintypes.com_error: (-2147023170, 'The remote procedure call failed.', None, N
 2026-09-23 10:49  END   p44 ok=True 127 min | Unsteady Finished Successfully | volume error 0.00696336617693305
 2026-09-23 10:49  PRODUCTS p44: peak 49525.26953125 m3/s at 2.083333333333419 h; area 17.027752 km2
 2026-09-23 10:49  sequence complete
+2026-09-23 12:03  END   p42 ok=True 106 min | Unsteady Finished Successfully | volume error 0.0006502598407678306
+2026-09-23 12:04  PRODUCTS p42: peak 58751.9375 m3/s at 15.666666666700255 h; area 26.387128 km2
+2026-09-23 12:04  sequence complete

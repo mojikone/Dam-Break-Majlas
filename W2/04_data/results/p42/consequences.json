@@ -1,0 +1,19 @@
+{
+  "plan": "p42",
+  "par_total": 43376.253654235974,
+  "par_depth_gt1m": 33534.52378992364,
+  "par_H1": 0.0,
+  "par_H2": 2241.875886656344,
+  "par_H3": 493.22122223488986,
+  "par_H4": 4639.054673586972,
+  "par_H5": 11988.398210718296,
+  "par_H6": 24013.70366103947,
+  "par_H4plus": 40641.15654534474,
+  "plots_total": 3293,
+  "plots_Residential": 1992,
+  "plots_Agriculture": 1031,
+  "plots_Commercial": 262,
+  "plots_Industry": 5,
+  "incremental_area_km2_gt0.6m": 18.247468,
+  "incremental_max_m": 35.38930130004883
+}

@@ -2,3 +2,52 @@
 2026-09-23 10:17  START p42 S2D-F10000 flood day, 10000-yr flood
 2026-09-23 10:17  p42 breach trigger set from p48: 01JAN2000 1530 (pool 93.75 m at 15.50 h)
 Plan_SetCurrent -> (True, 'S2D-F10000 flood day, 10000-yr flood') | current plan file: Majlas.p42 | geom: Majlas.g02 | unsteady: Majlas.u29
+2026-09-23 12:03  END   p42 ok=True 106 min | Unsteady Finished Successfully | volume error 0.0006502598407678306
+{
+ "plan": "p42",
+ "plan_title": "S2D-F10000 flood day, 10000-yr flood",
+ "solution": "Unsteady Finished Successfully",
+ "computation_time": "01:45:20",
+ "unstable_at": null,
+ "volume_error_pct": 0.0006502598407678306,
+ "volume_in_1000m3": 400150.625,
+ "volume_out_1000m3": 492577.65625,
+ "volume_end_1000m3": 9271.3447265625,
+ "volume_start_1000m3": 101701.6328125,
+ "max_courant": 0.8858933448791504,
+ "max_volume_error_step": 0.0,
+ "peak_total_flow_m3s": 58751.9375,
+ "peak_time_h": 15.666666666700255,
+ "peak_stage_hw": 80.02132415771484,
+ "peak_stage_tw": 73.01470184326172,
+ "breach_started": true,
+ "breach_final_width": 84.99988555908203,
+ "breach_peak_flow_m3s": 58749.40234375,
+ "max_stage_hw": 93.74674224853516,
+ "breach_start_h": 15.583333333366543,
+ "stage_hw_at_breach": 84.51774597167969,
+ "volume_through_dam_Mm3": 383.8240051269531,
+ "reference_time_h_for_arrival": 15.583333333366543,
+ "inundated_area_km2_gt0.3m": 26.387128,
+ "inundated_area_km2_gt0.3m_incl_reservoir": 31.43384,
+ "max_depth_m": 62.35267512504416,
+ "max_depth_incl_reservoir_m": 74.42006646432381,
+ "max_depth_plain_m": 13.092183241630078,
+ "max_depth_plain_p99_m": 9.660161605369092,
+ "max_velocity_ms": 13.667078971862793,
+ "max_dv_m2s": 621.265380859375,
+ "arrival_h_median": 0.0,
+ "arrival_h_max": 4.255401611328125,
+ "reservoir_area_km2": 5.070104,
+ "pixels": 42381370,
+ "hazard_area_km2": {
+  "H1": 0.656672,
+  "H2": 0.731716,
+  "H3": 0.566188,
+  "H4": 2.131664,
+  "H5": 6.068216,
+  "H6": 17.421568
+ }
+}
+2026-09-23 12:04  PRODUCTS p42: peak 58751.9375 m3/s at 15.666666666700255 h; area 26.387128 km2
+2026-09-23 12:04  sequence complete

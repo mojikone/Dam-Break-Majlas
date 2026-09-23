@@ -168,5 +168,61 @@ def analyse(plan):
     return out
 
 
+# ---------------------------------------------------------------- isolines for the combined maps (user, 2026-09-23 11:40)
+ISO_FAIL = [(5 / 60, "5 min"), (10 / 60, "10 min"), (0.25, "15 min"), (0.5, "30 min"), (1.0, "1 h")]      # after the breach
+ISO_PMF = [(1.0, "1 h"), (2.0, "2 h"), (3.0, "3 h"), (6.0, "6 h"), (12.0, "12 h")]                        # after the start of the storm
+HAZ_LINES = [(3.5, "H4"), (5.5, "H6")]          # boundaries of 'unsafe on foot' (H4 and worse) and 'buildings fail' (H6)
+HAZ_LINES_ALL = [(1.5, "H2"), (2.5, "H3"), (3.5, "H4"), (4.5, "H5"), (5.5, "H6")]   # every class boundary (line = where that class begins)
+
+
+def _contours(field, xs, ys, levels, min_len=300.0):
+    import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+    feats = []; fig, ax = plt.subplots(); cs = ax.contour(xs, ys, np.ma.masked_invalid(field), levels=[l for l, _ in levels])
+    paths = cs.get_paths() if hasattr(cs, "get_paths") else [c.get_paths() for c in cs.collections]
+    for (lev, lab), path in zip(levels, paths):
+        polys = path.to_polygons(closed_only=False) if hasattr(path, "to_polygons") else [q for pp in path for q in pp.to_polygons(closed_only=False)]
+        for poly in polys:
+            pts = [(float(x), float(y)) for x, y in poly]
+            L = sum(np.hypot(pts[i + 1][0] - pts[i][0], pts[i + 1][1] - pts[i][1]) for i in range(len(pts) - 1))
+            if L < min_len: continue
+            feats.append({"type": "Feature", "properties": {"level": lev, "label": lab}, "geometry": {"type": "LineString", "coordinates": pts}})
+    plt.close(fig); return feats
+
+
+def _block(a, tr, k, how):
+    """2 m -> 2k m by block minimum (arrival: earliest) or maximum (hazard: worst); dry stays NaN"""
+    ny, nx = a.shape[0] // k * k, a.shape[1] // k * k; b = a[:ny, :nx].reshape(ny // k, k, nx // k, k)
+    if how == "min": m = np.nanmin(np.where(np.isnan(b), np.inf, b), axis=(1, 3)); m[~np.isfinite(m)] = np.nan
+    else: m = np.nanmax(np.where(np.isnan(b), -np.inf, b), axis=(1, 3)); m[~np.isfinite(m)] = np.nan
+    xs = tr.c + (np.arange(m.shape[1]) * k + k / 2) * tr.a; ys = tr.f + (np.arange(m.shape[0]) * k + k / 2) * tr.e
+    return m, xs, ys
+
+
+def isolines(plan, version="v3"):
+    """isochrones_<version>.geojson (arrival of the 0.3 m rise; failure wave for a flood-day failure) and hazard_lines_<version>.geojson
+    (H4 and H6 boundaries) in the plan's results folder, EPSG:32640, at 10 m"""
+    from scipy import ndimage
+    d = os.path.join(RES, plan); s = json.load(open(os.path.join(d, "summary.json")))
+    fail = s.get("breach_start_h") is not None
+    arr, tr = read(os.path.join(d, "warning_arrival_h.tif")); m, xs, ys = _block(arr, tr, 5, "min")
+    if fail:
+        f = ndimage.generic_filter(np.where(np.isnan(m), np.inf, m), np.min, size=3); f[~np.isfinite(f)] = np.nan; f = np.where(np.isfinite(m), f, np.nan)
+        iso = _contours(f, xs, ys, ISO_FAIL)
+    else:   # the PMF arrival is a rain-on-grid patchwork: heavy smoothing, and only the long lines survive
+        f = ndimage.median_filter(np.where(np.isnan(m), 99.0, m), size=15); f = np.where(np.isfinite(m), f, np.nan)
+        iso = _contours(f, xs, ys, ISO_PMF, min_len=2000.0)
+    hz, _ = read(os.path.join(d, "hazard_aidr.tif")); hz = np.where((hz > 0) & np.isfinite(arr), hz, np.nan); h, xs2, ys2 = _block(hz, tr, 5, "max")   # downstream only: the reservoir carries no arrival
+    h = ndimage.median_filter(np.nan_to_num(h, nan=0.0), size=3).astype(float)     # dry = class 0, so every outline closes along the flood edge
+    lines = _contours(h, xs2, ys2, HAZ_LINES, min_len=800.0)          # small islands of a class only clutter the map
+    lines_all = _contours(h, xs2, ys2, HAZ_LINES_ALL, min_len=800.0)
+    crs = {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::32640"}}
+    json.dump({"type": "FeatureCollection", "crs": crs, "features": iso}, open(os.path.join(d, f"isochrones_{version}.geojson"), "w"))
+    json.dump({"type": "FeatureCollection", "crs": crs, "features": lines}, open(os.path.join(d, f"hazard_lines_{version}.geojson"), "w"))
+    json.dump({"type": "FeatureCollection", "crs": crs, "features": lines_all}, open(os.path.join(d, f"hazard_lines_all_{version}.geojson"), "w"))
+    print(plan, "isochrones", {lab: sum(1 for x in iso if x["properties"]["label"] == lab) for _, lab in (ISO_FAIL if fail else ISO_PMF)},
+          "hazard lines", {lab: sum(1 for x in lines if x["properties"]["label"] == lab) for _, lab in HAZ_LINES})
+
+
 if __name__ == "__main__":
-    for code in sys.argv[1:]: analyse(code)
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    for code in args: (isolines(code) if "--lines" in sys.argv else analyse(code))

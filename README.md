@@ -4,7 +4,7 @@ Dam break analysis of the Wadi Majlas Flood Protection Dam (Wilayat Qurayat, Mus
 
 This file is the entry point to the repository and is kept up to date whenever something meaningful changes (a result, a decision, a deliverable). Two more live documents carry the detail: [`W2/README.md`](W2/README.md) (what the working folder holds and how to run it) and [`W2/PROJECT_STATE.md`](W2/PROJECT_STATE.md) (every decision, number and open item, dated).
 
-*Last updated: 2026-09-23 11:00. Campaign status: all runs done except S2D-F10000 (computing, ends about 16:00); interim report rebuilt with the sunny-day formation-time family and the 10,000-year flood.*
+*Last updated: 2026-09-23 12:15. Campaign complete: 14 runs (4 base, 8 sensitivity, 2 fills); final report build of the same time.*
 
 ## The dam in brief
 
@@ -66,8 +66,9 @@ Peak flow at the dam, flooded area (depth over 0.3 m, reservoir excluded), peopl
 | S1D-T3m, breach formed in 3 min | 49,525 | 17.0 | 23,212 | 8.7 | 18,100 |
 | S1D-T18m, breach formed in 18 min | 42,856 | 17.0 | 23,211 | 8.7 | 4,900 |
 | S3D-F10000, 10,000-yr flood without failure | 12,386 (pool 93.75 m) | 24.8 | 39,083 | 8.7 | 0 (360 within 3 h) |
+| S2D-F10000, failure at the 10,000-yr flood peak | 58,752 | 26.4 | 43,376 | 17.4 | 24,300 (failure wave over the flood) |
 
-What they mean: the breach width sets the peak almost in proportion, the flooded plain barely moves; the formation time changes the peak by a tenth either way and nothing of the extent, but it sets how many people the wave reaches in the first quarter hour (18,100 for a 3-minute breach, 4,900 for 18 minutes); the failure at the PMF peak adds depth and force rather than extent; and time, not extent, separates the scenarios: the sunny-day wave reaches the residential centre of Qurayat in 15 minutes and the shoreline in 22, the PMF without failure takes about an hour to reach the town and twelve to reach everyone it will reach. Still computing: S2D-F10000 (started 10:17, breach at storm hour 15:30 on the 93.75 m pool). Dropped: S2D-W51, S2D-W153, S2D-T18m, S2D-T3m.
+What they mean: the breach width sets the peak almost in proportion, the flooded plain barely moves; the formation time changes the peak by a tenth either way and nothing of the extent, but it sets how many people the wave reaches in the first quarter hour (18,100 for a 3-minute breach, 4,900 for 18 minutes); the failure at the PMF peak adds depth and force rather than extent; and time, not extent, separates the scenarios: the sunny-day wave reaches the residential centre of Qurayat in 15 minutes and the shoreline in 22, the PMF without failure takes about an hour to reach the town and twelve to reach everyone it will reach. Campaign complete 2026-09-23 12:04. Dropped: S2D-W51, S2D-W153, S2D-T18m, S2D-T3m (breach mechanics tested on the sunny day instead).
 
 Deliverables: `W2/05_report/R0/Wadi Majlas Dam Break Analysis Report Rev00.pdf` (interim build, rebuilt from the results at the end of the campaign), maps in `W2/02_figures/maps/results/`, charts in `W2/02_figures/charts/`, per-plan results in `W2/04_data/results/<plan>/` (`summary.json`, `consequences.json`, `warning.json`, `connection.csv`, boundary series, flood outline). The methodology report Rev 00 and the HEC-RAS run sheet are in `W1/05_report/R0/`.
 

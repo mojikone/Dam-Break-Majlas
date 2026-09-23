@@ -176,6 +176,129 @@ def map_warning_arrival(code):
     export(f"{sid} wave town", f"{sid}: arrival of the failure wave over the PMF (0.3 m extra depth)", over + [arr], over + [arr], "town", rows, subtitle=sub)
     prj.write()
 
+def map_hazard_arrival(code, iso="isochrones_v1.geojson", wave=False):
+    """hazard class (AIDR palette) with arrival isochrones on top (15 min, 30 min, 1 h, 2 h after the breach; for a flood-day failure the
+    arrival of the failure wave over the PMF). Lines from ras_warning products (isochrones_*.geojson); user request 2026-09-23 11:10"""
+    d = RESULTS + code + "/"
+    if not os.path.exists(d + iso): print("no isochrones for", code); return
+    s = json.load(open(d + "summary.json")); w = json.load(open(d + "warning.json")) if os.path.exists(d + "warning.json") else {}
+    axis = vector("Straight dam axis (indicative)", GIS + "dam_axis_straight_indicative.shp", QgsLineSymbol.createSimple({"color": "#000000", "width": "1.4"}))
+    dikes = vector("Training dikes (200-yr design)", BASE + "Hydraulic/Flood Protection/Risk/Data/SHP/Dykes.shp", QgsLineSymbol.createSimple({"color": "#eb6834", "width": "0.9"}))
+    label_ = s.get("plan_title", code); sid = label_.split()[0]
+    haz = raster(f"{sid} hazard AIDR", d + "hazard_aidr.tif"); style_hazard(haz)
+    sym = QgsLineSymbol.createSimple({"color": "#111111", "width": "0.8", "line_style": "solid"})
+    from qgis.core import QgsSimpleLineSymbolLayer
+    sym.insertSymbolLayer(0, QgsSimpleLineSymbolLayer(QColor(255, 255, 255), 1.9))        # white casing so the line reads on red and yellow
+    iso_l = vector(f"{sid} arrival isochrones", d + iso, sym)
+    label(iso_l, field="label", size=9, placement="line", bold=True, color="#111111", all_labels=False)
+    desc = label_[len(sid):].strip(" ,").replace(", no dikes", ", without dikes").replace(", dikes", ", with dikes")
+    pc = w.get("people_cum", []); bands = w.get("bands_h", [])
+    rows = [["Scenario", f"{sid} ({desc})"], ["Peak flow at dam", f"{s.get('peak_total_flow_m3s', 0):,.0f} m3/s"],
+            ["Isochrones", "arrival of the failure wave over the PMF" if wave else "arrival of a 0.3 m rise after the breach"]]
+    if pc: rows += [["People reached within 15 min", f"{pc[bands.index(0.25)]:,.0f}"], ["People reached within 1 h", f"{pc[bands.index(1.0)]:,.0f}"]]
+    over = [axis] if sid.split("-")[0].endswith("N") else [axis, dikes]
+    sub = f"{label_} | Wadi Majlas Flood Protection Dam, Dam Break Analysis | Renardet S.A. & Partners, 2026"
+    what = "hazard class (AIDR) with arrival isochrones of the failure wave" if wave else "hazard class (AIDR) with arrival isochrones"
+    export(f"{sid} hazard-arrival town", f"{sid}: {what}", over + [iso_l, haz], over + [haz, iso_l], "town", rows, subtitle=sub)
+    prj.write()
+
+def style_arrival_steps(l, steps):
+    """arrival fill: red = least warning, fading with time to light blue (user, 2026-09-23 11:45)"""
+    sh = QgsRasterShader(); r = QgsColorRampShader(); r.setColorRampType(QgsColorRampShader.Discrete)
+    r.setColorRampItemList([QgsColorRampShader.ColorRampItem(v, QColor(c), lab) for v, c, lab in steps]); sh.setRasterShaderFunction(r)
+    rr = QgsSingleBandPseudoColorRenderer(l.dataProvider(), 1, sh); rr.setOpacity(0.85); l.setRenderer(rr)
+
+ARRIVAL_FAIL = [(5 / 60, "#7f0000", "0 - 5 min"), (10 / 60, "#b30000", "5 - 10 min"), (0.25, "#e8432f", "10 - 15 min"), (0.5, "#f28e2b", "15 - 30 min"),
+                (1.0, "#f2d13d", "30 - 60 min"), (1000, "#9ecae1", "over 1 h")]
+ARRIVAL_PMF = [(1.0, "#7f0000", "0 - 1 h"), (2.0, "#b30000", "1 - 2 h"), (3.0, "#e8432f", "2 - 3 h"), (6.0, "#f28e2b", "3 - 6 h"), (12.0, "#f2d13d", "6 - 12 h"),
+               (1000, "#9ecae1", "over 12 h")]
+
+def hazard_lines(sid, path):
+    """H6 and H4 boundaries as two line layers (solid and dashed, white casing), from hazard_lines_*.geojson"""
+    from qgis.core import QgsSimpleLineSymbolLayer
+    out = []
+    for lab, name, style in (("H6", f"{sid} H6 boundary: buildings fail", "solid"), ("H4", f"{sid} H4 boundary: unsafe on foot", "dash")):
+        sym = QgsLineSymbol.createSimple({"color": "#ffffff", "width": "0.9" if lab == "H6" else "0.8", "line_style": style})
+        sym.insertSymbolLayer(0, QgsSimpleLineSymbolLayer(QColor(0, 0, 0), 2.0 if lab == "H6" else 1.8))          # white on a black casing
+        l = vector(name, path, sym); l.setSubsetString(f"\"label\" = '{lab}'"); out.append(l)
+        label(l, field="label", size=8, placement="line", bold=True, color="#000000", all_labels=False)
+    return out
+
+def map_arrival_hazard(code, version="v3"):
+    """one map per scenario: for a failure, the arrival fill (0.3 m rise; the failure wave over the PMF on a flood day) with the H4 and H6
+    boundaries on top; for the flood without failure, the hazard fill with arrival isochrones (hours). User, 2026-09-23 11:45."""
+    d = RESULTS + code + "/"
+    if not os.path.exists(d + f"hazard_lines_{version}.geojson"): print("no lines for", code); return
+    s = json.load(open(d + "summary.json")); w = json.load(open(d + "warning.json")) if os.path.exists(d + "warning.json") else {}
+    axis = vector("Straight dam axis (indicative)", GIS + "dam_axis_straight_indicative.shp", QgsLineSymbol.createSimple({"color": "#000000", "width": "1.4"}))
+    dikes = vector("Training dikes (200-yr design)", BASE + "Hydraulic/Flood Protection/Risk/Data/SHP/Dykes.shp", QgsLineSymbol.createSimple({"color": "#eb6834", "width": "0.9"}))
+    label_ = s.get("plan_title", code); sid = label_.split()[0]; fail = s.get("breach_start_h") is not None; wave = fail and s["breach_start_h"] > 5
+    desc = label_[len(sid):].strip(" ,").replace(", no dikes", ", without dikes").replace(", dikes", ", with dikes")
+    over = [axis] if sid.split("-")[0].endswith("N") else [axis, dikes]
+    sub = f"{label_} | Wadi Majlas Flood Protection Dam, Dam Break Analysis | Renardet S.A. & Partners, 2026"
+    pc = w.get("people_cum", []); bands = w.get("bands_h", [])
+    rows = [["Scenario", f"{sid} ({desc})"], ["Peak flow at dam", f"{s.get('peak_total_flow_m3s', 0):,.0f} m3/s"]]
+    if fail:
+        arr = raster(f"{sid} arrival of the wave (0.3 m rise)" + (" over the PMF" if wave else ""), d + "warning_arrival_h.tif"); style_arrival_steps(arr, ARRIVAL_FAIL)
+        lines = hazard_lines(sid, d + f"hazard_lines_{version}.geojson")
+        if pc: rows += [["People reached within 15 min", f"{pc[bands.index(0.25)]:,.0f}"], ["People reached within 1 h", f"{pc[bands.index(1.0)]:,.0f}"], ["People in flooded area", f"{w['people_total']:,.0f}"]]
+        title = f"{sid}: failure wave over the PMF, with the H4 and H6 lines" if wave else f"{sid}: wave arrival with the H4 and H6 lines"
+        export(f"{sid} arrival-hazard town", title, over + lines + [arr], over + [arr] + lines, "town", rows, subtitle=sub)
+    else:
+        haz = raster(f"{sid} hazard AIDR", d + "hazard_aidr.tif"); style_hazard(haz)
+        from qgis.core import QgsSimpleLineSymbolLayer
+        sym = QgsLineSymbol.createSimple({"color": "#111111", "width": "0.8"}); sym.insertSymbolLayer(0, QgsSimpleLineSymbolLayer(QColor(255, 255, 255), 1.9))
+        iso_l = vector(f"{sid} arrival isochrones (h after the storm starts)", d + f"isochrones_{version}.geojson", sym)
+        label(iso_l, field="label", size=9, placement="line", bold=True, color="#111111", all_labels=False)
+        if pc: rows += [["People reached within 3 h", f"{pc[bands.index(3.0)]:,.0f}"], ["People reached within 12 h", f"{pc[bands.index(12.0)]:,.0f}"], ["People in flooded area", f"{w['people_total']:,.0f}"]]
+        export(f"{sid} arrival-hazard town", f"{sid}: hazard class with arrival isochrones (hours)", over + [iso_l, haz], over + [haz, iso_l], "town", rows, subtitle=sub)
+    prj.write()
+
+# ---- variants for the user's choice (2026-09-23 12:00): which variable is the fill, which the lines, and how the lines are coloured
+HAZ_COL = {"H2": "#00ffff", "H3": "#008000", "H4": "#00ff00", "H5": "#ffff00", "H6": "#f41f1f"}          # risk-map palette
+HAZ_GREY = {"H2": "#c8c8c8", "H3": "#9a9a9a", "H4": "#6a6a6a", "H5": "#3a3a3a", "H6": "#000000"}         # strong to less strong
+ISO_COL = {"5 min": "#7f0000", "10 min": "#b30000", "15 min": "#e8432f", "30 min": "#f28e2b", "1 h": "#f2d13d"}
+
+def line_layers(prefix, path, labels, colours, widths=None, casing=True, dashed=()):
+    """one line layer per label (subset of the geojson), coloured per label, optional white casing"""
+    from qgis.core import QgsSimpleLineSymbolLayer
+    out = []
+    for lab in labels:
+        w = (widths or {}).get(lab, 0.8)
+        sym = QgsLineSymbol.createSimple({"color": colours[lab], "width": str(w), "line_style": "dash" if lab in dashed else "solid"})
+        if casing: sym.insertSymbolLayer(0, QgsSimpleLineSymbolLayer(QColor(255, 255, 255), w + 1.2))
+        l = vector(f"{prefix} {lab}", path, sym); l.setSubsetString(f"\"label\" = '{lab}'"); out.append(l)
+    return out
+
+def map_variants(code, version="v3"):
+    d = RESULTS + code + "/"; s = json.load(open(d + "summary.json")); w = json.load(open(d + "warning.json"))
+    axis = vector("Straight dam axis (indicative)", GIS + "dam_axis_straight_indicative.shp", QgsLineSymbol.createSimple({"color": "#000000", "width": "1.4"}))
+    dikes = vector("Training dikes (200-yr design)", BASE + "Hydraulic/Flood Protection/Risk/Data/SHP/Dykes.shp", QgsLineSymbol.createSimple({"color": "#eb6834", "width": "0.9"}))
+    label_ = s.get("plan_title", code); sid = label_.split()[0]
+    desc = label_[len(sid):].strip(" ,").replace(", no dikes", ", without dikes").replace(", dikes", ", with dikes")
+    over = [axis, dikes]; sub = f"{label_} | Wadi Majlas Flood Protection Dam, Dam Break Analysis | Renardet S.A. & Partners, 2026"
+    pc = w["people_cum"]; bands = w["bands_h"]
+    rows = [["Scenario", f"{sid} ({desc})"], ["Peak flow at dam", f"{s.get('peak_total_flow_m3s', 0):,.0f} m3/s"],
+            ["People reached within 15 min", f"{pc[bands.index(0.25)]:,.0f}"], ["People reached within 1 h", f"{pc[bands.index(1.0)]:,.0f}"], ["People in flooded area", f"{w['people_total']:,.0f}"]]
+    arr = raster(f"{sid} arrival of the wave (0.3 m rise)", d + "warning_arrival_h.tif"); style_arrival_steps(arr, ARRIVAL_FAIL)
+    allp = d + f"hazard_lines_all_{version}.geojson"; labs = ["H2", "H3", "H4", "H5", "H6"]
+    # 2: arrival fill + every hazard boundary in greys, strong to less strong
+    L2 = line_layers(f"{sid} hazard boundary", allp, labs, HAZ_GREY, widths={"H2": 0.45, "H3": 0.55, "H4": 0.65, "H5": 0.8, "H6": 1.0})
+    export(f"{sid} variant2 town", f"{sid}: wave arrival, hazard boundaries in greys", over + L2 + [arr], over + [arr] + L2, "town", rows, subtitle=sub)
+    for l in L2: prj.removeMapLayer(l.id())
+    # 3: arrival fill + every hazard boundary in the hazard colours
+    L3 = line_layers(f"{sid} hazard boundary", allp, labs, HAZ_COL, widths={"H2": 0.6, "H3": 0.6, "H4": 0.7, "H5": 0.8, "H6": 0.9})
+    export(f"{sid} variant3 town", f"{sid}: wave arrival, hazard boundaries in hazard colours", over + L3 + [arr], over + [arr] + L3, "town", rows, subtitle=sub)
+    for l in L3: prj.removeMapLayer(l.id())
+    # 4: hazard fill + isochrones coloured by the arrival ramp
+    haz = raster(f"{sid} hazard AIDR", d + "hazard_aidr.tif"); style_hazard(haz)
+    isop = d + f"isochrones_{version}.geojson"; ilabs = ["5 min", "10 min", "15 min", "30 min", "1 h"]
+    L4 = line_layers(f"{sid} arrival", isop, ilabs, ISO_COL, widths={k: 0.9 for k in ilabs})
+    for l in L4: label(l, field="label", size=8, placement="line", bold=True, color="#111111", all_labels=False)
+    export(f"{sid} variant4 town", f"{sid}: hazard class with arrival isochrones coloured by time", over + L4 + [haz], over + [haz] + L4, "town", rows, subtitle=sub)
+    for l in L4: prj.removeMapLayer(l.id())
+    prj.write()
+
 POP = BASE + "Hydraulic/Flood Protection/Risk/Data/Population/GHS POP 2025 Majlas.tif"
 MAGMA_R = [(0, "#fcfdbf"), (2, "#fec98d"), (5, "#fd9668"), (10, "#f1605d"), (25, "#cd4071"), (50, "#9e2f7f"), (100, "#721f81"), (200, "#440f76"), (400, "#180f3e")]
 

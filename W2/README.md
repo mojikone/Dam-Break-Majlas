@@ -15,6 +15,8 @@ Campaign status (2026-09-23 04:40): base runs S1D, S1N, S3D, S2D done; S3N and S
 | `03_maps/` | `Majlas_DamBreak_W2.qgz`, the QGIS project whose layouts produce the maps. |
 | `05_report/`, `06_refs/` | Report and references, filled when the runs are complete. |
 
+The study folder is versioned at https://github.com/mojikone/Dam-Break-Majlas (root `README.md` = project overview; large results and third-party files excluded, see `.gitignore`).
+
 Related folders beside W1/W2 (not iterations, kept as given):
 
 - `HEC_HMS_Majlas/` — copy of the HEC-HMS project with the south catchment ("Basin 1 Res2", runs "DA <rp> Res2").

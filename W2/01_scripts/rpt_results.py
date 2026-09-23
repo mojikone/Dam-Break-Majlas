@@ -406,6 +406,12 @@ def content(d):
         d.P(f"With the dikes in place the reservoir peaks at {n2(peak_pool(s3d))} m a.s.l., {abs(over):.2f} m {'above' if over > 0 else 'below'} the crest and "
             f"{F.PARAPET - (peak_pool(s3d) or 0):.2f} m below the parapet, and the spillway passes {n0(s3d.get('peak_total_flow_m3s'))} m³/s against a design "
             f"discharge of {F.SPILL_QMAX:,.0f} m³/s.")
+    f3 = load("S3D-F10000")
+    if f3:
+        d.P(f"The 10,000-year flood, run on the same model as a check, peaks at {n2(peak_pool(f3))} m a.s.l., {n2(F.CREST - peak_pool(f3))} m below the crest, "
+            f"with {n0(f3.get('peak_total_flow_m3s'))} m³/s over the spillway; it covers {n1(f3.get('inundated_area_km2_gt0.3m'))} km² of the plain with "
+            f"{n0(f3.get('consequences_par_total'))} people in it, and reaches the town {hm((load_w('S3D-F10000') or {}).get('places', {}).get('Qurayat, residential centre'))} "
+            "after the storm starts, two hours later than the PMF.")
     for sid in ("S3D", "S3N"):
         if os.path.exists(mapfile(sid, "depth", "reach")):
             d.LANDSCAPE(lambda dd, sid=sid: dd.FIG(mapfile(sid, "depth", "reach"), f"{sid}, {DESC[sid]}: maximum depth.", f"map_{sid}_depth", width_cm=22.9, max_h_cm=15.0))
@@ -446,6 +452,12 @@ def content(d):
             f"{n1(h6_3)} to {n1(h6_2)} km², and the people in the flooded area from {n0((s3d or {}).get('consequences_par_total'))} to {n0(s2d.get('consequences_par_total'))}. "
             "The plain is under water before the dam fails, so the arrival that matters is that of the failure wave on top of the flood: chapter 9 "
             "times the moment the failure adds 0.3 m to the depth of the no-failure run and counts the people it reaches.")
+    f2, f3 = load("S2D-F10000"), load("S3D-F10000")
+    if f2 and f3:
+        d.P(f"During the 10,000-year flood the same failure, triggered at the {n2(f2.get('trigger_max_stage_hw'))} m pool, peaks at {n0(f2.get('peak_total_flow_m3s'))} m³/s "
+            f"against {n0(f3.get('peak_total_flow_m3s'))} m³/s without failure, floods {n1(f2.get('inundated_area_km2_gt0.3m'))} km² with "
+            f"{n0(f2.get('consequences_par_total'))} people, and adds 0.3 m to the water standing on {n0((load_w('S2D-F10000') or {}).get('people_cum', [None])[0])} "
+            "people within 15 minutes: the smaller flood lowers the peak by a tenth and changes little else.")
     else:
         d.P("Run pending.")
     for sid in ("S2D", "S2N"):

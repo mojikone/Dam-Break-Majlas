@@ -4,7 +4,7 @@ Dam break analysis of the Wadi Majlas Flood Protection Dam (Wilayat Qurayat, Mus
 
 This file is the entry point to the repository and is kept up to date whenever something meaningful changes (a result, a decision, a deliverable). Two more live documents carry the detail: [`W2/README.md`](W2/README.md) (what the working folder holds and how to run it) and [`W2/PROJECT_STATE.md`](W2/PROJECT_STATE.md) (every decision, number and open item, dated).
 
-*Last updated: 2026-09-23 12:15. Campaign complete: 14 runs (4 base, 8 sensitivity, 2 fills); final report build of the same time.*
+*Last updated: 2026-09-23 12:50. Campaign complete: 14 runs (4 base, 8 sensitivity, 2 fills); final report with hazard-plus-isochrone maps.*
 
 ## The dam in brief
 
@@ -25,7 +25,7 @@ Roller-compacted concrete gravity dam on a straight axis, 2 km upstream of Quray
 3. **Incremental reading.** A flood-day failure is read against its no-failure twin: only what the failure adds to the flood counts against the dam. The sunny-day failure stands alone.
 4. **Dikes decision gate.** S1N and S1D were run first; they differ by 0.4 % in flooded area and people at risk, so the flood-day pair without dikes (S3N, S2N) was not run and the with-dikes runs stand for both conditions (`W2/04_data/dikes_decision.json`).
 5. **Sensitivity, one parameter at a time.** Breach width 51 and 153 m (three and nine monoliths), formation time 3 and 18 min and weir coefficient 1.44 on the sunny day, where the dam's contribution stands alone and a run takes an hour; one width check on the flood day (119 m, seven monoliths); and the 10,000-year flood instead of the PMF, without and with failure. The flood-day width and formation-time runs first planned were stopped on 23 September once the sunny-day family had answered the question (a flood-day run costs about 15 h of computing against 1 h).
-6. **Consequences.** Depth, velocity and their product on a 2 m grid, AIDR hazard classes H1–H6, people (GHS-POP 2025) and plots (flood-risk land-use layer) in the flooded area, and, because the hazard maps alone make the PMF look as bad as a failure, **warning time**: who is reached, and when, timed from each scenario's own trigger.
+6. **Consequences.** Depth, velocity and their product on a 2 m grid, AIDR hazard classes H1–H6, people (GHS-POP 2025) and plots (flood-risk land-use layer) in the flooded area, and, because the hazard maps alone make the PMF look as bad as a failure, **warning time**: who is reached, and when, timed from each scenario's own trigger. The result maps carry the hazard classes with arrival isochrones on top (black earliest, greying with time), so one map per scenario says where it is unsafe and when the water gets there.
 
 ## Models and tools
 

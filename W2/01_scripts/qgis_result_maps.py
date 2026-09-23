@@ -299,6 +299,36 @@ def map_variants(code, version="v3"):
     for l in L4: prj.removeMapLayer(l.id())
     prj.write()
 
+ISO_GREY = {"5 min": "#000000", "10 min": "#2b2b2b", "15 min": "#555555", "30 min": "#8a8a8a", "1 h": "#b8b8b8"}   # earliest black, later grey
+ISO_GREY_PMF = {"1 h": "#000000", "2 h": "#2b2b2b", "3 h": "#555555", "6 h": "#8a8a8a", "12 h": "#b8b8b8"}
+
+def map_hazard_iso_grey(code, version="v3"):
+    """hazard fill with arrival isochrones as plain lines, no halo, black for the earliest and greying with time (user, 2026-09-23 12:30)"""
+    d = RESULTS + code + "/"; s = json.load(open(d + "summary.json")); w = json.load(open(d + "warning.json"))
+    axis = vector("Straight dam axis (indicative)", GIS + "dam_axis_straight_indicative.shp", QgsLineSymbol.createSimple({"color": "#000000", "width": "1.4"}))
+    dikes = vector("Training dikes (200-yr design)", BASE + "Hydraulic/Flood Protection/Risk/Data/SHP/Dykes.shp", QgsLineSymbol.createSimple({"color": "#eb6834", "width": "0.9"}))
+    label_ = s.get("plan_title", code); sid = label_.split()[0]
+    desc = label_[len(sid):].strip(" ,").replace(", no dikes", ", without dikes").replace(", dikes", ", with dikes")
+    over = [axis] if sid.split("-")[0].endswith("N") else [axis, dikes]
+    sub = f"{label_} | Wadi Majlas Flood Protection Dam, Dam Break Analysis | Renardet S.A. & Partners, 2026"
+    pc = w["people_cum"]; bands = w["bands_h"]
+    rows = [["Scenario", f"{sid} ({desc})"], ["Peak flow at dam", f"{s.get('peak_total_flow_m3s', 0):,.0f} m3/s"]]
+    haz = raster(f"{sid} hazard AIDR", d + "hazard_aidr.tif"); style_hazard(haz)
+    fail = s.get("breach_start_h") is not None; wave = fail and s["breach_start_h"] > 5
+    if fail: rows += [["People reached within 15 min", f"{pc[bands.index(0.25)]:,.0f}"], ["People reached within 1 h", f"{pc[bands.index(1.0)]:,.0f}"], ["People in flooded area", f"{w['people_total']:,.0f}"]]
+    if fail:
+        ilabs = ["5 min", "10 min", "15 min", "30 min", "1 h"]; cols = ISO_GREY; wid = {"5 min": 1.1, "10 min": 1.0, "15 min": 0.9, "30 min": 0.8, "1 h": 0.7}
+        title = f"{sid}: hazard class with arrival of the failure wave over the PMF" if wave else f"{sid}: hazard class with arrival isochrones after the breach"
+    else:
+        ilabs = ["1 h", "2 h", "3 h", "6 h", "12 h"]; cols = ISO_GREY_PMF; wid = {"1 h": 1.1, "2 h": 1.0, "3 h": 0.9, "6 h": 0.8, "12 h": 0.7}
+        title = f"{sid}: hazard class with arrival isochrones after the start of the storm"
+        rows += [["People reached within 3 h", f"{pc[bands.index(3.0)]:,.0f}"], ["People reached within 12 h", f"{pc[bands.index(12.0)]:,.0f}"], ["People in flooded area", f"{w['people_total']:,.0f}"]]
+    L = line_layers(f"{sid} arrival", d + f"isochrones_{version}.geojson", ilabs, cols, widths=wid, casing=False)
+    for l in L: label(l, field="label", size=8, placement="line", bold=True, color="#000000", all_labels=False)
+    export(f"{sid} hazard-iso-grey town", title, over + L + [haz], over + [haz] + L, "town", rows, subtitle=sub)
+    for l in L: prj.removeMapLayer(l.id())
+    prj.write()
+
 POP = BASE + "Hydraulic/Flood Protection/Risk/Data/Population/GHS POP 2025 Majlas.tif"
 MAGMA_R = [(0, "#fcfdbf"), (2, "#fec98d"), (5, "#fd9668"), (10, "#f1605d"), (25, "#cd4071"), (50, "#9e2f7f"), (100, "#721f81"), (200, "#440f76"), (400, "#180f3e")]
 

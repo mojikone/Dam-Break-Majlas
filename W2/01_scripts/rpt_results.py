@@ -415,6 +415,8 @@ def content(d):
     for sid in ("S3D", "S3N"):
         if os.path.exists(mapfile(sid, "depth", "reach")):
             d.LANDSCAPE(lambda dd, sid=sid: dd.FIG(mapfile(sid, "depth", "reach"), f"{sid}, {DESC[sid]}: maximum depth.", f"map_{sid}_depth", width_cm=22.9, max_h_cm=15.0))
+        if os.path.exists(mapfile(sid, "hazard-iso-grey", "town")):     # hazard fill with arrival isochrones (user, 2026-09-23 12:40)
+            d.LANDSCAPE(lambda dd, sid=sid: dd.FIG(mapfile(sid, "hazard-iso-grey", "town"), f"{sid}: flood hazard class (AIDR) with the arrival of a 0.3 m rise after the start of the storm, in hours (black earliest), Qurayat.", f"map_{sid}_haz", width_cm=22.9, max_h_cm=15.0))
 
     # ============================================================ 5 results: sunny day
     d.H1("Results: Sunny-day Failure")
@@ -433,7 +435,10 @@ def content(d):
     if os.path.exists(chart("results_pool_levels.png")):
         d.FIG(chart("results_pool_levels.png"), "Reservoir level at the dam, base runs.", "pool", width_cm=15)
     for sid in ("S1D", "S1N"):
-        if os.path.exists(mapfile(sid, "depth", "reach")):
+        if os.path.exists(mapfile(sid, "hazard-iso-grey", "town")):     # hazard fill with arrival isochrones replaces the arrival and hazard maps (user, 2026-09-23 12:40)
+            d.LANDSCAPE(lambda dd, sid=sid: (dd.FIG(mapfile(sid, "depth", "reach"), f"{sid}, {DESC[sid]}: maximum depth.", f"map_{sid}_depth", width_cm=22.9, max_h_cm=15.0),
+                                             dd.FIG(mapfile(sid, "hazard-iso-grey", "town"), f"{sid}: flood hazard class (AIDR) with the arrival of a 0.3 m rise after the breach, isochrones black (earliest) to grey, Qurayat.", f"map_{sid}_haz", width_cm=22.9, max_h_cm=15.0)))
+        elif os.path.exists(mapfile(sid, "depth", "reach")):
             d.LANDSCAPE(lambda dd, sid=sid: (dd.FIG(mapfile(sid, "depth", "reach"), f"{sid}, {DESC[sid]}: maximum depth.", f"map_{sid}_depth", width_cm=22.9, max_h_cm=15.0),
                                              dd.FIG(mapfile(sid, "arrival", "town"), f"{sid}: arrival time of a 0.3 m depth after the breach, Qurayat.", f"map_{sid}_arr", width_cm=22.9, max_h_cm=15.0),
                                              dd.FIG(mapfile(sid, "hazard", "town"), f"{sid}: flood hazard class (AIDR), Qurayat.", f"map_{sid}_haz", width_cm=22.9, max_h_cm=15.0)))
@@ -461,7 +466,10 @@ def content(d):
     else:
         d.P("Run pending.")
     for sid in ("S2D", "S2N"):
-        if os.path.exists(mapfile(sid, "depth", "reach")):
+        if os.path.exists(mapfile(sid, "hazard-iso-grey", "town")):
+            d.LANDSCAPE(lambda dd, sid=sid: (dd.FIG(mapfile(sid, "depth", "reach"), f"{sid}, {DESC[sid]}: maximum depth.", f"map_{sid}_depth", width_cm=22.9, max_h_cm=15.0),
+                                             dd.FIG(mapfile(sid, "hazard-iso-grey", "town"), f"{sid}: flood hazard class (AIDR) with the arrival of the failure wave over the PMF (0.3 m extra depth), isochrones black (earliest) to grey, Qurayat.", f"map_{sid}_haz", width_cm=22.9, max_h_cm=15.0)))
+        elif os.path.exists(mapfile(sid, "depth", "reach")):
             d.LANDSCAPE(lambda dd, sid=sid: (dd.FIG(mapfile(sid, "depth", "reach"), f"{sid}, {DESC[sid]}: maximum depth.", f"map_{sid}_depth", width_cm=22.9, max_h_cm=15.0),
                                              dd.FIG(mapfile(sid, "hazard", "town"), f"{sid}: flood hazard class (AIDR), Qurayat.", f"map_{sid}_haz", width_cm=22.9, max_h_cm=15.0)))
 
@@ -569,7 +577,7 @@ def content(d):
     for sid in ("S1D", "S2D", "S3D"):
         if os.path.exists(mapfile(sid, "population", "town")):
             d.LANDSCAPE(lambda dd, sid=sid: dd.FIG(mapfile(sid, "population", "town"), f"{sid}: people per 100 m cell (GHS-POP 2025) with the flooded area outlined.", f"map_{sid}_pop", width_cm=22.9, max_h_cm=15.0))
-    if os.path.exists(mapfile("S2D", "wave", "town")):
+    if os.path.exists(mapfile("S2D", "wave", "town")) and not os.path.exists(mapfile("S2D", "hazard-iso-grey", "town")):
         d.LANDSCAPE(lambda dd: dd.FIG(mapfile("S2D", "wave", "town"), "S2D: arrival of the failure wave over the PMF, the time after the breach at which the water is 0.3 m deeper than without failure.", "map_S2D_wave", width_cm=22.9, max_h_cm=15.0))
 
     # ============================================================ 9 discussion

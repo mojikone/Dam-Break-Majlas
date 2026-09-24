@@ -1,0 +1,6 @@
+AIDR (2017). Guideline 7-3: Flood Hazard. Australian Institute for Disaster Resilience.
+The AIDR site refuses automated downloads (HTTP 403). Download by hand from:
+https://knowledge.aidr.org.au/media/3518/adr-guideline-7-3.pdf
+
+ICOLD (2020). Bulletin 111, Dam Break Flood Analysis, Review and Recommendations.
+Paid publication (ICOLD / CRC Press); not downloadable.

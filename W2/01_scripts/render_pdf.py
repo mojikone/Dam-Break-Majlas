@@ -7,9 +7,10 @@ REV = "R0"
 RUNSHEET = "--runsheet" in sys.argv; RESULTS = "--results" in sys.argv; RENDER_ONLY = "--render-only" in sys.argv
 for flag in ("--runsheet", "--results", "--render-only"):
     if flag in sys.argv: sys.argv.remove(flag)
-DOCX = os.path.join(W1, "05_report", REV, "Wadi Majlas Dam Break Analysis - HEC-RAS Run Sheet Rev00.docx" if RUNSHEET
-                    else "Wadi Majlas Dam Break Analysis Report Rev00.docx" if RESULTS
-                    else "Wadi Majlas Dam Break Analysis Methodology Report Rev00.docx")
+import build_report as _BR
+DOCX = (os.path.join(W1, "05_report", REV, "Wadi Majlas Dam Break Analysis - HEC-RAS Run Sheet Rev00.docx") if RUNSHEET
+        else _BR.RESULTS_DOCX if RESULTS
+        else os.path.join(W1, "05_report", REV, "Wadi Majlas Dam Break Analysis Methodology Report Rev00.docx"))
 PDF = DOCX[:-5] + ".pdf"
 REVIEW = os.path.join(W1, "05_report", "_review_runsheet" if RUNSHEET else "_review_results" if RESULTS else "_review")
 

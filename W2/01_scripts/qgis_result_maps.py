@@ -329,6 +329,25 @@ def map_hazard_iso_grey(code, version="v3"):
     for l in L: prj.removeMapLayer(l.id())
     prj.write()
 
+def map_arrival_pmf(code):
+    """arrival of a 0.3 m rise after the start of the storm, in hours, for a no-failure run (user, 2026-09-24: the hazard map with
+    isochrones stays, a separate arrival map is added after it)"""
+    d = RESULTS + code + "/"
+    if not os.path.exists(d + "warning_arrival_h.tif"): print("no warning arrival for", code); return
+    s = json.load(open(d + "summary.json")); w = json.load(open(d + "warning.json"))
+    axis = vector("Straight dam axis (indicative)", GIS + "dam_axis_straight_indicative.shp", QgsLineSymbol.createSimple({"color": "#000000", "width": "1.4"}))
+    dikes = vector("Training dikes (200-yr design)", BASE + "Hydraulic/Flood Protection/Risk/Data/SHP/Dykes.shp", QgsLineSymbol.createSimple({"color": "#eb6834", "width": "0.9"}))
+    label_ = s.get("plan_title", code); sid = label_.split()[0]
+    arr = raster(f"{sid} arrival of a 0.3 m rise (h after the storm starts)", d + "warning_arrival_h.tif"); style_arrival_steps(arr, ARRIVAL_PMF)
+    desc = label_[len(sid):].strip(" ,").replace(", no dikes", ", without dikes").replace(", dikes", ", with dikes")
+    pc = w["people_cum"]; bands = w["bands_h"]
+    rows = [["Scenario", f"{sid} ({desc})"], ["Peak flow at dam", f"{s.get('peak_total_flow_m3s', 0):,.0f} m3/s"],
+            ["People reached within 3 h", f"{pc[bands.index(3.0)]:,.0f}"], ["People reached within 12 h", f"{pc[bands.index(12.0)]:,.0f}"], ["People in flooded area", f"{w['people_total']:,.0f}"]]
+    over = [axis] if sid.split("-")[0].endswith("N") else [axis, dikes]
+    sub = f"{label_} | Wadi Majlas Flood Protection Dam, Dam Break Analysis | Renardet S.A. & Partners, 2026"
+    export(f"{sid} arrival-pmf town", f"{sid}: arrival of a 0.3 m rise after the start of the storm", over + [arr], over + [arr], "town", rows, subtitle=sub)
+    prj.write()
+
 POP = BASE + "Hydraulic/Flood Protection/Risk/Data/Population/GHS POP 2025 Majlas.tif"
 MAGMA_R = [(0, "#fcfdbf"), (2, "#fec98d"), (5, "#fd9668"), (10, "#f1605d"), (25, "#cd4071"), (50, "#9e2f7f"), (100, "#721f81"), (200, "#440f76"), (400, "#180f3e")]
 

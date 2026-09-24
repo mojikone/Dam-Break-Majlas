@@ -197,7 +197,7 @@ class Doc:
             for i, (sym, meaning) in enumerate(params):
                 last = i == len(params) - 1
                 self.add(f'<w:p><w:pPr><w:pStyle w:val="BodyText"/>{"" if last else "<w:keepNext/>"}<w:ind w:left="567"/><w:spacing w:after="{120 if last else 20}" w:line="240" w:lineRule="auto"/></w:pPr>'
-                         f'{self.inline(sym)}{run("  ")}{self.inline(meaning)}</w:p>')   # single-spaced symbol list, kept together
+                         f'{self.inline(sym)}{run(": ")}{self.inline(meaning)}</w:p>')   # single-spaced symbol list, kept together
 
     # ---- sections: landscape block for wide figures
     def _sectpr(self, landscape):
@@ -241,9 +241,9 @@ def unpack_template():
     if os.path.exists(WORK): shutil.rmtree(WORK)
     with zipfile.ZipFile(TEMPLATE) as z: z.extractall(WORK)
 
-def patch_cover_and_headers(header_title="Dam Break Analysis Methodology Report"):
+def patch_cover_and_headers(header_title="Dam Break Analysis Methodology Report", rev="Rev 00"):
     p = os.path.join(WORK, "word", "document.xml"); x = open(p, encoding="utf-8").read()
-    x = x.replace(">Hydrology Report<", f">{esc(TITLE_LINE)}<", 1)
+    x = x.replace(">Hydrology Report<", f">{esc(TITLE_LINE)}<", 1).replace(">Rev 00<", f">{rev}<", 1)
     x = x.replace(">July 2026<", f">{DATE_LINE}<", 1)
     x = x.replace(">Ministry of Agriculture, Fisheries &amp; Water Resources<", f">{esc(MINISTRY)}<", 1)
     # lists of figures and tables: include the label and number ("\c" switch) instead of the template's "\a" (caption text only)
@@ -266,6 +266,9 @@ def patch_styles():
         body = re.sub(r'<w:suff w:val="\w+"/>', "", body).replace("<w:lvlJc", '<w:suff w:val="space"/><w:lvlJc', 1)
         return body
     nx = re.sub(r'<w:lvl w:ilvl="\d"[^>]*>.*?</w:lvl>', fix_level, nx, flags=re.S)
+    def strip_h1_rpr(m):        # the chapter number inherits the Heading 1 run properties instead of the template's black 11 pt (user, 2026-09-24)
+        body = m.group(0); return re.sub(r"<w:rPr>.*?</w:rPr>", "", body, flags=re.S) if 'w:val="Heading1"' in body else body
+    nx = re.sub(r'<w:lvl w:ilvl="0"[^>]*>.*?</w:lvl>', strip_h1_rpr, nx, flags=re.S)
     # bullets: the abstract list behind the 'Bullet' style (numId 10)
     m = re.search(r'<w:num w:numId="10"[^>]*>.*?<w:abstractNumId w:val="(\d+)"/>', nx, flags=re.S)
     if m:
@@ -279,6 +282,9 @@ def patch_styles():
     sx = re.sub(r'(<w:style [^>]*w:styleId="Heading3"[^>]*>.*?)<w:tabs>.*?</w:tabs>(.*?)<w:ind [^>]*/>', r"\1\2", sx, count=1, flags=re.S)
     sx = re.sub(r'(<w:style [^>]*w:styleId="Bullet"[^>]*>.*?<w:pPr>.*?)<w:spacing [^>]*/>(.*?)<w:sz w:val="20"/>',
                 r'\1<w:spacing w:before="0" w:after="60" w:line="264" w:lineRule="auto"/>\2<w:sz w:val="22"/>', sx, count=1, flags=re.S)
+    # user, 2026-09-24: bullets in the body text's spacing and font; the style keeps only the list reference and the body spacing
+    sx = re.sub(r'(<w:style [^>]*w:styleId="Bullet"[^>]*>.*?<w:pPr>).*?(</w:pPr>)(?:<w:rPr>.*?</w:rPr>)?',
+                r'\1<w:numPr><w:numId w:val="10"/></w:numPr><w:spacing w:before="0" w:after="120"/>\2', sx, count=1, flags=re.S)
     open(sp, "w", encoding="utf-8").write(sx)
 
 def assemble(d, drop_front=False):
@@ -369,18 +375,20 @@ def build():
     assemble(d2); zip_out()
     print(f"figures {d._fig}, tables {d._tbl}, equations {d._eq}, footnotes {len(d2.footnotes)}")
 
-RESULTS_DOCX = os.path.join(OUT_DIR, "Wadi Majlas Dam Break Analysis Report Rev00.docx")
+RESULTS_REV = "R1"                                                      # Rev 01 (2026-09-24): the user's review of the 23 Sep build applied
+RESULTS_DIR = os.path.join(W1, "05_report", RESULTS_REV)
+RESULTS_DOCX = os.path.join(RESULTS_DIR, "Wadi Majlas Dam Break Analysis Report Rev01.docx")
 
 def build_results():
     """W2: the Dam Break Analysis Report (results), same template and mechanics as the W1 methodology report."""
     global TITLE_LINE, HEADER_TITLE
     import rpt_results
     TITLE_LINE = "Dam Break Analysis Report"; HEADER_TITLE = "Wadi Majlas Flood Protection Dam-Dam Break Analysis Report"
-    unpack_template(); patch_cover_and_headers(header_title="Dam Break Analysis Report"); patch_styles()
+    unpack_template(); patch_cover_and_headers(header_title="Dam Break Analysis Report", rev="Rev 01"); patch_styles()
     d = Doc(); rpt_results.content(d)
     d2 = Doc(); d2.fign, d2.tbln, d2.eqn = d.fign, d.tbln, d.eqn; d2.pass_no = 2
     rpt_results.content(d2)
-    assemble(d2); prune_unreferenced_media(); zip_out(RESULTS_DOCX)
+    assemble(d2); prune_unreferenced_media(); os.makedirs(RESULTS_DIR, exist_ok=True); zip_out(RESULTS_DOCX)
     print(f"results report: figures {d._fig}, tables {d._tbl}, equations {d._eq}, footnotes {len(d2.footnotes)}")
 
 if __name__ == "__main__":

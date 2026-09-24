@@ -13,3 +13,11 @@ W2 boards (2026-09-23):
 | Scenario matrix v4 (dense, used in the report) | https://www.figma.com/board/9yi3MwlSoz1OhXnFrn3thF |
 | Analysis process, report style (replaces the Rev 00 board in W2) | https://www.figma.com/board/2n3QtLBMYLYC914LOPB9UB |
 | HEC-RAS model build, report style (replaces the Rev 00 board in W2) | https://www.figma.com/board/lZkjDuZemu0RPyZ10haHAn |
+
+Rev 01 boards (2026-09-24), used in the report:
+
+| Figure | Board |
+|---|---|
+| HEC-RAS model build, Rev 01 (no drone, ogee at FSL 84.5 m over 200 m, crest 96.7 m, breach 85 m = 5 monoliths) | https://www.figma.com/board/1tlmESTqrOGVYhSQ49Y8IC |
+| Scenarios and default conditions, Rev 01 (sensitivity as executed, no dropped runs) | https://www.figma.com/board/IYBraYhqi7ESPNFrS7ZC53 |
+| Run campaign as executed, Rev 01 (dikes gate without scenario names, sensitivity as executed) | https://www.figma.com/board/lKlvKtwycwsW12daHrdq6K |

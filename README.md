@@ -4,7 +4,7 @@ Dam break analysis of the Wadi Majlas Flood Protection Dam (Wilayat Qurayat, Mus
 
 This file is the entry point to the repository and is kept up to date whenever something meaningful changes (a result, a decision, a deliverable). Two more live documents carry the detail: [`W2/README.md`](W2/README.md) (what the working folder holds and how to run it) and [`W2/PROJECT_STATE.md`](W2/PROJECT_STATE.md) (every decision, number and open item, dated).
 
-*Last updated: 2026-09-23 12:50. Campaign complete: 14 runs (4 base, 8 sensitivity, 2 fills); final report with hazard-plus-isochrone maps.*
+*Last updated: 2026-09-24. Campaign complete: 14 runs (4 base, 8 sensitivity, 2 fills). Report Rev 01 built on the review of Rev 00; Rev 00 kept as superseded.*
 
 ## The dam in brief
 
@@ -41,7 +41,7 @@ Roller-compacted concrete gravity dam on a straight axis, 2 km upstream of Quray
 | Hydrology data and rainfall patterns as entered in HEC-RAS | `Data/XLS/` |
 | Dam axis, training dikes, land-use plots, project outline | `Data/SHP/` |
 | Sea level from the Oman maritime book | `Data/Maritime details.xlsx` |
-| HEC-RAS model, text files: project, geometries g02 (dikes) and g03 (no dikes), flow files u26–u31, plans p27–p48, RAS Mapper file | `HEC-RAS Majlas/` |
+| HEC-RAS model, text files: project, the two geometries (with and without dikes), the flow files and plans of every run, RAS Mapper file; the result files of all 14 runs sit in this folder on the workstation (not in the repository) | `HEC-RAS Majlas/` |
 | HEC-HMS model: basin, meteorology, control and run files | `HEC_HMS_Majlas/` |
 | Boundary hydrographs extracted from HEC-HMS | `W2/04_data/hms_res2_hydrographs.xlsx`, `hms_res2_*.csv` |
 | 2D area, boundary lines, dam connection, HMS elements as GeoJSON (EPSG:32640) | `W2/04_data/gis/` |
@@ -70,7 +70,7 @@ Peak flow at the dam, flooded area (depth over 0.3 m, reservoir excluded), peopl
 
 What they mean: the breach width sets the peak almost in proportion, the flooded plain barely moves; the formation time changes the peak by a tenth either way and nothing of the extent, but it sets how many people the wave reaches in the first quarter hour (18,100 for a 3-minute breach, 4,900 for 18 minutes); the failure at the PMF peak adds depth and force rather than extent; and time, not extent, separates the scenarios: the sunny-day wave reaches the residential centre of Qurayat in 15 minutes and the shoreline in 22, the PMF without failure takes about an hour to reach the town and twelve to reach everyone it will reach. Campaign complete 2026-09-23 12:04. Dropped: S2D-W51, S2D-W153, S2D-T18m, S2D-T3m (breach mechanics tested on the sunny day instead).
 
-Deliverables: `W2/05_report/R0/Wadi Majlas Dam Break Analysis Report Rev00.pdf` (interim build, rebuilt from the results at the end of the campaign), maps in `W2/02_figures/maps/results/`, charts in `W2/02_figures/charts/`, per-plan results in `W2/04_data/results/<plan>/` (`summary.json`, `consequences.json`, `warning.json`, `connection.csv`, boundary series, flood outline). The methodology report Rev 00 and the HEC-RAS run sheet are in `W1/05_report/R0/`.
+Deliverables: `W2/05_report/R1/Wadi Majlas Dam Break Analysis Report Rev01.pdf` (Rev 01; `R0/` is the superseded first build with the reviewer's comments), maps in `W2/02_figures/maps/results/`, charts in `W2/02_figures/charts/`, per-plan results in `W2/04_data/results/<plan>/` (`summary.json`, `consequences.json`, `warning.json`, `connection.csv`, boundary series, flood outline). The methodology report Rev 00 and the HEC-RAS run sheet are in `W1/05_report/R0/`.
 
 ## Repository layout
 

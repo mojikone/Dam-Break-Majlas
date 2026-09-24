@@ -2,7 +2,7 @@
 
 **Status: W2 is the live iteration** (started 2026-09-22). W1 (methodology report Rev 00 and the HEC-RAS run sheet) is frozen and superseded only where this folder says so.
 
-Campaign status (2026-09-23 04:40): base runs S1D, S1N, S3D, S2D done; S3N and S2N dropped (dikes immaterial, `04_data/dikes_decision.json`); sensitivity runs S1D-W51, S1D-W153, S1D-C1.44, S2D-W119 done, S3D-F10000, S2D-T18m, S2D-T3m running, S2D-F10000, S2D-W51, S2D-W153 queued. Interim report: `05_report/R0/Wadi Majlas Dam Break Analysis Report Rev00.pdf` (62 pages, 07:15); the final build follows the last run. Details and numbers: `PROJECT_STATE.md`.
+Campaign status (2026-09-23 04:40): base runs S1D, S1N, S3D, S2D done; S3N and S2N dropped (dikes immaterial, `04_data/dikes_decision.json`); sensitivity runs S1D-W51, S1D-W153, S1D-C1.44, S2D-W119 done, S3D-F10000, S2D-T18m, S2D-T3m running, S2D-F10000, S2D-W51, S2D-W153 queued. Report: `05_report/R1/Wadi Majlas Dam Break Analysis Report Rev01.pdf` (Rev 01, 2026-09-24; R0 superseded); the final build follows the last run. Details and numbers: `PROJECT_STATE.md`.
 
 ## What this folder holds
 
@@ -12,6 +12,7 @@ Campaign status (2026-09-23 04:40): base runs S1D, S1N, S3D, S2D done; S3N and S
 | `04_data/` | Hydrographs (`hms_res2_hydrographs.xlsx`, `hms_res2_<location>.csv`), `gis/`, the run log `run_sequence.log`, the run register `run_register.csv`, and `results/<plan>/` with `summary.json`, `connection.csv`, `boundary_*.csv`, `trigger.json` (S2 runs) and the rasters `max_depth`, `max_velocity`, `max_dv`, `arrival_h`, `duration_h`, `hazard_aidr` (2 m, EPSG:32640). |
 | `02_figures/` | `charts/results_*.png` and `maps/results/<plan> <map> <extent>.png` (depth, hazard, arrival; reach and town). |
 | `02_figures/deck/` | Drawings taken from the design review deck (`Data/20260921-Majlas Dam Design.pptx`): upstream elevation with the monoliths, non-overflow and spillway sections, cropped for the report. |
+| `06_references/` | The guidance documents cited in the report, as PDFs where the publisher allows a download. |
 | `03_maps/` | `Majlas_DamBreak_W2.qgz`, the QGIS project whose layouts produce the maps. |
 | `05_report/`, `06_refs/` | Report and references, filled when the runs are complete. |
 

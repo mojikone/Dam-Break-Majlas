@@ -4,7 +4,7 @@ Dam break analysis of the Wadi Majlas Flood Protection Dam (Wilayat Qurayat, Mus
 
 This file is the entry point to the repository and is kept up to date whenever something meaningful changes (a result, a decision, a deliverable). Two more live documents carry the detail: [`W2/README.md`](W2/README.md) (what the working folder holds and how to run it) and [`W2/PROJECT_STATE.md`](W2/PROJECT_STATE.md) (every decision, number and open item, dated).
 
-*Last updated: 2026-09-24. Campaign complete: 14 runs (4 base, 8 sensitivity, 2 fills). Report Rev 01 built on the review of Rev 00; Rev 00 kept as superseded.*
+*Last updated: 2026-09-24. Campaign complete: 14 runs (4 base, 8 sensitivity, 2 fills). Report Rev 01 issued on the review of Rev 00 (Rev 00 kept as superseded); hand-over package assembled (reports, models with terrains, all layers and maps in a grouped QGIS project).*
 
 ## The dam in brief
 
@@ -49,7 +49,7 @@ Roller-compacted concrete gravity dam on a straight axis, 2 km upstream of Quray
 
 Not in the repository (size or third-party): the 5 m terrain and the HEC-RAS terrain layers, the HEC-RAS result files (`*.hdf`, 340 MB each), restart files, DSS files, the 2 m result rasters (rebuilt by `ras_results.py`), the design review presentation, the maritime book and the sample dam-break report. They live in the project directory and on the workstation that ran the campaign.
 
-## Outcomes so far
+## Outcomes
 
 Peak flow at the dam, flooded area (depth over 0.3 m, reservoir excluded), people in the flooded area, area in the worst hazard class and people reached by a 0.3 m rise within 15 minutes of the trigger (failures from the breach; S3D from the start of the storm, hence none).
 

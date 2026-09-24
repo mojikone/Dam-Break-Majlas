@@ -55,3 +55,6 @@ __pycache__/
 HEC-RAS Majlas/*/
 # report build directory (unpacked template) and page renders
 W2/05_report/_build/
+
+# hand-over package (10 GB copy of models, layers and reports; rebuilt by W2/01_scripts/package_files.py + package_qgis.py)
+Majlas Dam Break files/

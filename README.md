@@ -72,6 +72,10 @@ What they mean: the breach width sets the peak almost in proportion, the flooded
 
 Deliverables: `W2/05_report/R1/Wadi Majlas Dam Break Analysis Report Rev01.pdf` (Rev 01; `R0/` is the superseded first build with the reviewer's comments), maps in `W2/02_figures/maps/results/`, charts in `W2/02_figures/charts/`, per-plan results in `W2/04_data/results/<plan>/` (`summary.json`, `consequences.json`, `warning.json`, `connection.csv`, boundary series, flood outline). The methodology report Rev 00 and the HEC-RAS run sheet are in `W1/05_report/R0/`.
 
+## Hand-over package
+
+`Majlas Dam Break files/` beside this repository (not in it: 10 GB) holds the deliverable set: `reports/`, `models/HEC-RAS` and `models/HEC-HMS` with their terrains and results, and `layers/` with the QGIS project (every layer in groups), shapefiles, GeoJSON, terrain, the 2 m result rasters per run, maps, charts, flowcharts, drawings and tables. `W2/01_scripts/package_files.py` and `package_qgis.py` rebuild it.
+
 ## Repository layout
 
 ```
